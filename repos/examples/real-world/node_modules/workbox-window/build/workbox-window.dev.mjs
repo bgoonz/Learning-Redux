@@ -1,5 +1,5 @@
 try {
-  self['workbox:window:4.3.0'] && _();
+  self['workbox:window:4.3.1'] && _();
 } catch (e) {} // eslint-disable-line
 
 /*
@@ -36,7 +36,7 @@ const messageSW = (sw, data) => {
 };
 
 try {
-  self['workbox:core:4.3.0'] && _();
+  self['workbox:core:4.3.1'] && _();
 } catch (e) {} // eslint-disable-line
 
 /*

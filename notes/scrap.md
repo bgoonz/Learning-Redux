@@ -869,3 +869,4 @@ Which combines down to:
 > O(1) + O(1) + O(n) + O(1) = `O(n)`
 
 Again, this algorithm evaluates down to a linear time complexity O(n).
+pauto

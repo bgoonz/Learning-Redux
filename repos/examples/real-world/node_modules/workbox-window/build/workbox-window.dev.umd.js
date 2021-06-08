@@ -5,7 +5,7 @@
 }(this, function (exports) { 'use strict';
 
   try {
-    self['workbox:window:4.3.0'] && _();
+    self['workbox:window:4.3.1'] && _();
   } catch (e) {} // eslint-disable-line
 
   /*
@@ -74,7 +74,7 @@
   }
 
   try {
-    self['workbox:core:4.3.0'] && _();
+    self['workbox:core:4.3.1'] && _();
   } catch (e) {} // eslint-disable-line
 
   /*
