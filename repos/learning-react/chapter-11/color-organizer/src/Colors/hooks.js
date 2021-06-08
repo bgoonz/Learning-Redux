@@ -6,16 +6,16 @@ import React, {
   useEffect,
   useCallback,
   useMemo,
-  useDebugValue
+  useDebugValue,
 } from "react";
 import { v4 } from "uuid";
 
-export const useInput = initialValue => {
+export const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue);
   useDebugValue(value);
   return [
-    { value, onChange: e => setValue(e.target.value) },
-    () => setValue(initialValue)
+    { value, onChange: (e) => setValue(e.target.value) },
+    () => setValue(initialValue),
   ];
 };
 
@@ -35,13 +35,13 @@ const reducer = (state = [], action) => {
           id: action.payload.id,
           title: action.payload.title,
           color: action.payload.color,
-          rating: 0
-        }
+          rating: 0,
+        },
       ];
     case "REMOVE_COLOR":
-      return state.filter(c => c.id !== action.payload.id);
+      return state.filter((c) => c.id !== action.payload.id);
     case "RATE_COLOR":
-      return state.map(c =>
+      return state.map((c) =>
         c.id !== action.payload.id ? c : { ...c, rating: action.payload.rating }
       );
     default:
@@ -64,22 +64,22 @@ export const ColorProvider = ({ children }) => {
       payload: {
         id: v4(),
         title,
-        color
-      }
+        color,
+      },
     })
   );
 
-  const removeColor = useCallback(id => {
+  const removeColor = useCallback((id) => {
     dispatch({
       type: "REMOVE_COLOR",
-      payload: { id }
+      payload: { id },
     });
   });
 
   const rateColor = useCallback((id, rating) => {
     dispatch({
       type: "RATE_COLOR",
-      payload: { id, rating }
+      payload: { id, rating },
     });
   });
 

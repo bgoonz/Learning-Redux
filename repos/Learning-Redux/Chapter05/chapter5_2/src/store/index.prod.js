@@ -1,7 +1,7 @@
-import { createStore } from 'redux'
+import { createStore } from "redux";
 
-import appReducer from '../reducers'
+import appReducer from "../reducers";
 
-export default function configureStore (initialState) {
-  return createStore(appReducer, initialState)
+export default function configureStore(initialState) {
+  return createStore(appReducer, initialState);
 }

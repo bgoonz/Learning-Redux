@@ -1,4 +1,4 @@
-import loggerMiddleware from './logger'
-import errorMiddleware from './error'
+import loggerMiddleware from "./logger";
+import errorMiddleware from "./error";
 
-export { loggerMiddleware, errorMiddleware }
+export { loggerMiddleware, errorMiddleware };

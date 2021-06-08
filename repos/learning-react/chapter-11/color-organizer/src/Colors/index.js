@@ -12,14 +12,8 @@ export default function App() {
     <ColorProvider>
       <AddColorForm />
       <Routes>
-        <Route
-          path="/"
-          element={<ColorList />}
-        ></Route>
-        <Route
-          path=":id"
-          element={<ColorDetails />}
-        />
+        <Route path="/" element={<ColorList />}></Route>
+        <Route path=":id" element={<ColorDetails />} />
       </Routes>
     </ColorProvider>
   );

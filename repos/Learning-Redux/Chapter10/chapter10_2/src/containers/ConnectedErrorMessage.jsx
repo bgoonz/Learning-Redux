@@ -1,14 +1,16 @@
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
-import ErrorMessage from '../components/ErrorMessage.jsx'
+import ErrorMessage from "../components/ErrorMessage.jsx";
 
 const mapStateToProps = (state, props) => {
   return {
-    message: state.error && state.error.message
-  }
-}
+    message: state.error && state.error.message,
+  };
+};
 
-const ConnectedErrorMessage = withRouter(connect(mapStateToProps)(ErrorMessage))
+const ConnectedErrorMessage = withRouter(
+  connect(mapStateToProps)(ErrorMessage)
+);
 
-export default ConnectedErrorMessage
+export default ConnectedErrorMessage;

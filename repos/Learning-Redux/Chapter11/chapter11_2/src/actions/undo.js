@@ -1,9 +1,9 @@
-import { UNDO, REDO } from '../actionTypes'
+import { UNDO, REDO } from "../actionTypes";
 
 export const undo = () => {
-  return { type: UNDO }
-}
+  return { type: UNDO };
+};
 
 export const redo = () => {
-  return { type: REDO }
-}
+  return { type: REDO };
+};

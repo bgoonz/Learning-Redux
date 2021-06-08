@@ -1,32 +1,35 @@
-import React from 'react';
-import DragonMember from './DragonMember';
+import React from "react";
+import DragonMember from "./DragonMember";
 
 class DragonList extends React.Component {
   state = {
-    newMember: '',
+    newMember: "",
     members: [
-      { name: 'Jojo Zhang', dragonStatus: true },
-      { name: 'Brandon Harris', dragonStatus: false }
-    ]
+      { name: "Jojo Zhang", dragonStatus: true },
+      { name: "Brandon Harris", dragonStatus: false },
+    ],
   };
 
-  handleChanges = e => {
+  handleChanges = (e) => {
     this.setState({ ...this.state, newMember: e.target.value });
   };
 
-  handleClick = ()=> {
+  handleClick = () => {
     this.setState({
       ...this.state.members,
-      members: [...this.state.members, {name: this.state.newMember, dragonStatus: true}]
-    })
-  }
+      members: [
+        ...this.state.members,
+        { name: this.state.newMember, dragonStatus: true },
+      ],
+    });
+  };
 
   render() {
     return (
       <div>
         <div className="friends-list">
           {this.state.members.map((member, index) => (
-            <DragonMember key={index} member={member}/>
+            <DragonMember key={index} member={member} />
           ))}
         </div>
         <input

@@ -1,8 +1,8 @@
-import { fetchPostsAndUsers } from './actions'
+import { fetchPostsAndUsers } from "./actions";
 
-export default function initStore (store) {
-  const state = store.getState()
+export default function initStore(store) {
+  const state = store.getState();
   if (!state.posts || state.posts.length <= 0) {
-    return store.dispatch(fetchPostsAndUsers())
+    return store.dispatch(fetchPostsAndUsers());
   }
 }

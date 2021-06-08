@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
-    <meta charset="utf-8">
+  <head>
+    <meta
+      name="viewport"
+      content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="utf-8" />
     <title>Template Strings</title>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-</head>
-<body>
-<h1>Template Strings</h1>
-<p>Open the console</p>
-<script type="text/babel">
+  </head>
+  <body>
+    <h1>Template Strings</h1>
+    <p>Open the console</p>
+    <script type="text/babel">
+      var lastName = "Ferrell";
+      var middleName = "William";
+      var firstName = "John";
 
-    var lastName = "Ferrell"
-    var middleName = "William"
-    var firstName = "John"
+      var ticketAgent = "The iO Theater";
+      var event = "TJ & Dave";
+      var qty = 2;
+      var price = 10;
 
-    var ticketAgent = "The iO Theater"
-    var event = "TJ & Dave"
-    var qty = 2
-    var price = 10
+      // ES6 template strings do not ignore whitespace
 
-    // ES6 template strings do not ignore whitespace
-
-    console.log(`
+      console.log(`
 
     Hello ${firstName},
 
@@ -30,7 +32,7 @@
 
     Order Details
      ${firstName} ${middleName} ${lastName}
-     ${qty} x $${price} = $${qty*price} to ${event}
+     ${qty} x $${price} = $${qty * price} to ${event}
 
     You can pick your tickets up at will call 30 minutes before
     the show.
@@ -39,8 +41,7 @@
 
     ${ticketAgent}
 
-    `)
-
-</script>
-</body>
+    `);
+    </script>
+  </body>
 </html>

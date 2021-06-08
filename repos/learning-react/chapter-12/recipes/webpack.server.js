@@ -10,15 +10,15 @@ module.exports = {
 
   output: {
     path: path.resolve("build-server"),
-    filename: "index.js"
+    filename: "index.js",
   },
 
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: "babel-loader"
-      }
-    ]
-  }
+        use: "babel-loader",
+      },
+    ],
+  },
 };

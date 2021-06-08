@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import MainPage from './pages/MainPage.jsx'
-import AboutPage from './pages/AboutPage.jsx'
+import MainPage from "./pages/MainPage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
 
 const Router = ({ store, route }) => {
   switch (route) {
-    case 'about':
-      return <AboutPage store={store} />
+    case "about":
+      return <AboutPage store={store} />;
 
     default:
-    case 'main':
-      return <MainPage store={store} />
+    case "main":
+      return <MainPage store={store} />;
   }
-}
+};
 
-export default Router
+export default Router;

@@ -1,16 +1,19 @@
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import CreatePost from '../components/CreatePost.jsx'
-import { createPost } from '../actions'
+import CreatePost from "../components/CreatePost.jsx";
+import { createPost } from "../actions";
 
 const mapStateToProps = (state, props) => {
-  return { error: state.error && state.error.message, users: state.users }
-}
+  return { error: state.error && state.error.message, users: state.users };
+};
 
 const mapDispatchToProps = (dispatch, props) =>
-  bindActionCreators({ createPost }, dispatch)
+  bindActionCreators({ createPost }, dispatch);
 
-const ConnectedCreatePost = connect(mapStateToProps, mapDispatchToProps)(CreatePost)
+const ConnectedCreatePost = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CreatePost);
 
-export default ConnectedCreatePost
+export default ConnectedCreatePost;

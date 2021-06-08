@@ -8,29 +8,15 @@ const Trash = memo(FaTrash);
 const Rating = memo(StarRating);
 
 export default memo(
-  function Color({
-    id,
-    title,
-    color,
-    rating = 0
-  }) {
-    const {
-      rateColor,
-      removeColor
-    } = useColors();
+  function Color({ id, title, color, rating = 0 }) {
+    const { rateColor, removeColor } = useColors();
 
-    const rate = useCallback(
-      rating => rateColor(id, rating),
-      []
-    );
+    const rate = useCallback((rating) => rateColor(id, rating), []);
 
     let navigate = useNavigate();
 
     return (
-      <section
-        className="color"
-        onClick={() => navigate(`/${id}`)}
-      >
+      <section className="color" onClick={() => navigate(`/${id}`)}>
         <h1>{title}</h1>
         <button onClick={() => removeColor(id)}>
           <Trash color="red" />
@@ -38,21 +24,15 @@ export default memo(
         <div
           style={{
             height: 50,
-            backgroundColor: color
+            backgroundColor: color,
           }}
         />
-        <Rating
-          selected={rating}
-          onChange={rate}
-        />
+        <Rating selected={rating} onChange={rate} />
       </section>
     );
   },
   (prevProps, nextProps) => {
-    console.log(
-      prevProps.rating,
-      nextProps.rating
-    );
+    console.log(prevProps.rating, nextProps.rating);
     return prevProps.rating === nextProps.rating;
   }
 );

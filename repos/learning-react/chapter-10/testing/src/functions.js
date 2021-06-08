@@ -3,12 +3,9 @@ export function timesTwo(a) {
 }
 
 export function order(items) {
-  const total = items.reduce(
-    (price, item) => price + item.price,
-    0
-  );
+  const total = items.reduce((price, item) => price + item.price, 0);
   return {
     orderItems: items,
-    total
+    total,
   };
 }

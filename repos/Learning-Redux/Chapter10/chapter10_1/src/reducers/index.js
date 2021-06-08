@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
 
-import usersReducer from './users'
-import postsReducer from './posts'
-import filterReducer from './filter'
-import loadingReducer from './loading'
-import errorReducer from './error'
-import sessionReducer from './session'
-import { routerReducer } from 'react-router-redux'
+import usersReducer from "./users";
+import postsReducer from "./posts";
+import filterReducer from "./filter";
+import loadingReducer from "./loading";
+import errorReducer from "./error";
+import sessionReducer from "./session";
+import { routerReducer } from "react-router-redux";
 
 const appReducer = combineReducers({
   users: usersReducer,
@@ -16,6 +16,6 @@ const appReducer = combineReducers({
   error: errorReducer,
   session: sessionReducer,
   route: routerReducer,
-})
+});
 
-export default appReducer
+export default appReducer;

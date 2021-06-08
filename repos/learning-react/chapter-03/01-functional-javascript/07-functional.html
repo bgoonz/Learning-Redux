@@ -13,12 +13,10 @@
     <h1>Functional JavaScript</h1>
     <p>Open the console</p>
     <script type="text/babel">
-      const createScream = logger => message =>
+      const createScream = (logger) => (message) =>
         logger(message.toUpperCase() + "!!!");
 
-      const scream = createScream(message =>
-        console.log(message)
-      );
+      const scream = createScream((message) => console.log(message));
 
       scream("ES6 can createScream with less");
     </script>

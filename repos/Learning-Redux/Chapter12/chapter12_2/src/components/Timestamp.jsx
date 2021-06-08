@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const Timestamp = ({ data }) => {
-  const d = new Date(data)
-  return <span>{d.toUTCString()}</span>
-}
+  const d = new Date(data);
+  return <span>{d.toUTCString()}</span>;
+};
 
-export default Timestamp
-
+export default Timestamp;

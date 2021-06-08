@@ -2,8 +2,7 @@
 
 > Redux is a predictable state management library for JavaScript applications and is the most popular State container for React applications. By now, we have discovered that building out applications using React requires a lot of forethought to give an application scalability. Specifically, we have noticed some complications around the area of state-management. You may have asked yourself a question like "Which of my components should have state vs. which of my components should just be a way to present some DOM elements?"
 
-Overview
---------
+## Overview
 
 Redux is a predictable state management library for JavaScript applications and is the most popular State container for React applications. By now, we have discovered that building out applications using React requires a lot of forethought to give an application scalability. Specifically, we have noticed some complications around the area of state-management. You may have asked yourself a question like _"Which of my components should have state vs. which of my components should just be a way to present some DOM elements?"_
 
@@ -29,36 +28,29 @@ Redux is a small, light-weight state container for use when building JavaScript 
 
 Redux is pretty simple at its core, the complications with Redux arise when we try and implement it within a React application. Usually, these issues are because there is some new syntax, and it's just a matter of time spent learning to sort them out.
 
-Follow Along
-------------
+## Follow Along
 
 Watch the first 4 videos in [this series (Links to an external site.)](https://egghead.io/lessons/react-redux-the-single-immutable-state-tree) and try to wrap your head around how this would be useful in a React application. Think of your projects that you've built in React up until this point. What types of problems would Redux have solved in those projects if any?
 
-Challenge
----------
+## Challenge
 
 Write your thoughts on why Redux exists and at least one reason to use it as well as one reason to not use it.
 
-
 [Source](https://lambdaschool.instructure.com/courses/1218/pages/objective-1-explain-what-redux-is-and-the-problem-it-solves?module_item_id=597488)
-
-
 
 # Objective 2 - create a Redux Store and connect it to a React application: WEB43 - 3.2
 
 > In this section, we'll learn how to create the Redux Store and how to use a library called react-redux to connect our React application to the Store. Because Redux is a standalone library,
-(meaning it can be used on its own or with another library/framework for state-management and data flow) we have to use a second helper package that will enable us to string together Redux within a React application. That package is called React-Redux (Links to an external site.). Some more documentation and information lives here (Links to an external site.). The packages React and Redux are entirely separate, as quoted in the Redux documentation.
+> (meaning it can be used on its own or with another library/framework for state-management and data flow) we have to use a second helper package that will enable us to string together Redux within a React application. That package is called React-Redux (Links to an external site.). Some more documentation and information lives here (Links to an external site.). The packages React and Redux are entirely separate, as quoted in the Redux documentation.
 
-Overview
---------
+## Overview
 
 In this section, we'll learn how to create the _Redux Store_ and how to use a library called `react-redux` to connect our React application to the _Store_. Because Redux is a standalone library,  
 (meaning it can be used on its own or with another library/framework for state-management and data flow) we have to use a second helper package that will enable us to string together Redux within a React application. That package is called [React-Redux (Links to an external site.)](https://github.com/reduxjs/react-redux). Some more documentation and information lives [here (Links to an external site.)](http://redux.js.org/basics/usage-with-react). The packages `React` and `Redux` are entirely separate, as quoted in the Redux documentation.
 
 > From the very beginning, we need to stress that Redux has no relation to React. You can write Redux apps with React, Angular, Ember, jQuery, or vanilla JavaScript.
 
-Follow Along
-------------
+## Follow Along
 
 The first step we're going to take to enable Redux within a React application is to install it. This process assumes you've used Create React App to boilerplate out a React application.
 
@@ -79,7 +71,7 @@ You'll notice that we passed a reducer into `createStore`, but we don't have a r
         title: 'Hello world! I\'m in the Redux store!',
       }
     }
-    
+
     const store = createStore(reducer);
 
 Now that we have a store, we want to make our application aware of it. The way this works is that react-redux gives us a `<Provider></Provider>` component that wraps around our entire application. We will pass our newly created store to that component as a prop.
@@ -94,8 +86,7 @@ Then, all we need to do is wrap our `<App/>` with the `<Provider>` component and
       <App/>
     </Provider>
 
-Challenge
----------
+## Challenge
 
 Let's go ahead and take a peek at our application using the React Dev Tools now that we've wrapped it up in a Provider Component.
 
@@ -103,22 +94,17 @@ Now, take the time to think about where and when you've done this before? Is the
 
 Write down a few thoughts on what you see, where you've seen similar patterns, etc, and send that to your PM.
 
-
 [Source](https://lambdaschool.instructure.com/courses/1218/pages/objective-2-create-a-redux-store-and-connect-it-to-a-react-application?module_item_id=597493)
-
-
 
 # Objective 3 - use the connect function to connect React components to the Redux store: WEB43 - 3.2
 
 > Now that we have built a store to manage our state, we need to connect our components to that store. We can do so using the connect function, within the components themselves. We can also build a helper function within the component files to tell the connect function what pieces of state we want to access. This function is usually named mapStateToProps, and it will map pieces of our Redux state to the props of our component. Let's try it out.
 
-Overview
---------
+## Overview
 
 Now that we have built a store to manage our state, we need to connect our components to that store. We can do so using the `connect` function, within the components themselves. We can also build a helper function within the component files to tell the `connect` function what pieces of state we want to access. This function is usually named `mapStateToProps`, and it will map pieces of our Redux state to the props of our component. Let's try it out.
 
-Follow Along
-------------
+## Follow Along
 
 Using the app you created earlier that has the redux store wired up, change the object you initially returned out of the reducer function to look like this:
 
@@ -143,7 +129,6 @@ Now create a component called `MovieList`. Next, we'll take a look at the syntax
 
 Next, we use the `connect` function, where we export the component at the bottom of the file. We invoke `connect` twice (function currying). First with two arguments - a function and an object. Second with just the component we are trying to connect. For now, we'll pass `null` and `{}` into the first invocation.
 
-    
     export default connect(null, {})(MovieList)
 
 Now `MovieList` is connected to the store. Let's write our `mapStateToProps` function now, to tell `connect` which pieces of our state we want to bring in to this component. This function takes in `state` as a parameter, then returns an object where the properties can be passed to props, and the values are retrieved from the store for our component.
@@ -166,22 +151,17 @@ Now, if you look at the props in the React tools, you will see that all three pi
 
 _By the way, did you notice that we are using a function that takes in a component, extends its functionality, and returns a component? `connect` is a HOC!!!\`_
 
-Challenge
----------
+## Challenge
 
 Create a new application. Add the `redux` and `react-redux` packages. Create a redux store with some test data (have fun with this part!). Build a component and connect that component to the store using `connect` and a `mapStateToProps` function. Render the connected data from your connected component.
 
-
 [Source](https://lambdaschool.instructure.com/courses/1218/pages/objective-3-use-the-connect-function-to-connect-react-components-to-the-redux-store?module_item_id=597498)
-
-
 
 # Objective 4 - write Actions and Action Creators to describe state changes: WEB43 - 3.2
 
 > In the world of Redux there's a whole new set of programmer jargon. The first we'll talk about here is actions.
 
-Overview
---------
+## Overview
 
 In the world of Redux there's a whole new set of programmer jargon. The first we'll talk about here is `actions`.
 
@@ -231,21 +211,20 @@ We do this because we deal with strings like we deal with `types`. Strings are u
 Instead, we'll create an action type, and import it wherever we need it. That way, with linters IntelliSense in our code editor, we can spot errors a lot quicker. This is what action types looks like:
 
     export const TOGGLE_SHOW = 'TOGGLE_SHOW';
-    
-    
+
+
     { type: TOGGLE_SHOW, payload: !state.show }
 
 Now let's try all of this in code!
 
-Follow Along
-------------
+## Follow Along
 
 Let's build our first action creator. We'll assume that we have a Redux store connected to our app, and a component connected to the store. On the state object, we have a `title` property brought into the component via the `mapStateToProps` function. Our component has an input field and an "update title" button. When we type into the input and click the button, we want to update our state object with our new title. (You can start with [this codesandbox (Links to an external site.)](https://codesandbox.io/s/rj862kxkkp))
 
 First, we need to create a new folder in the `src` folder called `actions`. Inside that folder, create an `actions.js` file. Inside that file, create a variable called `UPDATE_TITLE` with the value `'UPDATE_TITLE'`. The variable is an action type. Next, let's create a function called `updateTitle` that takes in a new title. This will be our action creator, and it will simply return an action with the type `UPDATE_TITLE` and a payload of the new title we passed into it. Don't forget to export both the action type and the action creator function. (Note that these will be `named exports`, so they will be imported with curly brace sytnax - `import { namedExport } from './place';`)
 
     export const UPDATE_TITLE = 'UPDATE_TITLE';
-    
+
     export function updateTitle(newTitle) {
       return {
         type: UPDATE_TITLE,
@@ -265,14 +244,14 @@ Let's see how we would do this in the app we have been building. Go to the `Titl
 
     import React from 'react';
     import { connect } from 'react-redux';
-    
+
     import { updateTitle } from '../actions/actions';
-    
+
     ...
-    
+
     export default connect(
       mapStateToProps,
-      { updateTitle }  
+      { updateTitle }
     )(Title);
 
 Now when the "Update title" button is pushed, invoke a function on the class that invokes `this.props.updateTitle` that gets `this.state.newTitleText` passed into it.
@@ -281,9 +260,9 @@ Now when the "Update title" button is pushed, invoke a function on the class tha
       e.preventDefault();
       this.props.updateTitle(this.state.newTitleText)
     }
-    
+
     ...
-    
+
     <button onClick={this.updateTitle}>Update title</button>
 
 Yes, names will be the same all over the place with this stuff. Just note that `props.updateTitle` is the action creator.
@@ -300,15 +279,8 @@ To make sure it is working, let's add a console.log in the action creator, and l
 
 Here's what our [codesandbox (Links to an external site.)](https://codesandbox.io/s/w2n0o4qwmw) should look like now.
 
-Challenge
----------
+## Challenge
 
 In the application you created earlier, look at the state you are displaying. Find something easy, like a string or a number, to update. (Add a string to your state if you only have arrays or objects. This will keep things simple today while we learn this brand new state management flow). Build an action creator, pass it in to your component, and call that action creator (from props) after some interaction like a button click. Make sure you have a console.log in the action creator so you will know if it's working.
 
-
 [Source](https://lambdaschool.instructure.com/courses/1218/pages/objective-4-write-actions-and-action-creators-to-describe-state-changes?module_item_id=597504)
-
-
-
-
-

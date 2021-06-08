@@ -1,17 +1,16 @@
-
-
 # Redux Libraries & Learning Material [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 [<img src="https://rawgit.com/brillout/awesome-redux/master/redux-logo.svg" align="right" width="110">](http://redux.js.org/)
 
 > Redux is a state container for JavaScript apps.
 
- - Official website: [`devarchy.com/redux`](https://devarchy.com/redux)
- - Use devarchy to add a library to the catalog
- 
+- Official website: [`devarchy.com/redux`](https://devarchy.com/redux)
+- Use devarchy to add a library to the catalog
+
  <br/>
 
 #### Contents
+
 - [Code Architecture](#code-architecture)
 - [Utilities](#utilities)
 - [Code Style](#code-style)
@@ -27,198 +26,177 @@
 
 ## Code Architecture
 
-*Aims to improve the overall structure of the source code. Makes reasoning about the code easier.*
+_Aims to improve the overall structure of the source code. Makes reasoning about the code easier._
 
- - [redux-schema](https://github.com/ddsol/redux-schema) - Automatic actions, reducers and validation for Redux.
- - [redux-tcomb](https://github.com/gcanti/redux-tcomb) - Immutable and type-checked state and actions for Redux.
- - [redux-action-tree](https://github.com/cerebral/redux-action-tree) - The Cerebral signals running with Redux.
- - [redux-elm](https://github.com/salsita/redux-elm) - The Elm Architecture in JavaScript.
-
+- [redux-schema](https://github.com/ddsol/redux-schema) - Automatic actions, reducers and validation for Redux.
+- [redux-tcomb](https://github.com/gcanti/redux-tcomb) - Immutable and type-checked state and actions for Redux.
+- [redux-action-tree](https://github.com/cerebral/redux-action-tree) - The Cerebral signals running with Redux.
+- [redux-elm](https://github.com/salsita/redux-elm) - The Elm Architecture in JavaScript.
 
 ## Utilities
 
- - [redux-orm](https://github.com/tommikaikkonen/redux-orm) - Small, simple and immutable ORM to manage relational data in your Redux store.
- - [redux-api-middleware](https://github.com/agraboso/redux-api-middleware) - Redux middleware for calling an API.
- - [redux-ignore](https://github.com/omnidan/redux-ignore) - Higher-order reducer to ignore Redux actions.
- - [redux-modifiers](https://github.com/calvinfroedge/redux-modifiers) - Collection of generic functions for writing Redux reducers to operate on various data structures.
- - [rereduce](https://github.com/slorber/rereduce) - Reducer library for Redux.
- - [redux-search](https://github.com/treasure-data/redux-search) - Redux bindings for client-side search.
- - [redux-logger](https://github.com/evgenyrodionov/redux-logger) - Logger middleware for Redux.
- - [redux-immutable](https://github.com/gajus/redux-immutable) - Redux-immutable is used to create an equivalent function of Redux combineReducers that works with Immutable.js state.
- - [reselect](https://github.com/reactjs/reselect) - Selector library for Redux.
- - [redux-requests](https://github.com/idolize/redux-requests) - Manages in-flight requests with a Redux reducer to avoid issuing duplicate requests.
- - [redux-undo](https://github.com/omnidan/redux-undo) - Higher order reducer to add undo/redo functionality to Redux state containers.
- - [redux-bug-reporter](https://github.com/dtschust/redux-bug-reporter) - Bug reporter and bug playback tool for Redux.
- - [redux-transducers](https://github.com/acdlite/redux-transducers) - Transducer utilities for Redux.
-
+- [redux-orm](https://github.com/tommikaikkonen/redux-orm) - Small, simple and immutable ORM to manage relational data in your Redux store.
+- [redux-api-middleware](https://github.com/agraboso/redux-api-middleware) - Redux middleware for calling an API.
+- [redux-ignore](https://github.com/omnidan/redux-ignore) - Higher-order reducer to ignore Redux actions.
+- [redux-modifiers](https://github.com/calvinfroedge/redux-modifiers) - Collection of generic functions for writing Redux reducers to operate on various data structures.
+- [rereduce](https://github.com/slorber/rereduce) - Reducer library for Redux.
+- [redux-search](https://github.com/treasure-data/redux-search) - Redux bindings for client-side search.
+- [redux-logger](https://github.com/evgenyrodionov/redux-logger) - Logger middleware for Redux.
+- [redux-immutable](https://github.com/gajus/redux-immutable) - Redux-immutable is used to create an equivalent function of Redux combineReducers that works with Immutable.js state.
+- [reselect](https://github.com/reactjs/reselect) - Selector library for Redux.
+- [redux-requests](https://github.com/idolize/redux-requests) - Manages in-flight requests with a Redux reducer to avoid issuing duplicate requests.
+- [redux-undo](https://github.com/omnidan/redux-undo) - Higher order reducer to add undo/redo functionality to Redux state containers.
+- [redux-bug-reporter](https://github.com/dtschust/redux-bug-reporter) - Bug reporter and bug playback tool for Redux.
+- [redux-transducers](https://github.com/acdlite/redux-transducers) - Transducer utilities for Redux.
 
 ### Store Persistence
 
- - [redux-storage](https://github.com/michaelcontento/redux-storage) - Persistence layer for Redux with flexible backends.
- - [redux-persist](https://github.com/rt2zz/redux-persist) - Persist and rehydrate a Redux store.
-
+- [redux-storage](https://github.com/michaelcontento/redux-storage) - Persistence layer for Redux with flexible backends.
+- [redux-persist](https://github.com/rt2zz/redux-persist) - Persist and rehydrate a Redux store.
 
 ### Side Effects
 
-*Side Effects / Asynchronous Actions*
+_Side Effects / Asynchronous Actions_
 
- - [redux-saga](https://github.com/yelouafi/redux-saga) - Alternative side effect model for Redux apps.
- - [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware) - Redux middleware for resolving and rejecting promises with conditional optimistic updates.
- - [redux-effects](https://github.com/redux-effects/redux-effects) - You write pure functions, redux-effects handles the rest.
- - [redux-thunk](https://github.com/gaearon/redux-thunk) - Thunk middleware for Redux.
- - [redux-connect](https://github.com/makeomatic/redux-connect) - Provides decorator for resolving async props in react-router, extremely useful for handling server-side rendering in React.
- - [redux-loop](https://github.com/redux-loop/redux-loop) - Port of elm-effects and the Elm Architecture to Redux that allows you to sequence your effects naturally and purely by returning them from your reducers.
- - [redux-side-effects](https://github.com/salsita/redux-side-effects) - Redux toolset for keeping all the side effects inside your reducers while maintaining their purity.
- - [redux-logic](https://github.com/jeffbski/redux-logic) - Redux middleware for organizing business logic and action side effects.
- - [redux-observable](https://github.com/redux-observable/redux-observable) - RxJS middleware for action side effects in Redux using &quot;Epics&quot;.
- - [redux-ship](https://github.com/clarus/redux-ship) - Composable, testable and typable side effects.
-
+- [redux-saga](https://github.com/yelouafi/redux-saga) - Alternative side effect model for Redux apps.
+- [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware) - Redux middleware for resolving and rejecting promises with conditional optimistic updates.
+- [redux-effects](https://github.com/redux-effects/redux-effects) - You write pure functions, redux-effects handles the rest.
+- [redux-thunk](https://github.com/gaearon/redux-thunk) - Thunk middleware for Redux.
+- [redux-connect](https://github.com/makeomatic/redux-connect) - Provides decorator for resolving async props in react-router, extremely useful for handling server-side rendering in React.
+- [redux-loop](https://github.com/redux-loop/redux-loop) - Port of elm-effects and the Elm Architecture to Redux that allows you to sequence your effects naturally and purely by returning them from your reducers.
+- [redux-side-effects](https://github.com/salsita/redux-side-effects) - Redux toolset for keeping all the side effects inside your reducers while maintaining their purity.
+- [redux-logic](https://github.com/jeffbski/redux-logic) - Redux middleware for organizing business logic and action side effects.
+- [redux-observable](https://github.com/redux-observable/redux-observable) - RxJS middleware for action side effects in Redux using &quot;Epics&quot;.
+- [redux-ship](https://github.com/clarus/redux-ship) - Composable, testable and typable side effects.
 
 ## Code Style
 
-*Aims to make parts of the source code easier to read/write.*
+_Aims to make parts of the source code easier to read/write._
 
- - [redux-act](https://github.com/pauldijou/redux-act) - Opinionated lib to create actions and reducers for Redux.
- - [redux-crud](https://github.com/Versent/redux-crud) - Set of standard actions and reducers for Redux CRUD Applications.
-
+- [redux-act](https://github.com/pauldijou/redux-act) - Opinionated lib to create actions and reducers for Redux.
+- [redux-crud](https://github.com/Versent/redux-crud) - Set of standard actions and reducers for Redux CRUD Applications.
 
 ## Dev tools / Inspection tools
 
- - [redux-devtools-inspector](https://github.com/alexkuz/redux-devtools-inspector) - Another Redux DevTools Monitor.
- - [redux-diff-logger](https://github.com/fcomb/redux-diff-logger) - Diff logger between states for Redux.
- - [redux-devtools-chart-monitor](https://github.com/romseguy/redux-devtools-chart-monitor) - Chart monitor for Redux DevTools.
- - [redux-devtools](https://github.com/gaearon/redux-devtools) - DevTools for Redux with hot reloading, action replay, and customizable UI.
- - [redux-devtools-dispatch](https://github.com/YoruNoHikage/redux-devtools-dispatch) - Dispatch your actions manually to test if your app Reacts well.
- - [redux-devtools-dock-monitor](https://github.com/gaearon/redux-devtools-dock-monitor) - Resizable and movable dock for Redux DevTools monitors.
- - [redux-devtools-filterable-log-monitor](https://github.com/bvaughn/redux-devtools-filterable-log-monitor) - Filterable tree view monitor for Redux DevTools.
- - [redux-devtools-log-monitor](https://github.com/gaearon/redux-devtools-log-monitor) - The default monitor for Redux DevTools with a tree view.
- - [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) - Redux DevTools remotely.
-
+- [redux-devtools-inspector](https://github.com/alexkuz/redux-devtools-inspector) - Another Redux DevTools Monitor.
+- [redux-diff-logger](https://github.com/fcomb/redux-diff-logger) - Diff logger between states for Redux.
+- [redux-devtools-chart-monitor](https://github.com/romseguy/redux-devtools-chart-monitor) - Chart monitor for Redux DevTools.
+- [redux-devtools](https://github.com/gaearon/redux-devtools) - DevTools for Redux with hot reloading, action replay, and customizable UI.
+- [redux-devtools-dispatch](https://github.com/YoruNoHikage/redux-devtools-dispatch) - Dispatch your actions manually to test if your app Reacts well.
+- [redux-devtools-dock-monitor](https://github.com/gaearon/redux-devtools-dock-monitor) - Resizable and movable dock for Redux DevTools monitors.
+- [redux-devtools-filterable-log-monitor](https://github.com/bvaughn/redux-devtools-filterable-log-monitor) - Filterable tree view monitor for Redux DevTools.
+- [redux-devtools-log-monitor](https://github.com/gaearon/redux-devtools-log-monitor) - The default monitor for Redux DevTools with a tree view.
+- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) - Redux DevTools remotely.
 
 ## React Integration
 
- - [redux-test-recorder](https://github.com/conorhastings/redux-test-recorder) - Redux middleware to automatically generate tests for reducers through ui interaction.
- - [react-redux](https://github.com/reactjs/react-redux) - Official React bindings for Redux.
- - [react-easy-universal](https://github.com/keystonejs/react-easy-universal) - Universal Routing &amp; Rendering with React &amp; Redux was too hard. Now it&#39;s easy.
- - [redux-form-material-ui](https://github.com/erikras/redux-form-material-ui) - Set of wrapper components to facilitate using Material UI with Redux Form.
-
+- [redux-test-recorder](https://github.com/conorhastings/redux-test-recorder) - Redux middleware to automatically generate tests for reducers through ui interaction.
+- [react-redux](https://github.com/reactjs/react-redux) - Official React bindings for Redux.
+- [react-easy-universal](https://github.com/keystonejs/react-easy-universal) - Universal Routing &amp; Rendering with React &amp; Redux was too hard. Now it&#39;s easy.
+- [redux-form-material-ui](https://github.com/erikras/redux-form-material-ui) - Set of wrapper components to facilitate using Material UI with Redux Form.
 
 ### Routing
 
- - [redux-async-connect](https://github.com/Rezonans/redux-async-connect) - It allows you to request async data, store them in Redux state and connect them to your React component.
- - [redux-tiny-router](https://github.com/Agamennon/redux-tiny-router) - Router made for Redux and made for universal apps. Stop using the router as a controller, it's just state.
- - [redux-router](https://github.com/acdlite/redux-router) - Redux bindings for React Router &ndash; keep your router state inside your Redux store.
- - [react-router-redux](https://github.com/reactjs/react-router-redux) - Ruthlessly simple bindings to keep react-router and Redux in sync.
- - [ground-control](https://github.com/raisemarketplace/ground-control) - Scalable reducer management &amp; powerful data fetching for React Router &amp; Redux.
-
+- [redux-async-connect](https://github.com/Rezonans/redux-async-connect) - It allows you to request async data, store them in Redux state and connect them to your React component.
+- [redux-tiny-router](https://github.com/Agamennon/redux-tiny-router) - Router made for Redux and made for universal apps. Stop using the router as a controller, it's just state.
+- [redux-router](https://github.com/acdlite/redux-router) - Redux bindings for React Router &ndash; keep your router state inside your Redux store.
+- [react-router-redux](https://github.com/reactjs/react-router-redux) - Ruthlessly simple bindings to keep react-router and Redux in sync.
+- [ground-control](https://github.com/raisemarketplace/ground-control) - Scalable reducer management &amp; powerful data fetching for React Router &amp; Redux.
 
 ### Forms
 
- - [redux-form](https://github.com/erikras/redux-form) - Higher Order Component using react-redux to keep form state in a Redux store.
- - [react-redux-form](https://github.com/davidkpiano/react-redux-form) - Create forms easily in React with Redux.
-
+- [redux-form](https://github.com/erikras/redux-form) - Higher Order Component using react-redux to keep form state in a Redux store.
+- [react-redux-form](https://github.com/davidkpiano/react-redux-form) - Create forms easily in React with Redux.
 
 ### Component State
 
- - [redux-react-local](https://github.com/threepointone/redux-react-local) - Local component state via Redux.
- - [redux-ui](https://github.com/tonyhb/redux-ui) - Easy UI state management for React Redux.
-
+- [redux-react-local](https://github.com/threepointone/redux-react-local) - Local component state via Redux.
+- [redux-ui](https://github.com/tonyhb/redux-ui) - Easy UI state management for React Redux.
 
 ## Other Integrations
 
-
 ### Flux
 
- - [redux-actions](https://github.com/acdlite/redux-actions) - Flux Standard Action utilities for Redux.
- - [redux-promise](https://github.com/acdlite/redux-promise) - FSA-compliant promise middleware for Redux.
-
+- [redux-actions](https://github.com/acdlite/redux-actions) - Flux Standard Action utilities for Redux.
+- [redux-promise](https://github.com/acdlite/redux-promise) - FSA-compliant promise middleware for Redux.
 
 ### Backbone
 
- - [backbone-redux](https://github.com/redbooth/backbone-redux) - Easy way to keep your backbone collections and Redux store in sync.
-
+- [backbone-redux](https://github.com/redbooth/backbone-redux) - Easy way to keep your backbone collections and Redux store in sync.
 
 ### Falcor
 
- - [redux-falcor](https://github.com/ekosz/redux-falcor) - Connect your Redux front-end to your falcor back-end.
-
+- [redux-falcor](https://github.com/ekosz/redux-falcor) - Connect your Redux front-end to your falcor back-end.
 
 ### RxJS
 
- - [redux-observable](https://github.com/redux-observable/redux-observable) - RxJS middleware for action side effects in Redux using &quot;Epics&quot;.
- - [rx-redux](https://github.com/jas-chen/rx-redux) - Reimplementation of Redux using RxJS.
- - [redux-rx](https://github.com/acdlite/redux-rx) - RxJS utilities for Redux.
- - [redurx](https://github.com/shiftyp/redurx) - Redux&#39;ish Functional State Management using RxJS.
-
+- [redux-observable](https://github.com/redux-observable/redux-observable) - RxJS middleware for action side effects in Redux using &quot;Epics&quot;.
+- [rx-redux](https://github.com/jas-chen/rx-redux) - Reimplementation of Redux using RxJS.
+- [redux-rx](https://github.com/acdlite/redux-rx) - RxJS utilities for Redux.
+- [redurx](https://github.com/shiftyp/redurx) - Redux&#39;ish Functional State Management using RxJS.
 
 ### Electron
 
- - [redux-electron-store](https://github.com/samiskin/redux-electron-store) - Redux store enhancer that allows automatic synchronization between electron processes.
-
+- [redux-electron-store](https://github.com/samiskin/redux-electron-store) - Redux store enhancer that allows automatic synchronization between electron processes.
 
 ### Deku
 
- - [deku-redux](https://github.com/troch/deku-redux) - Bindings for Redux in deku &lt; v2.
-
+- [deku-redux](https://github.com/troch/deku-redux) - Bindings for Redux in deku &lt; v2.
 
 ### Other
 
- - [redux-rollbar-middleware](https://github.com/netguru/redux-rollbar-middleware) - Redux middleware that wraps exceptions in actions and sends them to Rollbar with current state.
- - [kasia](https://github.com/outlandishideas/kasia) - React Redux toolset for the WordPress API.
-
+- [redux-rollbar-middleware](https://github.com/netguru/redux-rollbar-middleware) - Redux middleware that wraps exceptions in actions and sends them to Rollbar with current state.
+- [kasia](https://github.com/outlandishideas/kasia) - React Redux toolset for the WordPress API.
 
 ## Boilerplate
 
-*Boilerplates /  Scaffolds / Starter Kits / Generators / Stack Ensembles*
+_Boilerplates / Scaffolds / Starter Kits / Generators / Stack Ensembles_
 
- - [redux-cli](https://github.com/SpencerCDixon/redux-cli) - Opinionated CLI for building Redux/React apps quicker.
- - [reactuate](https://github.com/reactuate/reactuate) - React/Redux stack (not a boilerplate kit).
- - [react-chrome-extension-boilerplate](https://github.com/jhen0409/react-chrome-extension-boilerplate) - Boilerplate for Chrome Extension React.js project.
- - [universal-redux](https://github.com/bdefore/universal-redux) - Npm package that lets you jump right into coding React and Redux with universal (isomorphic) rendering. Only manage Express setups or Webpack configurations if you want to.
- - [generator-react-aspnet-boilerplate](https://github.com/pauldotknopf/react-aspnet-boilerplate) - Starting point for building isomorphic React applications with ASP.NET Core 1, leveraging existing techniques.
- - [generator-redux](https://github.com/banderson/generator-redux) - CLI tools for Redux: next-gen functional Flux/React with devtools.
- - [generator-react-webpack-redux](https://github.com/stylesuxx/generator-react-webpack-redux) - React Webpack Generator including Redux support.
- - [socrates](https://github.com/matthewmueller/socrates) - Small (8kb), batteries-included Redux store to reduce boilerplate and promote good habits.
-
+- [redux-cli](https://github.com/SpencerCDixon/redux-cli) - Opinionated CLI for building Redux/React apps quicker.
+- [reactuate](https://github.com/reactuate/reactuate) - React/Redux stack (not a boilerplate kit).
+- [react-chrome-extension-boilerplate](https://github.com/jhen0409/react-chrome-extension-boilerplate) - Boilerplate for Chrome Extension React.js project.
+- [universal-redux](https://github.com/bdefore/universal-redux) - Npm package that lets you jump right into coding React and Redux with universal (isomorphic) rendering. Only manage Express setups or Webpack configurations if you want to.
+- [generator-react-aspnet-boilerplate](https://github.com/pauldotknopf/react-aspnet-boilerplate) - Starting point for building isomorphic React applications with ASP.NET Core 1, leveraging existing techniques.
+- [generator-redux](https://github.com/banderson/generator-redux) - CLI tools for Redux: next-gen functional Flux/React with devtools.
+- [generator-react-webpack-redux](https://github.com/stylesuxx/generator-react-webpack-redux) - React Webpack Generator including Redux support.
+- [socrates](https://github.com/matthewmueller/socrates) - Small (8kb), batteries-included Redux store to reduce boilerplate and promote good habits.
 
 ## Miscellaneous
 
- - [redux-core](https://github.com/jas-chen/redux-core) - Minimal Redux.
-
+- [redux-core](https://github.com/jas-chen/redux-core) - Minimal Redux.
 
 ## Learning Material
 
- - **Redux's concepts**
+- **Redux's concepts**
 
-    [Redux official documentation](http://redux.js.org/) does a great job at explaining Redux's core principles.
+  [Redux official documentation](http://redux.js.org/) does a great job at explaining Redux's core principles.
 
- - **Why immutable data structures**
+- **Why immutable data structures**
 
-    The [guide on performance](https://facebook.github.io/react/docs/advanced-performance.html) of React's official documentation explains well what immutable data structures are and why they play an important role.
+  The [guide on performance](https://facebook.github.io/react/docs/advanced-performance.html) of React's official documentation explains well what immutable data structures are and why they play an important role.
 
- - **Side Effects**
+- **Side Effects**
 
-    [Redux Loop's readme](https://github.com/redux-loop/redux-loop) gives a good insight on Side Effects in the context of Redux.
+  [Redux Loop's readme](https://github.com/redux-loop/redux-loop) gives a good insight on Side Effects in the context of Redux.
 
 Reading the aforementioned material will get you a good start for writing apps with Redux.
 If you are curious for more, check out following resources.
 
- - **Functional Programming - Basics**
+- **Functional Programming - Basics**
 
-    This [post](http://jaysoo.ca/2016/01/13/functional-programming-little-ideas/) goes over basic concepts of functional programming while building a YouTube instant search demo app.
+  This [post](http://jaysoo.ca/2016/01/13/functional-programming-little-ideas/) goes over basic concepts of functional programming while building a YouTube instant search demo app.
 
- - **Reactive Programming**
+- **Reactive Programming**
 
-    This [introduction to Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) explains Reactive Programming with clarity.
+  This [introduction to Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) explains Reactive Programming with clarity.
 
- - **Functional Programming - Going beyond**
+- **Functional Programming - Going beyond**
 
-    Well written [article](https://medium.com/@chetcorcos/functional-programming-for-javascript-people-1915d8775504) that talks about interesting computer science concepts implemented in functional languages and how these apply to JavaScript.
+  Well written [article](https://medium.com/@chetcorcos/functional-programming-for-javascript-people-1915d8775504) that talks about interesting computer science concepts implemented in functional languages and how these apply to JavaScript.
 
- - **Monads**
+- **Monads**
 
-    Curious about monads? Wikipedia gives a good [overview on monads](https://en.wikipedia.org/wiki/Monad_(functional_programming)) and [this article](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) explains monads in more details with graphics and simple examples.
-
+  Curious about monads? Wikipedia gives a good [overview on monads](<https://en.wikipedia.org/wiki/Monad_(functional_programming)>) and [this article](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html) explains monads in more details with graphics and simple examples.
 
 ## Community
 
@@ -229,18 +207,13 @@ If you are curious for more, check out following resources.
 - [Gitter](https://gitter.im/reactjs/redux)
 - [`#rackt` on freenode](https://webchat.freenode.net/)
 
-
-
-
-
 # Getting Started with React Redux | React Redux
 
 > Introduction > Getting Started: First steps with React Redux
 
 [React Redux](https://github.com/reduxjs/react-redux) is the official [React](https://reactjs.org/) UI bindings layer for [Redux](https://redux.js.org/). It lets your React components read data from a Redux store, and dispatch actions to the store to update state.
 
-Installation[#](#installation "Direct link to heading")
--------------------------------------------------------
+## Installation[#](#installation "Direct link to heading")
 
 React Redux 7.1+ requires **React 16.8.3 or later**, in order to make use of React Hooks.
 
@@ -256,8 +229,7 @@ You'll also need to [install Redux](https://redux.js.org/introduction/installati
 
 If you are using TypeScript, the React Redux types are maintained separately in DefinitelyTyped, but included as a dependency of the `react-redux` package, so they should be installed automatically. If you still need to install them manually, run:
 
-API Overview[#](#api-overview "Direct link to heading")
--------------------------------------------------------
+## API Overview[#](#api-overview "Direct link to heading")
 
 ### `Provider`[#](#provider "Direct link to heading")
 
@@ -269,8 +241,7 @@ React Redux provides a pair of custom React hooks that allow your React componen
 
 `useSelector` reads a value from the store state and subscribes to updates, while `useDispatch` returns the store's `dispatch` method to let you dispatch actions.
 
-Learning React Redux[#](#learning-react-redux "Direct link to heading")
------------------------------------------------------------------------
+## Learning React Redux[#](#learning-react-redux "Direct link to heading")
 
 ### Learn Modern Redux Livestream[#](#learn-modern-redux-livestream "Direct link to heading")
 
@@ -278,23 +249,19 @@ Redux maintainer Mark Erikson appeared on the "Learn with Jason" show to explain
 
 See [the "Learn Modern Redux" show notes page](https://www.learnwithjason.dev/let-s-learn-modern-redux) for a transcript and links to the example app source.
 
-Help and Discussion[#](#help-and-discussion "Direct link to heading")
----------------------------------------------------------------------
+## Help and Discussion[#](#help-and-discussion "Direct link to heading")
 
 The **[#redux channel](https://discord.gg/0ZcbPKXt5bZ6au5t)** of the **[Reactiflux Discord community](http://www.reactiflux.com/)** is our official resource for all questions related to learning and using Redux. Reactiflux is a great place to hang out, ask questions, and learn - come join us!
 
 You can also ask questions on [Stack Overflow](https://stackoverflow.com/) using the **[#redux tag](https://stackoverflow.com/questions/tagged/redux)**.
 
-Docs Translations[#](#docs-translations "Direct link to heading")
------------------------------------------------------------------
+## Docs Translations[#](#docs-translations "Direct link to heading")
 
-*   [Portuguese](https://fernandobelotto.github.io/react-redux)
-
+- [Portuguese](https://fernandobelotto.github.io/react-redux)
 
 [Source](https://react-redux.js.org/introduction/getting-started)
 
-[Introduction](#introduction "Direct link to heading")
--------------------------------------------------------
+## [Introduction](#introduction "Direct link to heading")
 
 Welcome to the Redux Essentials tutorial! **This tutorial will introduce you to Redux and teach you how to use it the right way, using our latest recommended tools and best practices**. By the time you finish, you should be able to start building your own Redux applications using the tools and patterns you've learned here.
 
@@ -312,15 +279,14 @@ We've tried to keep these explanations beginner-friendly, but we do need to make
 
 You should make sure that you have the React and Redux DevTools extensions installed in your browser:
 
-*   React DevTools Extension:
-    *   [React DevTools Extension for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-    *   [React DevTools Extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-*   Redux DevTools Extension:
-    *   [Redux DevTools Extension for Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
-    *   [Redux DevTools Extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/)
+- React DevTools Extension:
+  - [React DevTools Extension for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+  - [React DevTools Extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+- Redux DevTools Extension:
+  - [Redux DevTools Extension for Chrome](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+  - [Redux DevTools Extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/reduxdevtools/)
 
-[What is Redux?](#what-is-redux "Direct link to heading")
-----------------------------------------------------------
+## [What is Redux?](#what-is-redux "Direct link to heading")
 
 It helps to understand what this "Redux" thing is in the first place. What does it do? What problems does it help me solve? Why would I want to use it?
 
@@ -338,10 +304,10 @@ Redux helps you deal with shared state management, but like any tool, it has tra
 
 Redux is more useful when:
 
-*   You have large amounts of application state that are needed in many places in the app
-*   The app state is updated frequently over time
-*   The logic to update that state may be complex
-*   The app has a medium or large-sized codebase, and might be worked on by many people
+- You have large amounts of application state that are needed in many places in the app
+- The app state is updated frequently over time
+- The logic to update that state may be complex
+- The app has a medium or large-sized codebase, and might be worked on by many people
 
 **Not all apps need Redux. Take some time to think about the kind of app you're building, and decide what tools would be best to help solve the problems you're working on.**
 
@@ -361,8 +327,7 @@ Redux can integrate with any UI framework, and is most frequently used with Reac
 
 The [**Redux DevTools Extension**](https://github.com/zalmoxisus/redux-devtools-extension) shows a history of the changes to the state in your Redux store over time. This allows you to debug your applications effectively, including using powerful techniques like "time-travel debugging".
 
-Redux Terms and Concepts[#](#redux-terms-and-concepts "Direct link to heading")
--------------------------------------------------------------------------------
+## Redux Terms and Concepts[#](#redux-terms-and-concepts "Direct link to heading")
 
 Before we dive into some actual code, let's talk about some of the terms and concepts you'll need to know to use Redux.
 
@@ -372,16 +337,16 @@ Let's start by looking at a small React counter component. It tracks a number in
 
 It is a self-contained app with the following parts:
 
-*   The **state**, the source of truth that drives our app;
-*   The **view**, a declarative description of the UI based on the current state
-*   The **actions**, the events that occur in the app based on user input, and trigger updates in the state
+- The **state**, the source of truth that drives our app;
+- The **view**, a declarative description of the UI based on the current state
+- The **actions**, the events that occur in the app based on user input, and trigger updates in the state
 
 This is a small example of **"one-way data flow"**:
 
-*   State describes the condition of the app at a specific point in time
-*   The UI is rendered based on that state
-*   When something happens (such as a user clicking a button), the state is updated based on what occurred
-*   The UI re-renders based on the new state
+- State describes the condition of the app at a specific point in time
+- The UI is rendered based on that state
+- When something happens (such as a user clicking a button), the state is updated based on what occurred
+- The UI re-renders based on the new state
 
 ![One-way data flow](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/images/one-way-data-flow-04fe46332c1ccb3497ecb04b94e55b97.png)
 
@@ -435,17 +400,17 @@ A **reducer** is a function that receives the current `state` and an `action` ob
 
 Reducers must _always_ follow some specific rules:
 
-*   They should only calculate the new state value based on the `state` and `action` arguments
-*   They are not allowed to modify the existing `state`. Instead, they must make _immutable updates_, by copying the existing `state` and making changes to the copied values.
-*   They must not do any asynchronous logic, calculate random values, or cause other "side effects"
+- They should only calculate the new state value based on the `state` and `action` arguments
+- They are not allowed to modify the existing `state`. Instead, they must make _immutable updates_, by copying the existing `state` and making changes to the copied values.
+- They must not do any asynchronous logic, calculate random values, or cause other "side effects"
 
 We'll talk more about the rules of reducers later, including why they're important and how to follow them correctly.
 
 The logic inside reducer functions typically follows the same series of steps:
 
-*   Check to see if the reducer cares about this action
-    *   If so, make a copy of the state, update the copy with new values, and return it
-*   Otherwise, return the existing state unchanged
+- Check to see if the reducer cares about this action
+  - If so, make a copy of the state, update the copy with new values, and return it
+- Otherwise, return the existing state unchanged
 
 Here's a small example of a reducer, showing the steps that each reducer should follow:
 
@@ -457,8 +422,8 @@ The [`Array.reduce()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 
 `Array.reduce()` takes a callback function as an argument, which will be called one time for each item in the array. It takes two arguments:
 
-*   `previousResult`, the value that your callback returned last time
-*   `currentItem`, the current item in the array
+- `previousResult`, the value that your callback returned last time
+- `currentItem`, the current item in the array
 
 The first time that the callback runs, there isn't a `previousResult` available, so we need to also pass in an initial value that will be used as the first `previousResult`.
 
@@ -494,70 +459,63 @@ We typically call action creators to dispatch the right action:
 
 Earlier, we talked about "one-way data flow", which describes this sequence of steps to update the app:
 
-*   State describes the condition of the app at a specific point in time
-*   The UI is rendered based on that state
-*   When something happens (such as a user clicking a button), the state is updated based on what occurred
-*   The UI re-renders based on the new state
+- State describes the condition of the app at a specific point in time
+- The UI is rendered based on that state
+- When something happens (such as a user clicking a button), the state is updated based on what occurred
+- The UI re-renders based on the new state
 
 For Redux specifically, we can break these steps into more detail:
 
-*   Initial setup:
-    *   A Redux store is created using a root reducer function
-    *   The store calls the root reducer once, and saves the return value as its initial `state`
-    *   When the UI is first rendered, UI components access the current state of the Redux store, and use that data to decide what to render. They also subscribe to any future store updates so they can know if the state has changed.
-*   Updates:
-    *   Something happens in the app, such as a user clicking a button
-    *   The app code dispatches an action to the Redux store, like `dispatch({type: 'counter/increment'})`
-    *   The store runs the reducer function again with the previous `state` and the current `action`, and saves the return value as the new `state`
-    *   The store notifies all parts of the UI that are subscribed that the store has been updated
-    *   Each UI component that needs data from the store checks to see if the parts of the state they need have changed.
-    *   Each component that sees its data has changed forces a re-render with the new data, so it can update what's shown on the screen
+- Initial setup:
+  - A Redux store is created using a root reducer function
+  - The store calls the root reducer once, and saves the return value as its initial `state`
+  - When the UI is first rendered, UI components access the current state of the Redux store, and use that data to decide what to render. They also subscribe to any future store updates so they can know if the state has changed.
+- Updates:
+  - Something happens in the app, such as a user clicking a button
+  - The app code dispatches an action to the Redux store, like `dispatch({type: 'counter/increment'})`
+  - The store runs the reducer function again with the previous `state` and the current `action`, and saves the return value as the new `state`
+  - The store notifies all parts of the UI that are subscribed that the store has been updated
+  - Each UI component that needs data from the store checks to see if the parts of the state they need have changed.
+  - Each component that sees its data has changed forces a re-render with the new data, so it can update what's shown on the screen
 
 Here's what that data flow looks like visually:
 
 ![Redux data flow diagram](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif)
 
-What You've Learned[#](#what-youve-learned "Direct link to heading")
---------------------------------------------------------------------
+## What You've Learned[#](#what-youve-learned "Direct link to heading")
 
 Redux does have a number of new terms and concepts to remember. As a reminder, here's what we just covered:
 
 ##### Summary
 
-*   **Redux is a library for managing global application state**
-    *   Redux is typically used with the React-Redux library for integrating Redux and React together
-    *   Redux Toolkit is the recommended way to write Redux logic
-*   **Redux uses a "one-way data flow" app structure**
-    *   State describes the condition of the app at a point in time, and UI renders based on that state
-    *   When something happens in the app:
-        *   The UI dispatches an action
-        *   The store runs the reducers, and the state is updated based on what occurred
-        *   The store notifies the UI that the state has changed
-    *   The UI re-renders based on the new state
-*   **Redux uses several types of code**
-    *   _Actions_ are plain objects with a `type` field, and describe "what happened" in the app
-    *   _Reducers_ are functions that calculate a new state value based on previous state + an action
-    *   A Redux _store_ runs the root reducer whenever an action is _dispatched_
+- **Redux is a library for managing global application state**
+  - Redux is typically used with the React-Redux library for integrating Redux and React together
+  - Redux Toolkit is the recommended way to write Redux logic
+- **Redux uses a "one-way data flow" app structure**
+  - State describes the condition of the app at a point in time, and UI renders based on that state
+  - When something happens in the app:
+    - The UI dispatches an action
+    - The store runs the reducers, and the state is updated based on what occurred
+    - The store notifies the UI that the state has changed
+  - The UI re-renders based on the new state
+- **Redux uses several types of code**
+  - _Actions_ are plain objects with a `type` field, and describe "what happened" in the app
+  - _Reducers_ are functions that calculate a new state value based on previous state + an action
+  - A Redux _store_ runs the root reducer whenever an action is _dispatched_
 
-What's Next?[#](#whats-next "Direct link to heading")
------------------------------------------------------
+## What's Next?[#](#whats-next "Direct link to heading")
 
 We've seen each of the individual pieces of a Redux app. Next, continue on to [Part 2: Redux App Structure](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/tutorials/essentials/part-2-app-structure), where we'll look at a full working example to see how the pieces fit together.
 
-
 [Source](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
 
-
-
-
-
----
 ---
 
+---
 
 ## When to use Redux
 
-Lately one of the biggest debates in the frontend world has been about Redux. Not long after its release, Redux became one of the hottest topics of discussion. Many favored it while others pointed out issues. 
+Lately one of the biggest debates in the frontend world has been about Redux. Not long after its release, Redux became one of the hottest topics of discussion. Many favored it while others pointed out issues.
 
 Redux allows you to manage your app’s state in a single place and keep changes in your app more predictable and traceable. It makes it easier to reason about changes occurring in your app. But all of these benefits come with tradeoffs and constraints. One might feel it adds up boilerplate code, making simple things a little overwhelming; but that depends upon the architecture decisions.
 
@@ -575,7 +533,7 @@ For instance, in React, to share data among siblings, a state has to live in the
 
 Here’s a simple example of a login component in React. The input of the login component affects what is displayed by its sibling component, the status component:
 
-class App extends React.Component { constructor(props) { super(props);  this.state \= { userStatus: "NOT LOGGED IN"} this.setStatus \= this.setStatus.bind(this); }   setStatus(username, password) { const newUsers \= users; newUsers.map(user \=> { if (user.username \== username && user.password \=== password) { this.setState({ userStatus: "LOGGED IN" }) } }); } render() { return ( <div>   <Status status\={this.state.userStatus} />   <Login handleSubmit\={this.setStatus} /> </div\> ); } });
+class App extends React.Component { constructor(props) { super(props); this.state \= { userStatus: "NOT LOGGED IN"} this.setStatus \= this.setStatus.bind(this); } setStatus(username, password) { const newUsers \= users; newUsers.map(user \=> { if (user.username \== username && user.password \=== password) { this.setState({ userStatus: "LOGGED IN" }) } }); } render() { return ( <div> <Status status\={this.state.userStatus} /> <Login handleSubmit\={this.setStatus} /> </div\> ); } });
 
 > ![💡](https://s.w.org/images/core/emoji/13.0.1/svg/1f4a1.svg) Remember, this data is not needed by the parent component, but because its children need to share data, it has to provide a state.
 
@@ -615,7 +573,7 @@ It is based on the `reduce` function in JavaScript, where a single value is calc
 
 Here is an example of how reducers work in Redux:
 
-const LoginComponent \= (state \= initialState, action) \=> { switch (action.type) {  case "LOGIN": return state.map(user \=> { if (user.username !== action.username) { return user; } if (user.password \== action.password) { return { ...user, login\_status: "LOGGED IN" } } }); default: return state; } };
+const LoginComponent \= (state \= initialState, action) \=> { switch (action.type) { case "LOGIN": return state.map(user \=> { if (user.username !== action.username) { return user; } if (user.password \== action.password) { return { ...user, login_status: "LOGGED IN" } } }); default: return state; } };
 
 > ![💡](https://s.w.org/images/core/emoji/13.0.1/svg/1f4a1.svg) Reducers take the previous state of the app and return a new state based on the action passed to it.
 
@@ -647,7 +605,7 @@ Technically, middlewares are functions that call the next method received in an 
 
 Here’s what a simple middleware looks like:
 
-function simpleMiddleware({ getState, dispatch }) { return function(next){ return function(action){  const nextAction \= next(action);  const state \= getState();  return nextAction; } } }
+function simpleMiddleware({ getState, dispatch }) { return function(next){ return function(action){ const nextAction \= next(action); const state \= getState(); return nextAction; } } }
 
 This might look a little overwhelming, but in most cases, you might not need to create your own middleware since the huge Redux community has already made a number of them available. If you feel middleware is required, you will enjoy it because it gives you a lot of power to do tons of great work with the best abstraction.
 

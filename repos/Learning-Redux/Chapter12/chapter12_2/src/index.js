@@ -1,22 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { ConnectedRouter } from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
-import { Provider } from 'react-redux'
+import React from "react";
+import ReactDOM from "react-dom";
+import { ConnectedRouter } from "react-router-redux";
+import createHistory from "history/createBrowserHistory";
+import { Provider } from "react-redux";
 
-import configureStore from './store'
-import initStore from './initStore'
-import App from './components/App.jsx'
-import DevTools from './containers/DevTools.jsx'
+import configureStore from "./store";
+import initStore from "./initStore";
+import App from "./components/App.jsx";
+import DevTools from "./containers/DevTools.jsx";
 
 if (module.hot) {
-  module.hot.accept()
+  module.hot.accept();
 }
 
-const store = configureStore(window.__PRELOADED_STATE__)
-initStore(store)
+const store = configureStore(window.__PRELOADED_STATE__);
+initStore(store);
 
-console.log('initial state', store.getState())
+console.log("initial state", store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
@@ -24,5 +24,5 @@ ReactDOM.render(
       <App store={store} />
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);

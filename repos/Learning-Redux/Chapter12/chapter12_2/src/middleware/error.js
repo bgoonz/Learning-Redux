@@ -1,13 +1,13 @@
-const errorReporter = store => {
-  console.log('error reporter active')
-  return next => action => {
+const errorReporter = (store) => {
+  console.log("error reporter active");
+  return (next) => (action) => {
     try {
-      return next(action)
+      return next(action);
     } catch (err) {
-      console.error('error:', err)
-      throw err
+      console.error("error:", err);
+      throw err;
     }
-  }
-}
+  };
+};
 
-export default errorReporter
+export default errorReporter;

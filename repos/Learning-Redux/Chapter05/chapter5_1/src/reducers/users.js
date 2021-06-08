@@ -1,12 +1,11 @@
-import { CREATE_USER } from '../actionTypes'
+import { CREATE_USER } from "../actionTypes";
 
-export default function usersReducer (state = [], action) {
-  const { type, ...user } = action
+export default function usersReducer(state = [], action) {
+  const { type, ...user } = action;
 
   if (type === CREATE_USER) {
-    return [ ...state, user ]
+    return [...state, user];
   }
 
-  return state
+  return state;
 }
-

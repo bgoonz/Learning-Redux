@@ -10,9 +10,7 @@ export default function ColorList() {
       {colors.length === 0 ? (
         <p>No Colors Listed. (Add a Color)</p>
       ) : (
-        colors.map(color => (
-          <Color key={color.id} {...color} />
-        ))
+        colors.map((color) => <Color key={color.id} {...color} />)
       )}
     </div>
   );

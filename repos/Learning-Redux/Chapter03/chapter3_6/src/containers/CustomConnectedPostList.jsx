@@ -1,25 +1,24 @@
-import React from 'react'
-import PostList from '../components/PostList.jsx'
+import React from "react";
+import PostList from "../components/PostList.jsx";
 
 export default class ConnectedPostList extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = props.store.getState()
+  constructor(props) {
+    super(props);
+    this.state = props.store.getState();
   }
 
-  componentDidMount () {
-    const { store } = this.props
+  componentDidMount() {
+    const { store } = this.props;
     this.unsubscribe = store.subscribe(() =>
       this.setState({ ...store.getState() })
-    )
+    );
   }
 
-  componentWillUnmount () {
-    this.unsubscribe()
+  componentWillUnmount() {
+    this.unsubscribe();
   }
 
-  render () {
-    return <PostList {...this.state} />
+  render() {
+    return <PostList {...this.state} />;
   }
 }
-

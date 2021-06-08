@@ -9,7 +9,7 @@ import {
   Whoops404,
   Services,
   History,
-  Location
+  Location,
 } from "./pages";
 
 function App() {
@@ -21,14 +21,14 @@ function App() {
       children: [
         {
           path: "services",
-          element: <Services />
+          element: <Services />,
         },
         { path: "history", element: <History /> },
         {
           path: "location",
-          element: <Location />
-        }
-      ]
+          element: <Location />,
+        },
+      ],
     },
     { path: "events", element: <Events /> },
     { path: "products", element: <Products /> },
@@ -36,8 +36,8 @@ function App() {
     { path: "*", element: <Whoops404 /> },
     {
       path: "services",
-      redirectTo: "about/services"
-    }
+      redirectTo: "about/services",
+    },
   ]);
   return element;
 }

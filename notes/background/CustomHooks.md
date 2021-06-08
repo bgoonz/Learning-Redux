@@ -3,7 +3,7 @@
 ## stateful logic
 
 the term `stateful logic` is not ubiquitous. it just means logic
-codified (i.e. code) that interacts with state in any way. it 
+codified (i.e. code) that interacts with state in any way. it
 can be logic that only reads from the state or logic that updates
 the state.
 
@@ -35,9 +35,9 @@ into field.
 
 1. explain that we want to have persistence between page reloads, so we are going to use local storage
 2. open up MDN for localStorage
-2. we will do this by creating a hook that looks and acts like `useState` except it save the values locally
-2. create `useLocalStorage.js` in `/hooks`
-2. flesh it out to mimic the `useState` hook and then call it from `useForm`
-3. add local storage read using an initial value function in `useState`
-4. add local storage setValues by creating it in `useLocalStorage.js` and passing it back as the `setValues` param
-5. the localStorageSetValues should store the passed in value into the loal storage and then call the useState setValues
+3. we will do this by creating a hook that looks and acts like `useState` except it save the values locally
+4. create `useLocalStorage.js` in `/hooks`
+5. flesh it out to mimic the `useState` hook and then call it from `useForm`
+6. add local storage read using an initial value function in `useState`
+7. add local storage setValues by creating it in `useLocalStorage.js` and passing it back as the `setValues` param
+8. the localStorageSetValues should store the passed in value into the loal storage and then call the useState setValues

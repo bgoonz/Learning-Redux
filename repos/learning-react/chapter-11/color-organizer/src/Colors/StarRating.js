@@ -1,12 +1,12 @@
 import React from "react";
 import Star from "./Star";
 
-const createArray = length => [...Array(length)];
+const createArray = (length) => [...Array(length)];
 
 export default function StarRating({
   total = 5,
   selected = 0,
-  onChange = f => f
+  onChange = (f) => f,
 }) {
   return (
     <div className="star-rating">

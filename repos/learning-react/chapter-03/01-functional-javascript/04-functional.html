@@ -15,9 +15,9 @@
     <script type="text/babel">
       const messages = [
         "They can be inserted into arrays",
-        message => console.log(message),
+        (message) => console.log(message),
         "like variables",
-        message => console.log(message)
+        (message) => console.log(message),
       ];
 
       messages[1](messages[0]);

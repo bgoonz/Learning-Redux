@@ -1,11 +1,11 @@
-import { LOGIN_SUCCESS } from '../actionTypes'
+import { LOGIN_SUCCESS } from "../actionTypes";
 
-export default function sessionReducer (state = false, action) {
-  const { type, result } = action
+export default function sessionReducer(state = false, action) {
+  const { type, result } = action;
 
   if (type === LOGIN_SUCCESS) {
-    return result
+    return result;
   }
 
-  return state
+  return state;
 }

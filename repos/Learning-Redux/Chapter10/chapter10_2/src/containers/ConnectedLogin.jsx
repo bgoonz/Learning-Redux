@@ -1,16 +1,16 @@
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import Login from '../components/Login.jsx'
-import { login } from '../actions'
+import Login from "../components/Login.jsx";
+import { login } from "../actions";
 
 const mapStateToProps = (state, props) => {
-  return { error: state.error && state.error.message }
-}
+  return { error: state.error && state.error.message };
+};
 
 const mapDispatchToProps = (dispatch, props) =>
-  bindActionCreators({ login }, dispatch)
+  bindActionCreators({ login }, dispatch);
 
-const ConnectedLogin = connect(mapStateToProps, mapDispatchToProps)(Login)
+const ConnectedLogin = connect(mapStateToProps, mapDispatchToProps)(Login);
 
-export default ConnectedLogin
+export default ConnectedLogin;

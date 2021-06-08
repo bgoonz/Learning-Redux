@@ -25,5 +25,5 @@
 2. create `doggos` state key in the class state object. it's an array of image sources
 3. define `componentDidMount` and use `fetch` to grab data from teh [dog ceo api](https://dog.ceo/api)
 4. flesh out application with other features as time permits
-  1. allow people to specify dog breed for search
-  2. allow people to toggle select of dog images
+5. allow people to specify dog breed for search
+6. allow people to toggle select of dog images

@@ -1,6 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const Loading = ({ isLoading }) =>
-  isLoading && <span>Loading...</span>
+const Loading = ({ isLoading }) => isLoading && <span>Loading...</span>;
 
-export default Loading
+export default Loading;

@@ -1,16 +1,16 @@
-import { applyMiddleware } from 'redux'
+import { applyMiddleware } from "redux";
 
-import thunkMiddleware from 'redux-thunk'
-import { routerMiddleware } from 'react-router-redux'
-import createHistory from 'history/createBrowserHistory'
+import thunkMiddleware from "redux-thunk";
+import { routerMiddleware } from "react-router-redux";
+import createHistory from "history/createBrowserHistory";
 
-import { loggerMiddleware, errorMiddleware } from '../middleware'
+import { loggerMiddleware, errorMiddleware } from "../middleware";
 
-export default function createMiddleware (history) {
+export default function createMiddleware(history) {
   return applyMiddleware(
     thunkMiddleware,
     routerMiddleware(history || createHistory()),
     loggerMiddleware,
     errorMiddleware
-  )
+  );
 }

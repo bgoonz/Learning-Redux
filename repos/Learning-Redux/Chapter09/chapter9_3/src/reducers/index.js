@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from "redux";
 
-import usersReducer from './users'
-import postsReducer from './posts'
-import filterReducer from './filter'
-import loadingReducer from './loading'
-import errorReducer from './error'
-import sessionReducer from './session'
+import usersReducer from "./users";
+import postsReducer from "./posts";
+import filterReducer from "./filter";
+import loadingReducer from "./loading";
+import errorReducer from "./error";
+import sessionReducer from "./session";
 
 const appReducer = combineReducers({
   users: usersReducer,
@@ -14,6 +14,6 @@ const appReducer = combineReducers({
   loading: loadingReducer,
   error: errorReducer,
   session: sessionReducer,
-})
+});
 
-export default appReducer
+export default appReducer;

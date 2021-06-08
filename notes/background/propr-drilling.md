@@ -2,8 +2,7 @@
 
 > Prop Drilling is the process by which you pass data from one part of the React Component tree to another by going through other parts that…
 
-No Redux or Context API
------------------------
+## No Redux or Context API
 
 [![Olusola Samuel](https://miro.medium.com/fit/c/96/96/1*4uKprtl6FxkdLgi0ozr1TA.jpeg)](https://solathecoder.medium.com/?source=post_page-----c42adfcdde1b--------------------------------)
 
@@ -18,7 +17,6 @@ Prop drilling is similar: You pass data (props) from some `FirstComponent` to an
 Consider the code snippet below:
 
 [gist](https://gist.github.com/bgoonz/03340eb3c61cf93ff650ad74e1c7c01e)
-
 
 The `content` prop is passed to `FirstComponent` in the root component, `App`. But `FirstComponent` does not need the prop to render, it only passes it to `SecondComponent`, which passes it to `ThirdComponent`, which passes it to `ComponentNeedingProps`. It is this component that uses the `content` prop to render content in `<h3>{content}</h3>`.
 
@@ -45,9 +43,9 @@ You can learn more here [Before You Use Context](https://reactjs.org/docs/contex
 Component Composition is when you compose different Components, usually simple, together to create more complex functionality. If you have ever written a React app, I bet that you have been composing components. Take for example:
 
 function LoginForm(props){  
-  return (  
-    <Input name="fname" />  
-    <Button onClick={props.handleClick} />)  
+ return (  
+ <Input name="fname" />  
+ <Button onClick={props.handleClick} />)  
 }
 
 Here, by using composition we are creating a ‘complex’ functionality, `LoginForm` by composing two simpler functionalities, `Button` and `Input` components. You can read more on the composition on React [documentation page](https://reactjs.org/docs/composition-vs-inheritance.html).
@@ -65,9 +63,10 @@ You can compose components by making one a child of another, for example:
 `ReactComponent2` is invoked inside of `ReactComponent1` and hence it is a child of it. Every component has an ‘automatic’ prop named `children` that holds the children of the Component. So in `ReactComponent1` we can write:
 
 function ReactComponent1({ children }) {  
-  return   
-   (<div> I render my children  
-      {children}   
+ return  
+ (<div> I render my children  
+ {children}
+
    </div>)  
 }
 
@@ -83,7 +82,8 @@ So, we will have:
 And in the declaration of `ThirdComponent` we have:
 
 function ThirdComponent({ children }) {  
- return (  
+ return (
+
  <div>  
     <h3>I am the third component</h3>  
      {children}  
@@ -97,7 +97,8 @@ By following this technique of rendering children, we can refactor `App` to this
 
 function App() {  
 const content = "Who needs me?";  
-return (  
+return (
+
 <div className="App">  
   <FirstComponent>  
     <SecondComponent>  
@@ -115,40 +116,40 @@ Then we refactor each of the other components to render their `children`
 FirstComponent:
 
 function FirstComponent({ children }) {  
-  return (  
-    <div>  
-      <h3>I am the first component</h3>;  
-     { children }  
-    </div>  
-  );  
+ return (  
+ <div>  
+ <h3>I am the first component</h3>;  
+ { children }  
+ </div>  
+ );  
 }
 
 SecondComponent:
 
 function SecondComponent({ children }) {  
-  return (  
-    <div>  
-      <h3>I am the second component</h3>;  
-     {children}  
-    </div>  
-  );  
+ return (  
+ <div>  
+ <h3>I am the second component</h3>;  
+ {children}  
+ </div>  
+ );  
 }
 
 ThirdComponent:
 
 function ThirdComponent({ children }) {  
-  return (  
-    <div>  
-      <h3>I am the third component</h3>  
-        {children}  
-    </div>  
-  );  
+ return (  
+ <div>  
+ <h3>I am the third component</h3>  
+ {children}  
+ </div>  
+ );  
 }
 
 `ComponentNeedingProps` stays as it is:
 
 function ComponentNeedingProps({ content }) {  
-  return <h3>{content}</h3>  
+ return <h3>{content}</h3>  
 }
 
 Did you see it? We have avoided prop drilling by giving `ComponentNeedingProps` the data it needs right from the source of the data `App` and then by using the children prop, we passed it down to where it should be rendered, `ThirdComponent`.
@@ -157,8 +158,7 @@ Awesome. See the complete code:
 
 [final](https://gist.github.com/bgoonz/14f267102d11fd116256e5e10c2be817)
 
-When should you use the Context API?
-------------------------------------
+## When should you use the Context API?
 
 You can also use the Context API to avoid prop drilling and I may write another article on that in the nearest future.
 
@@ -169,6 +169,5 @@ That is it for this post, thank you for reading through. You can play with the c
 Happy Coding.
 
 **_Note_**_: This post has had to go through major revisions based on the feedback provided in the comments. I am grateful for all the people who provided useful feedback. Some of the comments below do not apply to this revision._
-
 
 [Source](https://javascript.plainenglish.io/how-to-avoid-prop-drilling-in-react-using-component-composition-c42adfcdde1b)

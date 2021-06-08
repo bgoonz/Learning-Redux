@@ -1,3 +1,3 @@
-import { createPost } from './actions'
+import { createPost } from "./actions";
 
-console.log(createPost('dan', 'New post'))
+console.log(createPost("dan", "New post"));
