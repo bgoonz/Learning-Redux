@@ -11,42 +11,6 @@
 ---
 
 
-
-_**Editor’s note**: This React Redux tutorial was last updated on Jan. 28, 2021 to include a section on [Redux middleware](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/#middleware) and remove outdated information._
-
-With the number of tools and libraries out there for web development (a JavaScript library was probably released before you finished reading this), it might not be the wisest thing to jump on every new one without really understanding its benefits or why you should use it.
-
-Redux isn’t new, but it remains quite popular. In this tutorial, we’ll show you what Redux is, why you should use it, and how it works.
-
-First, we’ll review the [basics of Redux](https://egghead.io/courses/getting-started-with-redux) and how it functions. Then we will see how using Redux can help you in your app by using a simple but practical component.
-
-We’ll cover the following in detail:
-
--   [What is Redux?](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/#what)
--   [When to use Redux](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/#when)
--   [What is state management in Redux?](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/#statemanagement)
--   [How Redux works](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/#how)
--   [Redux middleware](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/#middleware)
--   [Why use Redux?](https://blog.logrocket.com/why-use-redux-reasons-with-clear-examples-d21bffd5835/#why)
-
-## We don’t just write about Redux, we talk about it too. Listen now:
-
-### Or subscribe for later
-
-[![](https://www2.logrocket.com/rs/740-LKM-263/images/podcast-rss-feed.png)](https://feeds.fireside.fm/podrocket/rss)[![](https://www2.logrocket.com/rs/740-LKM-263/images/Spotifypodcast.png)](https://open.spotify.com/show/6oFuKu89C9X1wQ7bT0QEM2)[![](https://www2.logrocket.com/rs/740-LKM-263/images/Google+Podcasts.png)](https://podcasts.google.com/feed/aHR0cDovL3BvZHJvY2tldC5sb2dyb2NrZXQuY29tL3Jzcw?)[![](https://www2.logrocket.com/rs/740-LKM-263/images/Apple+Podcasts.png)](https://podcasts.apple.com/us/podcast/podrocket-a-web-development-podcast-from-logrocket/id1539945251)
-
-## What is Redux?
-
-Redux is a predictable state container designed to help you write JavaScript apps that behave consistently across client, server, and native environments and are easy to test.
-
-While it’s mostly used as a state management tool with React, you can use it with any other JavaScript framework or library. It’s lightweight at 2KB (including dependencies), so you don’t have to worry about it making your application’s asset size bigger.
-
-With Redux, the state of your application is kept in a store, and each component can access any state that it needs from this store.
-
-If you’re just getting started with Redux, the video below is a great resource for beginners.
-
-<iframe loading="lazy" src="https://www.youtube.com/embed/CVpUuw9XSjY" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-
 ## When to use Redux
 
 Lately one of the biggest debates in the frontend world has been about Redux. Not long after its release, Redux became one of the hottest topics of discussion. Many favored it while others pointed out issues. 
