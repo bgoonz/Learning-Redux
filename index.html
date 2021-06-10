@@ -77,10 +77,11 @@
       height: 800px !important;
       width: 800px !important;
     }
-    h1{
+
+    h1 {
       padding: 10px;
       text-align: center;
-      background:rgb(17,132,220);
+      background: rgb(17, 132, 220);
       color: black;
       font-size: 20px;
     }
@@ -88,26 +89,72 @@
 </head>
 
 <body for="html-export">
-      <a class="github-corner" href="https://github.com/bgoonz/Learning-Redux" aria-label="View source on Github">
+  <a class="github-corner" href="https://github.com/bgoonz/Learning-Redux" aria-label="View source on Github">
 
-        <svg aria-hidden="true" width="80" height="80" viewbox="0 0 250 250"
-          style="z-index: 100000; fill:#194ccdaf; color:#fff; position: fixed; top: 20px; border: 0; left: 20px; transform: scale(-1.5, 1.5);">
-          <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z">
+    <svg aria-hidden="true" width="80" height="80" viewbox="0 0 250 250"
+      style="z-index: 100000; fill:#194ccdaf; color:#fff; position: fixed; top: 20px; border: 0; left: 20px; transform: scale(-1.5, 1.5);">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z">
 
-          </path>
-          <path class="octo-arm"
-            d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-            fill="currentColor" style="transform-origin: 130px 106px;">
+      </path>
+      <path class="octo-arm"
+        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+        fill="currentColor" style="transform-origin: 130px 106px;">
 
-          </path>
-          <path class="octo-body"
-            d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-            fill="currentColor">
+      </path>
+      <path class="octo-body"
+        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+        fill="currentColor">
 
-          </path>
-        </svg>
+      </path>
+    </svg>
 
-      </a>
+  </a>
+
+
+
+
+  <header class="navbar navbar-default navbar-static-top bsnavbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="index.html#/">
+          <img class="bannerad-img" src="images/banners/banner2.png" title="BooksLib" alt="BooksLib" height="90"
+            width="120">
+        </a>
+        <a class="navbar-brand" href="index.html">
+          <h1>Books Lib</h1>
+        </a>
+
+      </div>
+
+      <!-- ngIf: isVoiceSupported -->
+      <div class="collapse navbar-collapse ng-scope" ng-if="isVoiceSupported">
+        <div class="navbar-right" style="padding: 10px; spacing: 10px">
+          <div class="col-md-4">
+            <img ng-src="/images/status/sound-graph-static.jpg" alt="status" id="recStatus"
+              src="/images/status/sound-graph-static.jpg">
+          </div>
+
+          <div class="col-md-8">
+            <button class="btn btn-default" ng-click="listening(true)">Start</button>
+            <button class="btn btn-default" ng-click="listening(false)">Stop</button>
+            <br><br>
+            <button class="btn btn-default" ng-click="getCommand()">Get single command</button>
+          </div>
+        </div>
+      </div><!-- end ngIf: isVoiceSupported -->
+
+    </div>
+  </header>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+
+
+
   <center>
     <h1>Bgoonz Learning Redux Repo:</h1>
     <br />
@@ -131,16 +178,15 @@
     <br />
     <br />
 
-        
-        <iframe src="https://codesandbox.io/embed/hungry-lichterman-urxh4?fontsize=14&hidenavigation=1&theme=dark"
-          style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-          title="hungry-lichterman-urxh4"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-        
-            <br />
 
-            <br />
+    <iframe src="https://codesandbox.io/embed/hungry-lichterman-urxh4?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="hungry-lichterman-urxh4"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+    <br />
+
+    <br />
   </center>
   <div class="mume markdown-preview  ">
     <h1 class="mume-header"
@@ -176,8 +222,8 @@
     </ul>
     <br>
     <h2 class="mume-header" id="code-architecture">Code Architecture</h2>
-<blockquote>
-    <p><em>Aims to improve the overall structure of the source code. Makes reasoning about the code easier.</em></p>
+    <blockquote>
+      <p><em>Aims to improve the overall structure of the source code. Makes reasoning about the code easier.</em></p>
     </blockquote>
     <ul>
       <li><a href="https://github.com/ddsol/redux-schema">redux-schema</a> - Automatic actions, reducers and validation
@@ -223,37 +269,37 @@
       <li><a href="https://github.com/rt2zz/redux-persist">redux-persist</a> - Persist and rehydrate a Redux store.</li>
     </ul>
     <h3 class="mume-header" id="side-effects">Side Effects</h3>
-   <blockquote>
-    <p><em>Side Effects / Asynchronous Actions</em></p>
- 
-          </blockquote>
+    <blockquote>
+      <p><em>Side Effects / Asynchronous Actions</em></p>
+
+    </blockquote>
     <ul>
       <li><a href="https://github.com/yelouafi/redux-saga">redux-saga</a> - Alternative side effect model for Redux
         apps.</li>
-        </ul>
-  
-      <li><a href="https://github.com/pburtchaell/redux-promise-middleware">redux-promise-middleware</a> - Redux
-        middleware for resolving and rejecting promises with conditional optimistic updates.</li>
-      <li><a href="https://github.com/redux-effects/redux-effects">redux-effects</a> - You write pure functions,
-        redux-effects handles the rest.</li>
-      <li><a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> - Thunk middleware for Redux.</li>
-      <li><a href="https://github.com/makeomatic/redux-connect">redux-connect</a> - Provides decorator for resolving
-        async props in react-router, extremely useful for handling server-side rendering in React.</li>
-      <li><a href="https://github.com/redux-loop/redux-loop">redux-loop</a> - Port of elm-effects and the Elm
-        Architecture to Redux that allows you to sequence your effects naturally and purely by returning them from your
-        reducers.</li>
-      <li><a href="https://github.com/salsita/redux-side-effects">redux-side-effects</a> - Redux toolset for keeping all
-        the side effects inside your reducers while maintaining their purity.</li>
-      <li><a href="https://github.com/jeffbski/redux-logic">redux-logic</a> - Redux middleware for organizing business
-        logic and action side effects.</li>
-      <li><a href="https://github.com/redux-observable/redux-observable">redux-observable</a> - RxJS middleware for
-        action side effects in Redux using &quot;Epics&quot;.</li>
-      <li><a href="https://github.com/clarus/redux-ship">redux-ship</a> - Composable, testable and typable side effects.
-      </li>
+    </ul>
+
+    <li><a href="https://github.com/pburtchaell/redux-promise-middleware">redux-promise-middleware</a> - Redux
+      middleware for resolving and rejecting promises with conditional optimistic updates.</li>
+    <li><a href="https://github.com/redux-effects/redux-effects">redux-effects</a> - You write pure functions,
+      redux-effects handles the rest.</li>
+    <li><a href="https://github.com/gaearon/redux-thunk">redux-thunk</a> - Thunk middleware for Redux.</li>
+    <li><a href="https://github.com/makeomatic/redux-connect">redux-connect</a> - Provides decorator for resolving
+      async props in react-router, extremely useful for handling server-side rendering in React.</li>
+    <li><a href="https://github.com/redux-loop/redux-loop">redux-loop</a> - Port of elm-effects and the Elm
+      Architecture to Redux that allows you to sequence your effects naturally and purely by returning them from your
+      reducers.</li>
+    <li><a href="https://github.com/salsita/redux-side-effects">redux-side-effects</a> - Redux toolset for keeping all
+      the side effects inside your reducers while maintaining their purity.</li>
+    <li><a href="https://github.com/jeffbski/redux-logic">redux-logic</a> - Redux middleware for organizing business
+      logic and action side effects.</li>
+    <li><a href="https://github.com/redux-observable/redux-observable">redux-observable</a> - RxJS middleware for
+      action side effects in Redux using &quot;Epics&quot;.</li>
+    <li><a href="https://github.com/clarus/redux-ship">redux-ship</a> - Composable, testable and typable side effects.
+    </li>
     </ul>
     <h2 class="mume-header" id="code-style">Code Style</h2>
-   <blockquote>
-    <p><em>Aims to make parts of the source code easier to read/write.</em></p>
+    <blockquote>
+      <p><em>Aims to make parts of the source code easier to read/write.</em></p>
     </blockquote>
     <ul>
       <li><a href="https://github.com/pauldijou/redux-act">redux-act</a> - Opinionated lib to create actions and
@@ -461,63 +507,61 @@
       <li><a href="https://gitter.im/reactjs/redux">Gitter</a></li>
       <li><a href="https://webchat.freenode.net/"><code class="language-js">#rackt</code> on freenode</a></li>
     </ul>
-    
-    
-        <br />
 
-        <iframe src="https://codesandbox.io/embed/crazy-smoke-17b98?fontsize=14&hidenavigation=1&theme=dark" style="
+
+    <br />
+
+    <iframe src="https://codesandbox.io/embed/crazy-smoke-17b98?fontsize=14&hidenavigation=1&theme=dark" style="
           width: 90%;
           height: 500px;
           border: 0;
           border-radius: 4px;
           overflow: hidden;
         " title="crazy-smoke-17b98"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-        <br />
-        <br />
-        <iframe
-          src="https://codesandbox.io/embed/react-redux-example-forked-xrlj1?fontsize=14&hidenavigation=1&theme=dark"
-          style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-          title="React-Redux example (forked)"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-        <br />
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+    <br />
+    <br />
+    <iframe src="https://codesandbox.io/embed/react-redux-example-forked-xrlj1?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="React-Redux example (forked)"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+    <br />
 
-        <br />
+    <br />
 
-        <iframe
-          src="https://codesandbox.io/embed/react-redux-tutorial-for-beginners-learning-redux-in-2018-forked-3p58w?fontsize=14&hidenavigation=1&theme=dark"
-          style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-          title="React Redux Tutorial for Beginners, learning Redux in 2018  (forked)"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+    <iframe
+      src="https://codesandbox.io/embed/react-redux-tutorial-for-beginners-learning-redux-in-2018-forked-3p58w?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="React Redux Tutorial for Beginners, learning Redux in 2018  (forked)"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
-        <br />
+    <br />
 
-        <br />
+    <br />
 
-        <iframe src="https://codesandbox.io/embed/learn-redux-forked-q10lp?fontsize=14&hidenavigation=1&theme=dark"
-          style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="learn-redux (forked)"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-
-        <br />
-
-        <br />
+    <iframe src="https://codesandbox.io/embed/learn-redux-forked-q10lp?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="learn-redux (forked)"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
 
-        <iframe
-          src="https://codesandbox.io/embed/redux-in-5-minutes-forked-qd377?fontsize=14&hidenavigation=1&theme=dark"
-          style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-          title="Redux in 5 minutes (forked)"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+    <br />
 
-        <br />
+    <br />
 
-        <br />
+
+    <iframe src="https://codesandbox.io/embed/redux-in-5-minutes-forked-qd377?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="Redux in 5 minutes (forked)"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+    <br />
+
+    <br />
     <h1 class="mume-header" id="getting-started-with-react-redux-react-redux">Getting Started with React Redux | React
       Redux</h1>
 
@@ -588,7 +632,7 @@
       come join us!</p>
     <p>You can also ask questions on <a href="https://stackoverflow.com/">Stack Overflow</a> using the <strong><a
           href="https://stackoverflow.com/questions/tagged/redux">#redux tag</a></strong>.</p>
- 
+
 
 
     <h2 class="mume-header" id="introductionintroduction-direct-link-to-heading"><a href="#introduction"
@@ -753,7 +797,8 @@
 
     <p>An <strong>action</strong> is a plain JavaScript object that has a <code class="language-js">type</code> field.
       <strong>You can think
-        of an action as an event that describes something that happened in the application</strong>.</p>
+        of an action as an event that describes something that happened in the application</strong>.
+    </p>
     <p>The <code class="language-js">type</code> field should be a string that gives this action a descriptive name,
       like
       <code class="language-js">&quot;todos/todoAdded&quot;</code>. We usually write that type string like
@@ -799,7 +844,8 @@
       <li>They are not allowed to modify the existing <code class="language-js">state</code>. Instead, they must make
         <em>immutable
           updates</em>, by copying the existing <code class="language-js">state</code> and making changes to the copied
-        values.</li>
+        values.
+      </li>
       <li>They must not do any asynchronous logic, calculate random values, or cause other &quot;side effects&quot;</li>
     </ul>
     <p>We&apos;ll talk more about the rules of reducers later, including why they&apos;re important and how to follow
@@ -1319,11 +1365,26 @@
   </div>
   <a id="sidebar-toc-btn">&#x2261;</a>
 
+  <script>
+    voiceCmdr.addCommand( "home", function () {
+      window.location.href = 'https://learning-redux42.netlify.app/';
+    } );
+
+    voiceCmdr.addCommand( "search", function ( param ) {
+      console.log( "Searching for:", param );
+    } );
+  </script>
 <script>
-  
+  ( function () {
+    var rcs = document.createElement( "script" );
+    rcs.src = "https://ringcentral.github.io/engage-voice-embeddable/adapter.js";
+    var rcs0 = document.getElementsByTagName( "script" )[ 0 ];
+    rcs0.parentNode.insertBefore( rcs, rcs0 );
+  } )();
 </script>
-
-
+<iframe width="300" height="500" id="engage-voice-embeddable-adapter-frame" allow="microphone"
+  src="https://ringcentral.github.io/engage-voice-embeddable/app.html">
+</iframe>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
 

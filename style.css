@@ -983,8 +983,6 @@ textarea {
   font: inherit;
 }
 
-
-
 html {
   background-color: #fff;
   box-sizing: border-box;
@@ -1028,8 +1026,7 @@ h2,
 h3 {
   font-family: zillaslab, palatino, "Palatino Linotype", serif;
   line-height: 1.2;
-    border-radius:10px;
-
+  border-radius: 10px;
 }
 
 h1 {
@@ -1055,7 +1052,7 @@ h2 {
 h3 {
   font-size: 1.424rem;
   background-color: #e3d6d6;
-  border-radius:10px;
+  border-radius: 10px;
   color: #fff;
   font-family: zillaslab, palatino, "Palatino Linotype", serif;
   font-weight: 400;
@@ -3657,8 +3654,8 @@ a.page-not-created {
 
 .main-page-content iframe {
   border: 0;
-  height:800px!important;
-  width:800px!important;
+  height: 800px !important;
+  width: 800px !important;
 }
 
 .archived {
