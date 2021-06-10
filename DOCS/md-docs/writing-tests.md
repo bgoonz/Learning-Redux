@@ -1,4 +1,3 @@
-
 <a href="../index.html" class="navbar__brand"><img src="../official/d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg" alt="Redux Logo" class="themedImage_1VuW themedImage--light_3UqQ navbar__logo" /><strong>Redux</strong></a>
 
 <a href="../introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a><a href="../tutorials/essentials/part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a><a href="../api/api-reference.html" class="navbar__item navbar__link">API</a><a href="../faq.html" class="navbar__item navbar__link">FAQ</a><a href="../style-guide/style-guide.html" class="navbar__item navbar__link">Best Practices</a><a href="../official/github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a><a href="../introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a>
@@ -18,7 +17,6 @@
 - <a href="../style-guide/style-guide.html" class="menu__link">Best Practices</a>
 - <a href="../official/github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
 - <a href="../introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
-
 
 - <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
   - <a href="../introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>

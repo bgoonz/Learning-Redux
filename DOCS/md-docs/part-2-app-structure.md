@@ -1,4 +1,3 @@
-
 <a href="../official/index.html" class="navbar__brand"><strong>Redux</strong></a>
 
 <a href="../official/introduction/getting-started.html" class="navbar__item navbar__link">Getting Started</a><a href="part-1-overview-concepts.html" class="navbar__item navbar__link">Tutorial</a><a href="../official/api/api-reference.html" class="navbar__item navbar__link">API</a><a href="../official/faq.html" class="navbar__item navbar__link">FAQ</a><a href="../official/style-guide/style-guide.html" class="navbar__item navbar__link">Best Practices</a><a href="../official/../github.com/reduxjs/redux.html" class="navbar__item navbar__link">GitHub</a><a href="../official/introduction/getting-started.html#help-and-discussion" class="navbar__item navbar__link">Need help?</a>
@@ -18,7 +17,6 @@
 - <a href="../official/style-guide/style-guide.html" class="menu__link">Best Practices</a>
 - <a href="../official/../github.com/reduxjs/redux.html" class="menu__link">GitHub</a>
 - <a href="../official/introduction/getting-started.html#help-and-discussion" class="menu__link">Need help?</a>
-
 
 - <a href="#!" class="menu__link menu__link--sublist">Introduction</a>
   - <a href="../official/introduction/getting-started.html" class="menu__link">Getting Started with Redux</a>
