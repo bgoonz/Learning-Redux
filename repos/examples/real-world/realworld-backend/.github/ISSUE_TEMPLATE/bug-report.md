@@ -1,7 +1,8 @@
 ---
-name: "🐞 Bug report"
+name: '🐞 Bug report'
 about: Report a bug in the RealWorld project
 ---
+
 <!--🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅
 
 Oh hi there! 😄
@@ -10,10 +11,10 @@ To expedite issue processing please search open and closed issues before submitt
 
 🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅🔅-->
 
-
 # 🐞 bug report
 
 ### Relevant scope
+
 What is the scope of this request?
 
 <!-- Please check the one that applies to this PR using "x". -->
@@ -25,6 +26,5 @@ What is the scope of this request?
 ### Description
 
 <!-- ✍️--> A clear and concise description of the problem...
-
 
 **Anything else relevant?**

@@ -1,5 +1,5 @@
-export const SET_TITLE = 'SET_TITLE';
-export const TOGGLE_EDITING = 'TOGGLE_EDITING';
+export const SET_TITLE = "SET_TITLE";
+export const TOGGLE_EDITING = "TOGGLE_EDITING";
 
 export const titleReducer = (state, action) => {
   // if (action.type === 'SET_TITLE') {
@@ -20,13 +20,14 @@ export const titleReducer = (state, action) => {
       return {
         ...state,
         title: action.payload,
-        editing: false
-      }
+        editing: false,
+      };
     case TOGGLE_EDITING:
       return {
         ...state,
-        editing: !state.editing
-      }
-    default: return state
+        editing: !state.editing,
+      };
+    default:
+      return state;
   }
-}
+};

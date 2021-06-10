@@ -534,13 +534,7 @@ module.exports = /******/ (function (modules) {
             // want to force navigation since this is only a prefetch
 
             _router.default
-              .prefetch(
-                paths[/* href */
-                0],
-                paths[/* asPath */
-                1],
-                options
-              )
+              .prefetch(paths /* href */[0], paths /* asPath */[1], options)
               .catch((err) => {
                 if (true) {
                   // rethrow to show invalid URL errors

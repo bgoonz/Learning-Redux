@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import Title from './components/Title';
-import './styles.css';
+import Title from "./components/Title";
+import "./styles.css";
 
 function App() {
   return (
@@ -12,5 +12,5 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);

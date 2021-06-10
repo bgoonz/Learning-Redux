@@ -1,16 +1,23 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer } from "react";
 
-import { TOGGLE_EDITING, SET_TITLE, titleReducer } from '../reducers/titleReducer';
+import {
+  TOGGLE_EDITING,
+  SET_TITLE,
+  titleReducer,
+} from "../reducers/titleReducer";
 
 const Title = () => {
   // const [title, setTitle] = useState('Hello earthlings!');
   // const [editing, setEditing] = useState(false);
 
-  const [state, dispatch] = useReducer(titleReducer, { title: 'hello from reducer', editing: false });
+  const [state, dispatch] = useReducer(titleReducer, {
+    title: "hello from reducer",
+    editing: false,
+  });
 
-  const [newTitleText, setNewTitleText] = useState('');
+  const [newTitleText, setNewTitleText] = useState("");
 
-  const handleChanges = e => {
+  const handleChanges = (e) => {
     setNewTitleText(e.target.value);
   };
 
@@ -18,11 +25,14 @@ const Title = () => {
     <div>
       {!state.editing ? (
         <h1>
-          {state.title}{' '}
-          <i onClick={() => {
-            // setEditing(!editing)
-            dispatch({ type: TOGGLE_EDITING })
-          }} className="far fa-edit" />
+          {state.title}{" "}
+          <i
+            onClick={() => {
+              // setEditing(!editing)
+              dispatch({ type: TOGGLE_EDITING });
+            }}
+            className="far fa-edit"
+          />
         </h1>
       ) : (
         <div>

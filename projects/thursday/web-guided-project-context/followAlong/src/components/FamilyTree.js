@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Parents from "./Parents";
 import Siblings from "./Siblings";
 
-import FamilyContext from './../contexts/FamilyContext';
+import FamilyContext from "./../contexts/FamilyContext";
 
 export default function FamilyTree() {
   const family = useContext(FamilyContext);

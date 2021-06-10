@@ -1,6 +1,5 @@
 Huge thanks to [**@thejmazz**](https://github.com/thejmazz) for taking the time to write these notes about how the codebase works! 🍻
 
-
 # React-Redux App Architecture
 
 ## Entrypoint
@@ -12,21 +11,21 @@ Imports: `agent.js`, `store.js`, `./components/*`
 Renders routes pointing to their associated components:
 
 ```html
-  <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home} />
-        <Route path="login" component={Login} />
-        <Route path="register" component={Register} />
-        <Route path="editor" component={Editor} />
-        <Route path="editor/:slug" component={Editor} />
-        <Route path="article/:id" component={Article} />
-        <Route path="settings" component={Settings} />
-        <Route path="@:username" component={Profile} />
-        <Route path="@:username/favorites" component={ProfileFavorites} />
-      </Route>
-    </Router>
-  </Provider>
+<Provider store="{store}">
+  <Router history="{hashHistory}">
+    <Route path="/" component="{App}">
+      <IndexRoute component="{Home}" />
+      <Route path="login" component="{Login}" />
+      <Route path="register" component="{Register}" />
+      <Route path="editor" component="{Editor}" />
+      <Route path="editor/:slug" component="{Editor}" />
+      <Route path="article/:id" component="{Article}" />
+      <Route path="settings" component="{Settings}" />
+      <Route path="@:username" component="{Profile}" />
+      <Route path="@:username/favorites" component="{ProfileFavorites}" />
+    </Route>
+  </Router>
+</Provider>
 ```
 
 ## Agent
@@ -45,15 +44,13 @@ For example, `Auth`:
 
 ```javascript
 const Auth = {
-  current: () =>
-    requests.get('/user'),
+  current: () => requests.get('/user'),
   login: (email, password) =>
     requests.post('/users/login', { user: { email, password } }),
   register: (username, email, password) =>
     requests.post('/users', { user: { username, email, password } }),
-  save: user =>
-    requests.put('/user', { user })
-};
+  save: (user) => requests.put('/user', { user }),
+}
 ```
 
 Thus, these services essentially take some options, map to a request, and
@@ -61,7 +58,7 @@ return the promise of that request. The general type could be:
 
 ```javascript
 type Service = {
-    [key: string]: (opts: any) => Promise<T>
+  [key: string]: (opts: any) => Promise<T>,
 }
 ```
 
@@ -91,16 +88,16 @@ Intercepts all actions where `action.payload` is a Promise. In which case it:
 
 1. `store.dispatch({ type: 'ASYNC_START', subtype: action.type })`
 2. `action.payload.then`
-    - success: `store.dispatch({ type: 'ASYNC_END', promise: res })`
-    - error: sets `action.error = true`, `store.dispatch({ type: 'ASYNC_END', promise: action.payload })`
+   - success: `store.dispatch({ type: 'ASYNC_END', promise: res })`
+   - error: sets `action.error = true`, `store.dispatch({ type: 'ASYNC_END', promise: action.payload })`
 3. Then, for success and error, using the modified `action` object: `store.dispatch(action)`
 
 #### localStorageMiddleware
 
 Runs after `promiseMiddleware`. Intercepts `REGISTER | LOGIN` and either
 
-  - a. sets token into localstorage and `agent.setToken(token)`
-  - b. sets token in localstorage to `''` and does `agent.setToken(null)`
+- a. sets token into localstorage and `agent.setToken(token)`
+- b. sets token in localstorage to `''` and does `agent.setToken(null)`
 
 ### Reducers
 
@@ -181,11 +178,10 @@ an SPA lol).
 Patterns
 
 - `onLoad` handlers pass a Promise or multiple promises via `Promise.all`
- - sending multiple leads to magic `payload[0]` and `payload[1]` in reducer (see `reducers/article.js`)
+- sending multiple leads to magic `payload[0]` and `payload[1]` in reducer (see `reducers/article.js`)
 
 - pass a handler, e.g. `onClickTag` as a prop to a child component. child
-  component then calls it with agent: `props.onClickTag(tag,
-  agent.Articles.byTag(tag))`. (does this only ever happen with a connected `index.jsx` inside a folder?)
+  component then calls it with agent: `props.onClickTag(tag, agent.Articles.byTag(tag))`. (does this only ever happen with a connected `index.jsx` inside a folder?)
 
 - to render or not to render:
 
@@ -221,7 +217,6 @@ componentWillReceiveProps(nextProps) {
   }
 }
 ```
-
 
 ### Root Component - "/"
 

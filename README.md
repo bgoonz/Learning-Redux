@@ -2,9 +2,7 @@
 
 [<img src="https://rawgit.com/brillout/awesome-redux/master/redux-logo.svg" align="right" width="110">](http://redux.js.org/)
 
-
-![picture 1](images/9c1b589ffe03e4cf849563c863e828652e1add56ef051a3130356cf287f28a9d.png)  
-
+![picture 1](images/9c1b589ffe03e4cf849563c863e828652e1add56ef051a3130356cf287f28a9d.png)
 
 > Redux is a state container for JavaScript apps.
 

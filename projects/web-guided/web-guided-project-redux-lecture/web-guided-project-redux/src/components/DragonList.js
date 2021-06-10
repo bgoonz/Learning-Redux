@@ -1,28 +1,28 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import DragonMember from './DragonMember';
+import React from "react";
+import { connect } from "react-redux";
+import DragonMember from "./DragonMember";
 
-import { addMember } from './../actions/dragonActions';
+import { addMember } from "./../actions/dragonActions";
 
 class DragonList extends React.Component {
   state = {
-    newMember: ''
+    newMember: "",
   };
 
-  handleChanges = e => {
+  handleChanges = (e) => {
     this.setState({ ...this.state, newMember: e.target.value });
   };
 
-  handleClick = ()=> {
+  handleClick = () => {
     this.props.addMember(this.state.newMember);
-  }
+  };
 
   render() {
     return (
       <div>
         <div className="friends-list">
           {this.props.members.map((member, index) => (
-            <DragonMember key={index} member={member}/>
+            <DragonMember key={index} member={member} />
           ))}
         </div>
 
@@ -38,10 +38,10 @@ class DragonList extends React.Component {
   }
 }
 
-const mapStateToProps = (state)=> {
+const mapStateToProps = (state) => {
   return {
-    members: state.dragon.members
-  }
-}
+    members: state.dragon.members,
+  };
+};
 
 export default connect(mapStateToProps, { addMember })(DragonList);

@@ -1,28 +1,30 @@
 import React, { useState, useReducer } from "react";
-import calcReducer from './reducers/calcReducer';
+import calcReducer from "./reducers/calcReducer";
 import "./styles.css";
-
 
 export default function App() {
   // const [total, setTotal] = useState(0);
   // const [memory]
-  const [calcState, dispatch] = useReducer(calcReducer, { currentValue: 0, memory: 0 })
+  const [calcState, dispatch] = useReducer(calcReducer, {
+    currentValue: 0,
+    memory: 0,
+  });
 
-  const handleAddFive = e => {
+  const handleAddFive = (e) => {
     e.preventDefault();
     // setTotal(total + 5);
-    dispatch({ type: 'ADD', payload: 5 })
-  }
+    dispatch({ type: "ADD", payload: 5 });
+  };
 
-  const handleSubtractOne = e => {
+  const handleSubtractOne = (e) => {
     e.preventDefault();
-    dispatch({ type: 'SUBTRACT', payload: 1 })
-  }
+    dispatch({ type: "SUBTRACT", payload: 1 });
+  };
 
-  const handleClear = e => {
+  const handleClear = (e) => {
     e.preventDefault();
-    dispatch({ type: 'CLEAR' })
-  }
+    dispatch({ type: "CLEAR" });
+  };
 
   // clear
   // set memory
@@ -31,7 +33,13 @@ export default function App() {
 
   return (
     <div className="App">
-      <textarea rows="1" value={calcState.currentValue} id="total" type="text" name="ans"></textarea>
+      <textarea
+        rows="1"
+        value={calcState.currentValue}
+        id="total"
+        type="text"
+        name="ans"
+      ></textarea>
       <br />
       <button type="button" className="btn" onClick={handleAddFive}>
         +5

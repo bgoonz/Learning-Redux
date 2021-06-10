@@ -1,28 +1,31 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-import { addMember, toggleDragonStatus } from '../actions';
+import { addMember, toggleDragonStatus } from "../actions";
 
 class DragonList extends React.Component {
   state = {
-    newMember: ''
+    newMember: "",
   };
 
-  handleChanges = e => {
+  handleChanges = (e) => {
     this.setState({ newMember: e.target.value });
   };
 
-  handleNewMember = e => {
+  handleNewMember = (e) => {
     e.preventDefault();
-    this.props.addMember(this.state.newMember)
-  }
+    this.props.addMember(this.state.newMember);
+  };
 
   render() {
     return (
       <React.Fragment>
         <div className="friends-list">
           {this.props.members.map((member, index) => (
-            <h4 key={index} onClick={() => this.props.toggleDragonStatus(member.name)}>
+            <h4
+              key={index}
+              onClick={() => this.props.toggleDragonStatus(member.name)}
+            >
               {member.name}
               {member.dragonStatus && <i className="fas fa-dragon">🐲</i>}
             </h4>
@@ -40,10 +43,12 @@ class DragonList extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    members: state.members.members
-  }
-}
+    members: state.members.members,
+  };
+};
 
-export default connect(mapStateToProps, { addMember, toggleDragonStatus })(DragonList);
+export default connect(mapStateToProps, { addMember, toggleDragonStatus })(
+  DragonList
+);
