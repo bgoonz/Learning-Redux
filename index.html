@@ -17,33 +17,56 @@
   <title>Learning Redux</title>
 
 
-<link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
 
 
-
-  
+  <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css" />
+  <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-dark.min.css" integrity="sha512-Njdz7T/p6Ud1FiTMqH87bzDxaZBsVNebOWmacBjMdgWyeIhUSFU4V52oGwo3sT+ud+lyIE98sS291/zxBfozKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script async defer type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+  </script>
+  <script async defer type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/download-button/prism-download-button.min.js" integrity="sha512-rGJwSZEEYPBQjqYxrdg6Ug/6i763XQogKx+N/GF1rCGvfmhIlIUFxCjc4FmEdCu5dvovqxHsoe3IPMKP+KlgNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    import Prism from 'prismjs';
+  </script>
 </head>
 
 <body for="html-export">
+  <center>
+    <h1>Bgoonz Learning Redux Repo:</h1>
+    <br>
+    <br>
+    <br>
+    <br>
 
-  <h1>Bgoonz Learning Redux Repo:</h1>
-  
-  
-  <a href="./directory.html">Navigation</a>
-  
-  
+    <a href="./directory.html">Navigation</a>
+    <br>
+    <br>
+    <br>
 
-  <iframe src="https://codesandbox.io/embed/crazy-smoke-17b98?fontsize=14&hidenavigation=1&theme=dark" style="
-        width: 100%;
+    <br>
+    <a href="./DOCS/index.html">Docs</a>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <iframe src="https://codesandbox.io/embed/crazy-smoke-17b98?fontsize=14&hidenavigation=1&theme=dark" style="
+        width: 90%;
         height: 500px;
         border: 0;
         border-radius: 4px;
         overflow: hidden;
       " title="crazy-smoke-17b98"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+    <br>
+    <br>
+    <br>
+    <br>
+  </center>
   <div class="mume markdown-preview  ">
     <h1 class="mume-header"
       id="redux-libraries-learning-material-awesomehttpscdnrawgitcomsindresorhusawesomed7305f38d29fed78fa85652e3a63e154dd8e8829mediabadgesvghttpsgithubcomsindresorhusawesome">
@@ -57,7 +80,7 @@
       <p>Redux is a state container for JavaScript apps.</p>
     </blockquote>
     <ul>
-      <li>Official website: <a href="https://devarchy.com/redux"><code>devarchy.com/redux</code></a></li>
+      <li>Official website: <a href="https://devarchy.com/redux"><code class="language-js">devarchy.com/redux</code></a></li>
       <li>Use devarchy to add a library to the catalog</li>
     </ul>
     <br>
@@ -354,7 +377,7 @@
       <li><a href="https://discord.gg/0ZcbPKXt5bZ6au5t">Discord</a></li>
       <li><a href="http://slack.redux.io/">Slack</a></li>
       <li><a href="https://gitter.im/reactjs/redux">Gitter</a></li>
-      <li><a href="https://webchat.freenode.net/"><code>#rackt</code> on freenode</a></li>
+      <li><a href="https://webchat.freenode.net/"><code class="language-js">#rackt</code> on freenode</a></li>
     </ul>
     <h1 class="mume-header" id="getting-started-with-react-redux-react-redux">Getting Started with React Redux | React
       Redux</h1>
@@ -385,23 +408,23 @@
     <p>You&apos;ll also need to <a href="https://redux.js.org/introduction/installation">install Redux</a> and <a
         href="https://redux.js.org/recipes/configuring-your-store/">set up a Redux store</a> in your app.</p>
     <p>If you are using TypeScript, the React Redux types are maintained separately in DefinitelyTyped, but included as
-      a dependency of the <code>react-redux</code> package, so they should be installed automatically. If you still need
+      a dependency of the <code class="language-js">react-redux</code> package, so they should be installed automatically. If you still need
       to install them manually, run:</p>
     <h2 class="mume-header" id="api-overviewapi-overview-direct-link-to-heading">API Overview<a href="#api-overview"
         title="Direct link to heading">#</a></h2>
 
-    <h3 class="mume-header" id="providerprovider-direct-link-to-heading"><code>Provider</code><a href="#provider"
+    <h3 class="mume-header" id="providerprovider-direct-link-to-heading"><code class="language-js">Provider</code><a href="#provider"
         title="Direct link to heading">#</a></h3>
 
-    <p>React Redux includes a <code>&lt;Provider /&gt;</code> component, which makes the Redux store available to the
+    <p>React Redux includes a <code class="language-js">&lt;Provider /&gt;</code> component, which makes the Redux store available to the
       rest of your app:</p>
     <h3 class="mume-header" id="hookshooks-direct-link-to-heading">Hooks<a href="#hooks"
         title="Direct link to heading">#</a></h3>
 
     <p>React Redux provides a pair of custom React hooks that allow your React components to interact with the Redux
       store.</p>
-    <p><code>useSelector</code> reads a value from the store state and subscribes to updates, while
-      <code>useDispatch</code> returns the store&apos;s <code>dispatch</code> method to let you dispatch actions.</p>
+    <p><code class="language-js">useSelector</code> reads a value from the store state and subscribes to updates, while
+      <code class="language-js">useDispatch</code> returns the store&apos;s <code class="language-js">dispatch</code> method to let you dispatch actions.</p>
     <h2 class="mume-header" id="learning-react-reduxlearning-react-redux-direct-link-to-heading">Learning React Redux<a
         href="#learning-react-redux" title="Direct link to heading">#</a></h2>
 
@@ -428,7 +451,7 @@
     <ul>
       <li><a href="https://fernandobelotto.github.io/react-redux">Portuguese</a></li>
     </ul>
-    <p><a href="https://react-redux.js.org/introduction/getting-started">Source</a></p>
+    
     <h2 class="mume-header" id="introductionintroduction-direct-link-to-heading"><a href="#introduction"
         title="Direct link to heading">Introduction</a></h2>
 
@@ -555,7 +578,7 @@
       <li>The UI re-renders based on the new state</li>
     </ul>
     <p><img
-        src="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/images/one-way-data-flow-04fe46332c1ccb3497ecb04b94e55b97.png"
+        src="https://redux.js.org/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif"
         alt="One-way data flow"></p>
     <p>However, the simplicity can break down when we have <strong>multiple components that need to share and use the
         same state</strong>, especially if those components are located in different parts of the application. Sometimes
@@ -590,14 +613,22 @@
     <h4 class="mume-header" id="actionsactions-direct-link-to-heading">Actions<a href="#actions"
         title="Direct link to heading">#</a></h4>
 
-    <p>An <strong>action</strong> is a plain JavaScript object that has a <code>type</code> field. <strong>You can think
+    <p>An <strong>action</strong> is a plain JavaScript object that has a <code class="language-js">type</code> field. <strong>You can think
         of an action as an event that describes something that happened in the application</strong>.</p>
-    <p>The <code>type</code> field should be a string that gives this action a descriptive name, like
-      <code>&quot;todos/todoAdded&quot;</code>. We usually write that type string like
-      <code>&quot;domain/eventName&quot;</code>, where the first part is the feature or category that this action
+    <p>The <code class="language-js">type</code> field should be a string that gives this action a descriptive name, like
+      <code class="language-js">&quot;todos/todoAdded&quot;</code>. We usually write that type string like
+      <code class="language-js">&quot;domain/eventName&quot;</code>
+      , where the first part is the feature or category that this action
       belongs to, and the second part is the specific thing that happened.</p>
+      
+      <iframe src="https://codesandbox.io/embed/hardcore-tdd-kowsj?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="hardcore-tdd-kowsj"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
     <p>An action object can have other fields with additional information about what happened. By convention, we put
-      that information in a field called <code>payload</code>.</p>
+      that information in a field called <code class="language-js">payload</code>.</p>
     <p>A typical action object might look like this:</p>
     <h4 class="mume-header" id="action-creatorsaction-creators-direct-link-to-heading">Action Creators<a
         href="#action-creators" title="Direct link to heading">#</a></h4>
@@ -607,22 +638,22 @@
     <h4 class="mume-header" id="reducersreducers-direct-link-to-heading">Reducers<a href="#reducers"
         title="Direct link to heading">#</a></h4>
 
-    <p>A <strong>reducer</strong> is a function that receives the current <code>state</code> and an <code>action</code>
+    <p>A <strong>reducer</strong> is a function that receives the current <code class="language-js">state</code> and an <code class="language-js">action</code>
       object, decides how to update the state if necessary, and returns the new state:
-      <code>(state, action) =&gt; newState</code>. <strong>You can think of a reducer as an event listener which handles
+      <code class="language-js">(state, action) =&gt; newState</code>. <strong>You can think of a reducer as an event listener which handles
         events based on the received action (event) type.</strong></p>
     <h5 class="mume-header" id="info">info</h5>
 
     <p>&quot;Reducer&quot; functions get their name because they&apos;re similar to the kind of callback function you
       pass to the <a
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"><code>Array.reduce()</code></a>
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"><code class="language-js">Array.reduce()</code></a>
       method.</p>
     <p>Reducers must <em>always</em> follow some specific rules:</p>
     <ul>
-      <li>They should only calculate the new state value based on the <code>state</code> and <code>action</code>
+      <li>They should only calculate the new state value based on the <code class="language-js">state</code> and <code class="language-js">action</code>
         arguments</li>
-      <li>They are not allowed to modify the existing <code>state</code>. Instead, they must make <em>immutable
-          updates</em>, by copying the existing <code>state</code> and making changes to the copied values.</li>
+      <li>They are not allowed to modify the existing <code class="language-js">state</code>. Instead, they must make <em>immutable
+          updates</em>, by copying the existing <code class="language-js">state</code> and making changes to the copied values.</li>
       <li>They must not do any asynchronous logic, calculate random values, or cause other &quot;side effects&quot;</li>
     </ul>
     <p>We&apos;ll talk more about the rules of reducers later, including why they&apos;re important and how to follow
@@ -637,48 +668,48 @@
       <li>Otherwise, return the existing state unchanged</li>
     </ul>
     <p>Here&apos;s a small example of a reducer, showing the steps that each reducer should follow:</p>
-    <p>Reducers can use any kind of logic inside to decide what the new state should be: <code>if/else</code>,
-      <code>switch</code>, loops, and so on.</p>
+    <p>Reducers can use any kind of logic inside to decide what the new state should be: <code class="language-js">if/else</code>,
+      <code class="language-js">switch</code>, loops, and so on.</p>
     <h4 class="mume-header" id="detailed-explanation-why-are-they-called-reducers">Detailed Explanation: Why Are They
       Called &apos;Reducers?&apos;</h4>
 
     <p>The <a
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"><code>Array.reduce()</code></a>
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce"><code class="language-js">Array.reduce()</code></a>
       method lets you take an array of values, process each item in the array one at a time, and return a single final
       result. You can think of it as &quot;reducing the array down to one value&quot;.</p>
-    <p><code>Array.reduce()</code> takes a callback function as an argument, which will be called one time for each item
+    <p><code class="language-js">Array.reduce()</code> takes a callback function as an argument, which will be called one time for each item
       in the array. It takes two arguments:</p>
     <ul>
-      <li><code>previousResult</code>, the value that your callback returned last time</li>
-      <li><code>currentItem</code>, the current item in the array</li>
+      <li><code class="language-js">previousResult</code>, the value that your callback returned last time</li>
+      <li><code class="language-js">currentItem</code>, the current item in the array</li>
     </ul>
-    <p>The first time that the callback runs, there isn&apos;t a <code>previousResult</code> available, so we need to
-      also pass in an initial value that will be used as the first <code>previousResult</code>.</p>
+    <p>The first time that the callback runs, there isn&apos;t a <code class="language-js">previousResult</code> available, so we need to
+      also pass in an initial value that will be used as the first <code class="language-js">previousResult</code>.</p>
     <p>If we wanted to add together an array of numbers to find out what the total is, we could write a reduce callback
       that looks like this:</p>
-    <p>Notice that this <code>addNumbers</code> &quot;reduce callback&quot; function doesn&apos;t need to keep track of
-      anything itself. It takes the <code>previousResult</code> and <code>currentItem</code> arguments, does something
+    <p>Notice that this <code class="language-js">addNumbers</code> &quot;reduce callback&quot; function doesn&apos;t need to keep track of
+      anything itself. It takes the <code class="language-js">previousResult</code> and <code class="language-js">currentItem</code> arguments, does something
       with them, and returns a new result value.</p>
     <p><strong>A Redux reducer function is exactly the same idea as this &quot;reduce callback&quot; function!</strong>
-      It takes a &quot;previous result&quot; (the <code>state</code>), and the &quot;current item&quot; (the
-      <code>action</code> object), decides a new state value based on those arguments, and returns that new state.</p>
-    <p>If we were to create an array of Redux actions, call <code>reduce()</code>, and pass in a reducer function,
+      It takes a &quot;previous result&quot; (the <code class="language-js">state</code>), and the &quot;current item&quot; (the
+      <code class="language-js">action</code> object), decides a new state value based on those arguments, and returns that new state.</p>
+    <p>If we were to create an array of Redux actions, call <code class="language-js">reduce()</code>, and pass in a reducer function,
       we&apos;d get a final result the same way:</p>
     <p>We can say that <strong>Redux reducers reduce a set of actions (over time) into a single state</strong>. The
-      difference is that with <code>Array.reduce()</code> it happens all at once, and with Redux, it happens over the
+      difference is that with <code class="language-js">Array.reduce()</code> it happens all at once, and with Redux, it happens over the
       lifetime of your running app.</p>
     <h4 class="mume-header" id="storestore-direct-link-to-heading">Store<a href="#store"
         title="Direct link to heading">#</a></h4>
 
     <p>The current Redux application state lives in an object called the <strong>store</strong> .</p>
-    <p>The store is created by passing in a reducer, and has a method called <code>getState</code> that returns the
+    <p>The store is created by passing in a reducer, and has a method called <code class="language-js">getState</code> that returns the
       current state value:</p>
     <h4 class="mume-header" id="dispatchdispatch-direct-link-to-heading">Dispatch<a href="#dispatch"
         title="Direct link to heading">#</a></h4>
 
-    <p>The Redux store has a method called <code>dispatch</code>. <strong>The only way to update the state is to call
-        <code>store.dispatch()</code> and pass in an action object</strong>. The store will run its reducer function and
-      save the new state value inside, and we can call <code>getState()</code> to retrieve the updated value:</p>
+    <p>The Redux store has a method called <code class="language-js">dispatch</code>. <strong>The only way to update the state is to call
+        <code class="language-js">store.dispatch()</code> and pass in an action object</strong>. The store will run its reducer function and
+      save the new state value inside, and we can call <code class="language-js">getState()</code> to retrieve the updated value:</p>
     <p><strong>You can think of dispatching actions as &quot;triggering an event&quot;</strong> in the application.
       Something happened, and we want the store to know about it. Reducers act like event listeners, and when they hear
       an action they are interested in, they update the state in response.</p>
@@ -705,7 +736,7 @@
       <li>Initial setup:
         <ul>
           <li>A Redux store is created using a root reducer function</li>
-          <li>The store calls the root reducer once, and saves the return value as its initial <code>state</code></li>
+          <li>The store calls the root reducer once, and saves the return value as its initial <code class="language-js">state</code></li>
           <li>When the UI is first rendered, UI components access the current state of the Redux store, and use that
             data to decide what to render. They also subscribe to any future store updates so they can know if the state
             has changed.</li>
@@ -715,9 +746,9 @@
         <ul>
           <li>Something happens in the app, such as a user clicking a button</li>
           <li>The app code dispatches an action to the Redux store, like
-            <code>dispatch({type: &apos;counter/increment&apos;})</code></li>
-          <li>The store runs the reducer function again with the previous <code>state</code> and the current
-            <code>action</code>, and saves the return value as the new <code>state</code></li>
+            <code class="language-js">dispatch({type: &apos;counter/increment&apos;})</code></li>
+          <li>The store runs the reducer function again with the previous <code class="language-js">state</code> and the current
+            <code class="language-js">action</code>, and saves the return value as the new <code class="language-js">state</code></li>
           <li>The store notifies all parts of the UI that are subscribed that the store has been updated</li>
           <li>Each UI component that needs data from the store checks to see if the parts of the state they need have
             changed.</li>
@@ -728,7 +759,7 @@
     </ul>
     <p>Here&apos;s what that data flow looks like visually:</p>
     <p><img
-        src="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif"
+        src="https://redux.js.org/assets/images/ReduxDataFlowDiagram-49fa8c3968371d9ef6f2a1486bd40a26.gif"
         alt="Redux data flow diagram"></p>
     <h2 class="mume-header" id="what-youve-learnedwhat-youve-learned-direct-link-to-heading">What You&apos;ve Learned<a
         href="#what-youve-learned" title="Direct link to heading">#</a></h2>
@@ -759,7 +790,7 @@
       </li>
       <li><strong>Redux uses several types of code</strong>
         <ul>
-          <li><em>Actions</em> are plain objects with a <code>type</code> field, and describe &quot;what happened&quot;
+          <li><em>Actions</em> are plain objects with a <code class="language-js">type</code> field, and describe &quot;what happened&quot;
             in the app</li>
           <li><em>Reducers</em> are functions that calculate a new state value based on previous state + an action</li>
           <li>A Redux <em>store</em> runs the root reducer whenever an action is <em>dispatched</em></li>
@@ -772,7 +803,7 @@
     <p>We&apos;ve seen each of the individual pieces of a Redux app. Next, continue on to <a
         href="chrome-extension://cjedbglnccaioiolemnfhjncicchinao/tutorials/essentials/part-2-app-structure">Part 2:
         Redux App Structure</a>, where we&apos;ll look at a full working example to see how the pieces fit together.</p>
-    <p><a href="https://redux.js.org/tutorials/essentials/part-1-overview-concepts">Source</a></p>
+    <p></p>
     <hr>
     <hr>
     <h2 class="mume-header" id="when-to-use-redux">When to use Redux</h2>
@@ -801,12 +832,36 @@
       updating this state is provided by the parent component and passed as props to these sibling components.</p>
     <p>Here&#x2019;s a simple example of a login component in React. The input of the login component affects what is
       displayed by its sibling component, the status component:</p>
-    <p>class App extends React.Component { constructor(props) { super(props); this.state = { userStatus: &quot;NOT
-      LOGGED IN&quot;} this.setStatus = this.setStatus.bind(this); } setStatus(username, password) { const newUsers =
-      users; newUsers.map(user =&gt; { if (user.username == username &amp;&amp; user.password === password) {
-      this.setState({ userStatus: &quot;LOGGED IN&quot; }) } }); } render() { return ( </p>
-    <div> &lt;Status status={this.state.userStatus} /&gt; &lt;Login handleSubmit={this.setStatus} /&gt; &lt;/div&gt; );
-      } });<p></p>
+<code class="language-js">
+  <pre>
+    class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { userStatus: "NOT LOGGED IN" };
+    this.setStatus = this.setStatus.bind(this);
+  }
+  setStatus(username, password) {
+    const newUsers = users;
+    newUsers.map((user) => {
+      if (user.username == username && user.password === password) {
+        this.setState({
+          userStatus: "LOGGED IN",
+        });
+      }
+    });
+  }
+  render() {
+    return (
+      <div>
+        <Status status={this.state.userStatus} />
+        <Login handleSubmit={this.setStatus} />{" "}
+      </div>
+    );
+  }
+}
+
+  </pre>
+</code>>
       <blockquote>
         <p><img src="https://s.w.org/images/core/emoji/13.0.1/svg/1f4a1.svg" alt="&#x1F4A1;"> Remember, this data is not
           needed by the parent component, but because its children need to share data, it has to provide a state.</p>
@@ -831,7 +886,7 @@
 
       <p>Simply put, actions are events. They are the only way you can send data from your application to your Redux
         store. The data can be from user interactions, API calls, or even form submissions.</p>
-      <p>Actions are sent using the <code>store.dispatch()</code> method. Actions are plain JavaScript objects, and they
+      <p>Actions are sent using the <code class="language-js">store.dispatch()</code> method. Actions are plain JavaScript objects, and they
         must have a type property to indicate the type of action to be carried out. They must also have a payload that
         contains the information that should be worked on by the action. Actions are created via an action creator.</p>
       <p>Here&#x2019;s an example of an action that can be carried out during login in an app:</p>
@@ -845,7 +900,7 @@
       <p>Reducers are pure functions that take the current state of an application, perform an action, and return a new
         state. These states are stored as objects, and they specify how the state of an application changes in response
         to an action sent to the store.</p>
-      <p>It is based on the <code>reduce</code> function in JavaScript, where a single value is calculated from multiple
+      <p>It is based on the <code class="language-js">reduce</code> function in JavaScript, where a single value is calculated from multiple
         values after a callback function has been carried out.</p>
       <p>Here is an example of how reducers work in Redux:</p>
       <p>const LoginComponent = (state = initialState, action) =&gt; { switch (action.type) { case &quot;LOGIN&quot;:
@@ -953,7 +1008,7 @@
       </div>
     </div>
   </div>
-  <div class="md-sidebar-toc">
+  <div style="vertical-align:top;" class="md-sidebar-toc">
     <ul>
       <li><a
           href="#redux-libraries-learning-material-awesomehttpscdnrawgitcomsindresorhusawesomed7305f38d29fed78fa85652e3a63e154dd8e8829mediabadgesvghttpsgithubcomsindresorhusawesome">Redux
@@ -1005,7 +1060,7 @@
           </li>
           <li><a href="#api-overviewapi-overview-direct-link-to-heading">API Overview#</a>
             <ul>
-              <li><a href="#providerprovider-direct-link-to-heading"><code>Provider</code>#</a></li>
+              <li><a href="#providerprovider-direct-link-to-heading"><code class="language-js">Provider</code>#</a></li>
               <li><a href="#hookshooks-direct-link-to-heading">Hooks#</a></li>
             </ul>
           </li>
@@ -1105,7 +1160,6 @@
 
 
   <script>
-
     var sidebarTOCBtn = document.getElementById( 'sidebar-toc-btn' )
     sidebarTOCBtn.addEventListener( 'click', function ( event ) {
       event.stopPropagation()
