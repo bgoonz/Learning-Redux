@@ -983,14 +983,7 @@ textarea {
   font: inherit;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+
 
 html {
   background-color: #fff;
@@ -1035,6 +1028,8 @@ h2,
 h3 {
   font-family: zillaslab, palatino, "Palatino Linotype", serif;
   line-height: 1.2;
+    border-radius:10px;
+
 }
 
 h1 {
@@ -1059,7 +1054,8 @@ h2 {
 
 h3 {
   font-size: 1.424rem;
-  background-color: #988e8e;
+  background-color: #e3d6d6;
+  border-radius:10px;
   color: #fff;
   font-family: zillaslab, palatino, "Palatino Linotype", serif;
   font-weight: 400;
@@ -3661,6 +3657,8 @@ a.page-not-created {
 
 .main-page-content iframe {
   border: 0;
+  height:800px!important;
+  width:800px!important;
 }
 
 .archived {
