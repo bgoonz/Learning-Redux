@@ -10,6 +10,6 @@
     "formik": "2.1.5",
     "graphql-request": "3.4.0",
     "immutable": "3.8.2",
-    "rxjs": "6.6.2"
+    "rxjs": "6.6.7"
   }
 }
