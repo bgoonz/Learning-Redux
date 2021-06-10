@@ -1,5 +1,4 @@
-Title
------
+## Title
 
 #### Adding Redux to a React app
 
@@ -26,9 +25,9 @@ Title
 2.  `import { connect } from 'react-redux';`
 3.  `connect` gets invoked twice
 
--   First invocation it takes in a function and an object (more on those in just a minute)
--   Second invocation it takes in the component we are connecting
--   Recognize this pattern? It’s an HOC!!!
+- First invocation it takes in a function and an object (more on those in just a minute)
+- Second invocation it takes in the component we are connecting
+- Recognize this pattern? It’s an HOC!!!
 
 <!-- -->
 
@@ -36,23 +35,23 @@ Title
 
 1.  Let’s talk about the first argument in the first function call.
 
--   The function is a function that will get the entire Redux state tree passed to it as an argument. We will then map whatever pieces of state we need in this function to the props of this function. So we will write a new function call “mapStateToProps”, since that is what it is doing.
+- The function is a function that will get the entire Redux state tree passed to it as an argument. We will then map whatever pieces of state we need in this function to the props of this function. So we will write a new function call “mapStateToProps”, since that is what it is doing.
 
-    const mapStateToProps = (state) => {
-      console.log(state);
-    };
+  const mapStateToProps = (state) => {
+  console.log(state);
+  };
 
--   Pass `mapStateToProps` in to connect - `export default connect(mapStateToProps, {})(Title);`
--   To “map” the state to `Title`’s props, we return an object. This object’s properties will be properties on the props object in `Title`. The value for the object properties will be from state
+- Pass `mapStateToProps` in to connect - `export default connect(mapStateToProps, {})(Title);`
+- To “map” the state to `Title`’s props, we return an object. This object’s properties will be properties on the props object in `Title`. The value for the object properties will be from state
 
-    const mapStateToProps = (state) => {
-      console.log(state);
-      return {
-        title: state.title,
-      };
-    };
+  const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+  title: state.title,
+  };
+  };
 
--   Now we have a “title” props in `Title`. Go look in the React tools. Let’s rewrite this a bit to make the distinction between on the “titles” more clear:
+- Now we have a “title” props in `Title`. Go look in the React tools. Let’s rewrite this a bit to make the distinction between on the “titles” more clear:
 
 <!-- -->
 
@@ -63,8 +62,8 @@ Title
       };
     };
 
--   Now we have a “titleOnProps” prop in `Title`. Go look in the React tools.
--   In the header, change the hardcoded text to this -\`{this.props.titleOnProps}\`
+- Now we have a “titleOnProps” prop in `Title`. Go look in the React tools.
+- In the header, change the hardcoded text to this -\`{this.props.titleOnProps}\`
 
 #### Actions, actions types, and action creators
 
@@ -73,16 +72,16 @@ Title
 3.  We are going to add an action creator - a function that creates actions. Write a function called `updateTitle`. It will take in `title` as an argument. Console.log `title` so we can make sure it’s working when we go to test this function.
 
     const updateTitle = (title) => {
-      console.log(title);
+    console.log(title);
     };
 
-1.  In `Title.js` - `import { updateTitle } from '../actions';`
+4.  In `Title.js` - `import { updateTitle } from '../actions';`
 
--   Explain that by calling the file in the actions folder, `index.js`, we can import from the directory now, instead of the file. This helps us a ton later when we have a lot of files in one directory.
+- Explain that by calling the file in the actions folder, `index.js`, we can import from the directory now, instead of the file. This helps us a ton later when we have a lot of files in one directory.
 
 1.  Now let’s discuss the second argument of the first invocation of `connect`.
 
--   The second argument is an object that takes in action creators and adds them to props for the connected component. Let’s add `updateTitle`.
+- The second argument is an object that takes in action creators and adds them to props for the connected component. Let’s add `updateTitle`.
 
 <!-- -->
 
@@ -91,68 +90,68 @@ Title
       { updateTitle } // same as { updateTitle: updateTitle }
     )(Title);
 
--   In the React tools, check out props. We now have our action creator function passed in as a prop!
+- In the React tools, check out props. We now have our action creator function passed in as a prop!
 
 1.  Add an `onClick` handler on the button that will invoke a function called `updateTitle` (not to be confused with the action creator, which is available in this component as `props.updateTitle`).
 2.  Create a function on the class called `updateTitle`. It will take in an event, call `preventDefault`, then call `this.props.updateTitle` and pass in the input text
 
     updateTitle = (e) => {
-      e.preventDefault();
-      this.props.updateTitle(this.state.newTitleText);
+    e.preventDefault();
+    this.props.updateTitle(this.state.newTitleText);
     };
 
-1.  Type in the input, and click the button. You should have your text logged from the action creator function.
+3.  Type in the input, and click the button. You should have your text logged from the action creator function.
 
-2.  Back in the actions file. We want the action creator to create and return an action. An action is an object. That’s it. This object HAS to have a “type” property, and then sometimes has a “payload” property. The object will tell the store how to update.
-3.  Let’s return the action object from the action creator.
+4.  Back in the actions file. We want the action creator to create and return an action. An action is an object. That’s it. This object HAS to have a “type” property, and then sometimes has a “payload” property. The object will tell the store how to update.
+5.  Let’s return the action object from the action creator.
 
     export function updateTitle(title) {
-      console.log(title);
-      return {
-        type: "UPDATE_TITLE",
-        payload: title,
-      };
+    console.log(title);
+    return {
+    type: "UPDATE_TITLE",
+    payload: title,
+    };
     }
 
-1.  Since misspelled strings (like “UPDATE\_TITLE”) can be very very hard to debug, we have a convention we use to help us avoid that bug. We create action types - a variable whose value is the string - and use the action type instead of a string.
+6.  Since misspelled strings (like “UPDATE_TITLE”) can be very very hard to debug, we have a convention we use to help us avoid that bug. We create action types - a variable whose value is the string - and use the action type instead of a string.
 
     export const UPDATE_TITLE = "UPDATE_TITLE";
 
     export function updateTitle(title) {
-      console.log(title);
-      return {
-        type: UPDATE_TITLE,
-        payload: title,
-      };
+    console.log(title);
+    return {
+    type: UPDATE_TITLE,
+    payload: title,
+    };
     }
 
--   This is where some Redux black magic happens. When an action creator returns an action object, that object gets passed into the reducer we made. Let’s go handle that now.
+- This is where some Redux black magic happens. When an action creator returns an action object, that object gets passed into the reducer we made. Let’s go handle that now.
 
 #### Dragon Club Members
 
 1.  Move the `members` state from the `DragonList` component to the `initialState` object in the `reducer/index.js` file.
 2.  Get the list of membersw from state, and render the list in the DOM. (Can have students lead here)
 
--   import connect into `DragonList`
--   connect component
--   build `mapStateToProps` function and get membersfrom the state
--   leave the action creators object that you pass into `connect` an empty object for now - `export default connect(mapStateToProps, {})(DragonList)`
--   Show members on props. Map over members and render list
+- import connect into `DragonList`
+- connect component
+- build `mapStateToProps` function and get membersfrom the state
+- leave the action creators object that you pass into `connect` an empty object for now - `export default connect(mapStateToProps, {})(DragonList)`
+- Show members on props. Map over members and render list
 
 1.  Action creator
 
--   Go to the action creator file and create a new action creator called `addNewMember`.
--   Also create a “ADD\_MEMBER” action type
--   import that into the component, and pass it into the connect function
--   Talk about how calling it straight from the import in our code won’t dispatch theaction it’s returning. It *needs* to be passed into the connect function.
--   Now on the “Add Member” button, invoke an “addMember” function in the component - pass it the event.
--   “addMember” will run `e.preventDefault`, then invoke `this.props.addNewMember` and pass in `this.state.newMember`
--   console.log “member” that is coming in to the action creator
--   the action creator should return an action with that member as the payload.
+- Go to the action creator file and create a new action creator called `addNewMember`.
+- Also create a “ADD_MEMBER” action type
+- import that into the component, and pass it into the connect function
+- Talk about how calling it straight from the import in our code won’t dispatch theaction it’s returning. It _needs_ to be passed into the connect function.
+- Now on the “Add Member” button, invoke an “addMember” function in the component - pass it the event.
+- “addMember” will run `e.preventDefault`, then invoke `this.props.addNewMember` and pass in `this.state.newMember`
+- console.log “member” that is coming in to the action creator
+- the action creator should return an action with that member as the payload.
 
 1.  Reducer
 
--   In the `reducer/index.js` file, import your new action type. Then write the case for the action. Talk through the aspects of immutibility here (Don’t forget that the new member you’re adding to the array needs to be an object!)
+- In the `reducer/index.js` file, import your new action type. Then write the case for the action. Talk through the aspects of immutibility here (Don’t forget that the new member you’re adding to the array needs to be an object!)
 
 #### (If you have time) Walk through the magic with debugger!
 

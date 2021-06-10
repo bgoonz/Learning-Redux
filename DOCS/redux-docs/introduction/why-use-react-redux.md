@@ -1,7 +1,6 @@
- 
 
-Why Use React Redux?
-====================
+
+# Why Use React Redux?
 
 Redux itself is a standalone library that can be used with any UI layer or framework, including React, Angular, Vue, Ember, and vanilla JS. Although Redux and React are commonly used together, they are independent of each other.
 
@@ -13,15 +12,14 @@ To understand why you should use React Redux, it may help to understand what a �
 
 > **Note**: If you have questions about whether you should use Redux in general, please see these articles for discussion of when and why you might want to use Redux, and how it’s intended to be used:
 >
-> -   [Redux docs: Motivation](https://redux.js.org/introduction/motivation)
-> -   [Redux docs: FAQ - When should I use Redux?](https://redux.js.org/faq/general#when-should-i-use-redux)
-> -   [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
-> -   [Idiomatic Redux: The Tao of Redux, Part 1 - Implementation and Intent](https://blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-1/)
+> - [Redux docs: Motivation](https://redux.js.org/introduction/motivation)
+> - [Redux docs: FAQ - When should I use Redux?](https://redux.js.org/faq/general#when-should-i-use-redux)
+> - [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367)
+> - [Idiomatic Redux: The Tao of Redux, Part 1 - Implementation and Intent](https://blog.isquaredsoftware.com/2017/05/idiomatic-redux-tao-of-redux-part-1/)
 
-Integrating Redux with a UI
----------------------------
+## Integrating Redux with a UI
 
-Using Redux with *any* UI layer requires [the same consistent set of steps](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html#/4):
+Using Redux with _any_ UI layer requires [the same consistent set of steps](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html#/4):
 
 1.  Create a Redux store
 2.  Subscribe to updates
@@ -38,8 +36,7 @@ The process of subscribing to the store, checking for updated data, and triggeri
 
 > **Note**: For a deeper look at how React Redux works internally and how it handles the store interaction for you, see **[Idiomatic Redux: The History and Implementation of React Redux](https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/)**.
 
-Reasons to Use React Redux
---------------------------
+## Reasons to Use React Redux
 
 ### It is the Official Redux UI Bindings for React
 
@@ -53,7 +50,7 @@ React components are a lot like functions. While it’s possible to write all yo
 
 Similarly, while you can write large React components that handle many different tasks, it’s usually better to split up components based on responsibilities. In particular, it is common to have “container” components that are responsible for collecting and managing some kind of data, and “presentational” components that simply display UI based on whatever data they’ve received as props.
 
-**The React Redux `connect` function generates “container” wrapper components that handle the process of interacting with the store for you**. That way, your own components can focus on other tasks, whether it be collecting other data, or just displaying a piece of the UI. In addition, **`connect` abstracts away the question of *which* store is being used, making your own components more reusable**.
+**The React Redux `connect` function generates “container” wrapper components that handle the process of interacting with the store for you**. That way, your own components can focus on other tasks, whether it be collecting other data, or just displaying a piece of the UI. In addition, **`connect` abstracts away the question of _which_ store is being used, making your own components more reusable**.
 
 As a general architectural principle, **we want to keep our own components “unaware” of Redux**. They should simply receive data and functions as props, just like any other React component. This ultimately makes it easier to test and reuse your own components.
 
@@ -69,21 +66,20 @@ In addition, by connecting multiple components in your React component tree, you
 
 As the official binding library for React and Redux, React Redux has a large community of users. This makes it easier to ask for help, learn about best practices, use libraries that build on top of React Redux, and reuse your knowledge across different applications.
 
-Links and References
---------------------
+## Links and References
 
 ### Understanding React Redux
 
--   [Idiomatic Redux: The History and Implementation of React Redux](https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/)
--   [`connect.js` Explained](https://gist.github.com/gaearon/1d19088790e70ac32ea636c025ba424e)
--   [Redux Fundamentals workshop slides](https://blog.isquaredsoftware.com/2018/06/redux-fundamentals-workshop-slides/)
-    -   [UI Layer Integration](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html)
-    -   [Using React Redux](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/react-redux.html)
+- [Idiomatic Redux: The History and Implementation of React Redux](https://blog.isquaredsoftware.com/2018/11/react-redux-history-implementation/)
+- [`connect.js` Explained](https://gist.github.com/gaearon/1d19088790e70ac32ea636c025ba424e)
+- [Redux Fundamentals workshop slides](https://blog.isquaredsoftware.com/2018/06/redux-fundamentals-workshop-slides/)
+  - [UI Layer Integration](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/ui-layer.html)
+  - [Using React Redux](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/react-redux.html)
 
 ### Community Resources
 
--   Discord channel: [\#redux on Reactiflux](https://discord.gg/0ZcbPKXt5bZ6au5t) ([Reactiflux invite link](https://reactiflux.com))
--   Stack Overflow topics: [Redux](https://stackoverflow.com/questions/tagged/redux), [React Redux](https://stackoverflow.com/questions/tagged/redux)
--   Reddit: [/r/reactjs](https://www.reddit.com/r/reactjs/), [/r/reduxjs](https://www.reddit.com/r/reduxjs/)
--   GitHub issues (bug reports and feature requests): https://github.com/reduxjs/react-redux/issues
--   Tutorials, articles, and further resources: [React/Redux Links](https://github.com/markerikson/react-redux-links)
+- Discord channel: [\#redux on Reactiflux](https://discord.gg/0ZcbPKXt5bZ6au5t) ([Reactiflux invite link](https://reactiflux.com))
+- Stack Overflow topics: [Redux](https://stackoverflow.com/questions/tagged/redux), [React Redux](https://stackoverflow.com/questions/tagged/redux)
+- Reddit: [/r/reactjs](https://www.reddit.com/r/reactjs/), [/r/reduxjs](https://www.reddit.com/r/reduxjs/)
+- GitHub issues (bug reports and feature requests): https://github.com/reduxjs/react-redux/issues
+- Tutorials, articles, and further resources: [React/Redux Links](https://github.com/markerikson/react-redux-links)

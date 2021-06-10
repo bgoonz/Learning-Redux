@@ -1,19 +1,19 @@
 export default (state = {}, action = {}) => {
   switch (action.type) {
-    case 'CATEGORIES_FETCHED':
-    case 'POSTS_FETCHED':
-    case 'COMMENTS_FETCHED':
+    case "CATEGORIES_FETCHED":
+    case "POSTS_FETCHED":
+    case "COMMENTS_FETCHED":
       return action.payload.models.reduce(
         (state, model) => {
-          state[model._id] = model
-          return state
+          state[model._id] = model;
+          return state;
         },
         { ...state }
-      )
+      );
     default:
-      return state
+      return state;
   }
-}
+};
 
 /* EXAMPLE STATE:
 {

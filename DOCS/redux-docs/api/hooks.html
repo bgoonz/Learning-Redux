@@ -1,96 +1,246 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Hooks</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Hooks</h1>
-</header>
-<p> </p>
-<h1 id="hooks">Hooks</h1>
-<p>React’s new <a href="https://reactjs.org/docs/hooks-intro.html">“hooks” APIs</a> give function components the ability to use local component state, execute side effects, and more. React also lets us write <a href="https://reactjs.org/docs/hooks-custom.html">custom hooks</a>, which let us extract reusable hooks to add our own behavior on top of React’s built-in hooks.</p>
-<p>React Redux includes its own custom hook APIs, which allow your React components to subscribe to the Redux store and dispatch actions.</p>
-<div class="tip">
-<p><strong>We recommend using the React-Redux hooks API as the default approach in your React components.</strong></p>
-<p>The existing <code>connect</code> API still works and will continue to be supported, but the hooks API is simpler and works better with TypeScript.</p>
-</div>
-<p>These hooks were first added in v7.1.0.</p>
-<h2 id="using-hooks-in-a-react-redux-app">Using Hooks in a React Redux App</h2>
-<p>As with <code>connect()</code>, you should start by wrapping your entire application in a <code>&lt;Provider&gt;</code> component to make the store available throughout the component tree:</p>
-<pre class="jsx"><code>const store = createStore(rootReducer)
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Hooks</title>
+    <style type="text/css">
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      span.underline {
+        text-decoration: underline;
+      }
+      div.column {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+    </style>
+    <style type="text/css">
+      a.sourceLine {
+        display: inline-block;
+        line-height: 1.25;
+      }
+      a.sourceLine {
+        pointer-events: none;
+        color: inherit;
+        text-decoration: inherit;
+      }
+      a.sourceLine:empty {
+        height: 1.2em;
+      }
+      .sourceCode {
+        overflow: visible;
+      }
+      code.sourceCode {
+        white-space: pre;
+        position: relative;
+      }
+      div.sourceCode {
+        margin: 1em 0;
+      }
+      pre.sourceCode {
+        margin: 0;
+      }
+      @media screen {
+        div.sourceCode {
+          overflow: auto;
+        }
+      }
+      @media print {
+        code.sourceCode {
+          white-space: pre-wrap;
+        }
+        a.sourceLine {
+          text-indent: -1em;
+          padding-left: 1em;
+        }
+      }
+      pre.numberSource a.sourceLine {
+        position: relative;
+        left: -4em;
+      }
+      pre.numberSource a.sourceLine::before {
+        content: attr(title);
+        position: relative;
+        left: -1em;
+        text-align: right;
+        vertical-align: baseline;
+        border: none;
+        pointer-events: all;
+        display: inline-block;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 0 4px;
+        width: 4em;
+        color: #aaaaaa;
+      }
+      pre.numberSource {
+        margin-left: 3em;
+        border-left: 1px solid #aaaaaa;
+        padding-left: 4px;
+      }
+      div.sourceCode {
+      }
+      @media screen {
+        a.sourceLine::before {
+          text-decoration: underline;
+        }
+      }
+      code span.al {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Alert */
+      code span.an {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Annotation */
+      code span.at {
+        color: #7d9029;
+      } /* Attribute */
+      code span.bn {
+        color: #40a070;
+      } /* BaseN */
+      code span.bu {
+      } /* BuiltIn */
+      code span.cf {
+        color: #007020;
+        font-weight: bold;
+      } /* ControlFlow */
+      code span.ch {
+        color: #4070a0;
+      } /* Char */
+      code span.cn {
+        color: #880000;
+      } /* Constant */
+      code span.co {
+        color: #60a0b0;
+        font-style: italic;
+      } /* Comment */
+      code span.cv {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* CommentVar */
+      code span.do {
+        color: #ba2121;
+        font-style: italic;
+      } /* Documentation */
+      code span.dt {
+        color: #902000;
+      } /* DataType */
+      code span.dv {
+        color: #40a070;
+      } /* DecVal */
+      code span.er {
+        color: #ff0000;
+        font-weight: bold;
+      } /* Error */
+      code span.ex {
+      } /* Extension */
+      code span.fl {
+        color: #40a070;
+      } /* Float */
+      code span.fu {
+        color: #06287e;
+      } /* Function */
+      code span.im {
+      } /* Import */
+      code span.in {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Information */
+      code span.kw {
+        color: #007020;
+        font-weight: bold;
+      } /* Keyword */
+      code span.op {
+        color: #666666;
+      } /* Operator */
+      code span.ot {
+        color: #007020;
+      } /* Other */
+      code span.pp {
+        color: #bc7a00;
+      } /* Preprocessor */
+      code span.sc {
+        color: #4070a0;
+      } /* SpecialChar */
+      code span.ss {
+        color: #bb6688;
+      } /* SpecialString */
+      code span.st {
+        color: #4070a0;
+      } /* String */
+      code span.va {
+        color: #19177c;
+      } /* Variable */
+      code span.vs {
+        color: #4070a0;
+      } /* VerbatimString */
+      code span.wa {
+        color: #60a0b0;
+        font-weight: bold;
+        font-style: italic;
+      } /* Warning */
+    </style>
+  </head>
+  <body>
+    <header id="title-block-header">
+      <h1 class="title">Hooks</h1>
+    </header>
+    <p> </p>
+    <h1 id="hooks">Hooks</h1>
+    <p>
+      React’s new
+      <a href="https://reactjs.org/docs/hooks-intro.html">“hooks” APIs</a> give
+      function components the ability to use local component state, execute side
+      effects, and more. React also lets us write
+      <a href="https://reactjs.org/docs/hooks-custom.html">custom hooks</a>,
+      which let us extract reusable hooks to add our own behavior on top of
+      React’s built-in hooks.
+    </p>
+    <p>
+      React Redux includes its own custom hook APIs, which allow your React
+      components to subscribe to the Redux store and dispatch actions.
+    </p>
+    <div class="tip">
+      <p>
+        <strong
+          >We recommend using the React-Redux hooks API as the default approach
+          in your React components.</strong
+        >
+      </p>
+      <p>
+        The existing <code>connect</code> API still works and will continue to
+        be supported, but the hooks API is simpler and works better with
+        TypeScript.
+      </p>
+    </div>
+    <p>These hooks were first added in v7.1.0.</p>
+    <h2 id="using-hooks-in-a-react-redux-app">
+      Using Hooks in a React Redux App
+    </h2>
+    <p>
+      As with <code>connect()</code>, you should start by wrapping your entire
+      application in a <code>&lt;Provider&gt;</code> component to make the store
+      available throughout the component tree:
+    </p>
+    <pre class="jsx"><code>const store = createStore(rootReducer)
 
 ReactDOM.render(
   &lt;Provider store={store}&gt;
@@ -98,61 +248,177 @@ ReactDOM.render(
   &lt;/Provider&gt;,
   document.getElementById(&#39;root&#39;)
 )</code></pre>
-<p>From there, you may import any of the listed React Redux hooks APIs and use them within your function components.</p>
-<h2 id="useselector"><code>useSelector()</code></h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> result<span class="op">:</span> any <span class="op">=</span> <span class="at">useSelector</span>(selector<span class="op">:</span> Function<span class="op">,</span> equalityFn<span class="op">?</span>: Function)</a></code></pre></div>
-<p>Allows you to extract data from the Redux store state, using a selector function.</p>
-<div class="info">
-<p>The selector function should be <a href="https://en.wikipedia.org/wiki/Pure_function">pure</a> since it is potentially executed multiple times and at arbitrary points in time.</p>
-</div>
-<p>The selector is approximately equivalent to the <a href="../using-react-redux/connect-mapstate"><code>mapStateToProps</code> argument to <code>connect</code></a> conceptually. The selector will be called with the entire Redux store state as its only argument. The selector will be run whenever the function component renders (unless its reference hasn’t changed since a previous render of the component so that a cached result can be returned by the hook without re-running the selector). <code>useSelector()</code> will also subscribe to the Redux store, and run your selector whenever an action is dispatched.</p>
-<p>However, there are some differences between the selectors passed to <code>useSelector()</code> and a <code>mapState</code> function:</p>
-<ul>
-<li>The selector may return any value as a result, not just an object. The return value of the selector will be used as the return value of the <code>useSelector()</code> hook.</li>
-<li>When an action is dispatched, <code>useSelector()</code> will do a reference comparison of the previous selector result value and the current result value. If they are different, the component will be forced to re-render. If they are the same, the component will not re-render.</li>
-<li>The selector function does <em>not</em> receive an <code>ownProps</code> argument. However, props can be used through closure (see the examples below) or by using a curried selector.</li>
-<li>Extra care must be taken when using memoizing selectors (see examples below for more details).</li>
-<li><code>useSelector()</code> uses strict <code>===</code> reference equality checks by default, not shallow equality (see the following section for more details).</li>
-</ul>
-<div class="info">
-<p>There are potential edge cases with using props in selectors that may cause issues. See the <a href="#usage-warnings">Usage Warnings</a> section of this page for further details.</p>
-</div>
-<p>You may call <code>useSelector()</code> multiple times within a single function component. Each call to <code>useSelector()</code> creates an individual subscription to the Redux store. Because of the React update batching behavior used in React Redux v7, a dispatched action that causes multiple <code>useSelector()</code>s in the same component to return new values <em>should</em> only result in a single re-render.</p>
-<h3 id="equality-comparisons-and-updates">Equality Comparisons and Updates</h3>
-<p>When the function component renders, the provided selector function will be called and its result will be returned from the <code>useSelector()</code> hook. (A cached result may be returned by the hook without re-running the selector if it’s the same function reference as on a previous render of the component.)</p>
-<p>However, when an action is dispatched to the Redux store, <code>useSelector()</code> only forces a re-render if the selector result appears to be different than the last result. As of v7.1.0-alpha.5, the default comparison is a strict <code>===</code> reference comparison. This is different than <code>connect()</code>, which uses shallow equality checks on the results of <code>mapState</code> calls to determine if re-rendering is needed. This has several implications on how you should use <code>useSelector()</code>.</p>
-<p>With <code>mapState</code>, all individual fields were returned in a combined object. It didn’t matter if the return object was a new reference or not - <code>connect()</code> just compared the individual fields. With <code>useSelector()</code>, returning a new object every time will <em>always</em> force a re-render by default. If you want to retrieve multiple values from the store, you can:</p>
-<ul>
-<li>Call <code>useSelector()</code> multiple times, with each call returning a single field value</li>
-<li>Use Reselect or a similar library to create a memoized selector that returns multiple values in one object, but only returns a new object when one of the values has changed.</li>
-<li>Use the <code>shallowEqual</code> function from React-Redux as the <code>equalityFn</code> argument to <code>useSelector()</code>, like:</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span> shallowEqual<span class="op">,</span> useSelector <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-redux&#39;</span></a>
+    <p>
+      From there, you may import any of the listed React Redux hooks APIs and
+      use them within your function components.
+    </p>
+    <h2 id="useselector"><code>useSelector()</code></h2>
+    <div class="sourceCode" id="cb2">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">const</span> result<span class="op">:</span> any <span class="op">=</span> <span class="at">useSelector</span>(selector<span class="op">:</span> Function<span class="op">,</span> equalityFn<span class="op">?</span>: Function)</a></code></pre>
+    </div>
+    <p>
+      Allows you to extract data from the Redux store state, using a selector
+      function.
+    </p>
+    <div class="info">
+      <p>
+        The selector function should be
+        <a href="https://en.wikipedia.org/wiki/Pure_function">pure</a> since it
+        is potentially executed multiple times and at arbitrary points in time.
+      </p>
+    </div>
+    <p>
+      The selector is approximately equivalent to the
+      <a href="../using-react-redux/connect-mapstate"
+        ><code>mapStateToProps</code> argument to <code>connect</code></a
+      >
+      conceptually. The selector will be called with the entire Redux store
+      state as its only argument. The selector will be run whenever the function
+      component renders (unless its reference hasn’t changed since a previous
+      render of the component so that a cached result can be returned by the
+      hook without re-running the selector). <code>useSelector()</code> will
+      also subscribe to the Redux store, and run your selector whenever an
+      action is dispatched.
+    </p>
+    <p>
+      However, there are some differences between the selectors passed to
+      <code>useSelector()</code> and a <code>mapState</code> function:
+    </p>
+    <ul>
+      <li>
+        The selector may return any value as a result, not just an object. The
+        return value of the selector will be used as the return value of the
+        <code>useSelector()</code> hook.
+      </li>
+      <li>
+        When an action is dispatched, <code>useSelector()</code> will do a
+        reference comparison of the previous selector result value and the
+        current result value. If they are different, the component will be
+        forced to re-render. If they are the same, the component will not
+        re-render.
+      </li>
+      <li>
+        The selector function does <em>not</em> receive an
+        <code>ownProps</code> argument. However, props can be used through
+        closure (see the examples below) or by using a curried selector.
+      </li>
+      <li>
+        Extra care must be taken when using memoizing selectors (see examples
+        below for more details).
+      </li>
+      <li>
+        <code>useSelector()</code> uses strict <code>===</code> reference
+        equality checks by default, not shallow equality (see the following
+        section for more details).
+      </li>
+    </ul>
+    <div class="info">
+      <p>
+        There are potential edge cases with using props in selectors that may
+        cause issues. See the
+        <a href="#usage-warnings">Usage Warnings</a> section of this page for
+        further details.
+      </p>
+    </div>
+    <p>
+      You may call <code>useSelector()</code> multiple times within a single
+      function component. Each call to <code>useSelector()</code> creates an
+      individual subscription to the Redux store. Because of the React update
+      batching behavior used in React Redux v7, a dispatched action that causes
+      multiple <code>useSelector()</code>s in the same component to return new
+      values <em>should</em> only result in a single re-render.
+    </p>
+    <h3 id="equality-comparisons-and-updates">
+      Equality Comparisons and Updates
+    </h3>
+    <p>
+      When the function component renders, the provided selector function will
+      be called and its result will be returned from the
+      <code>useSelector()</code> hook. (A cached result may be returned by the
+      hook without re-running the selector if it’s the same function reference
+      as on a previous render of the component.)
+    </p>
+    <p>
+      However, when an action is dispatched to the Redux store,
+      <code>useSelector()</code> only forces a re-render if the selector result
+      appears to be different than the last result. As of v7.1.0-alpha.5, the
+      default comparison is a strict <code>===</code> reference comparison. This
+      is different than <code>connect()</code>, which uses shallow equality
+      checks on the results of <code>mapState</code> calls to determine if
+      re-rendering is needed. This has several implications on how you should
+      use <code>useSelector()</code>.
+    </p>
+    <p>
+      With <code>mapState</code>, all individual fields were returned in a
+      combined object. It didn’t matter if the return object was a new reference
+      or not - <code>connect()</code> just compared the individual fields. With
+      <code>useSelector()</code>, returning a new object every time will
+      <em>always</em> force a re-render by default. If you want to retrieve
+      multiple values from the store, you can:
+    </p>
+    <ul>
+      <li>
+        Call <code>useSelector()</code> multiple times, with each call returning
+        a single field value
+      </li>
+      <li>
+        Use Reselect or a similar library to create a memoized selector that
+        returns multiple values in one object, but only returns a new object
+        when one of the values has changed.
+      </li>
+      <li>
+        Use the <code>shallowEqual</code> function from React-Redux as the
+        <code>equalityFn</code> argument to <code>useSelector()</code>, like:
+      </li>
+    </ul>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="im">import</span> <span class="op">{</span> shallowEqual<span class="op">,</span> useSelector <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;react-redux&#39;</span></a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="co">// later</span></a>
-<a class="sourceLine" id="cb3-4" title="4"><span class="kw">const</span> selectedData <span class="op">=</span> <span class="at">useSelector</span>(selectorReturningObject<span class="op">,</span> shallowEqual)</a></code></pre></div>
-<p>The optional comparison function also enables using something like Lodash’s <code>_.isEqual()</code> or Immutable.js’s comparison capabilities.</p>
-<h3 id="useselector-examples"><code>useSelector</code> Examples</h3>
-<p>Basic usage:</p>
-<pre class="jsx"><code>import React from &#39;react&#39;
+<a class="sourceLine" id="cb3-4" title="4"><span class="kw">const</span> selectedData <span class="op">=</span> <span class="at">useSelector</span>(selectorReturningObject<span class="op">,</span> shallowEqual)</a></code></pre>
+    </div>
+    <p>
+      The optional comparison function also enables using something like
+      Lodash’s <code>_.isEqual()</code> or Immutable.js’s comparison
+      capabilities.
+    </p>
+    <h3 id="useselector-examples"><code>useSelector</code> Examples</h3>
+    <p>Basic usage:</p>
+    <pre class="jsx"><code>import React from &#39;react&#39;
 import { useSelector } from &#39;react-redux&#39;
 
 export const CounterComponent = () =&gt; {
   const counter = useSelector((state) =&gt; state.counter)
   return &lt;div&gt;{counter}&lt;/div&gt;
 }</code></pre>
-<p>Using props via closure to determine what to extract:</p>
-<pre class="jsx"><code>import React from &#39;react&#39;
+    <p>Using props via closure to determine what to extract:</p>
+    <pre class="jsx"><code>import React from &#39;react&#39;
 import { useSelector } from &#39;react-redux&#39;
 
 export const TodoListItem = (props) =&gt; {
   const todo = useSelector((state) =&gt; state.todos[props.id])
   return &lt;div&gt;{todo.text}&lt;/div&gt;
 }</code></pre>
-<h4 id="using-memoizing-selectors">Using memoizing selectors</h4>
-<p>When using <code>useSelector</code> with an inline selector as shown above, a new instance of the selector is created whenever the component is rendered. This works as long as the selector does not maintain any state. However, memoizing selectors (e.g. created via <code>createSelector</code> from <code>reselect</code>) do have internal state, and therefore care must be taken when using them. Below you can find typical usage scenarios for memoizing selectors.</p>
-<p>When the selector does only depend on the state, simply ensure that it is declared outside of the component so that the same selector instance is used for each render:</p>
-<pre class="jsx"><code>import React from &#39;react&#39;
+    <h4 id="using-memoizing-selectors">Using memoizing selectors</h4>
+    <p>
+      When using <code>useSelector</code> with an inline selector as shown
+      above, a new instance of the selector is created whenever the component is
+      rendered. This works as long as the selector does not maintain any state.
+      However, memoizing selectors (e.g. created via
+      <code>createSelector</code> from <code>reselect</code>) do have internal
+      state, and therefore care must be taken when using them. Below you can
+      find typical usage scenarios for memoizing selectors.
+    </p>
+    <p>
+      When the selector does only depend on the state, simply ensure that it is
+      declared outside of the component so that the same selector instance is
+      used for each render:
+    </p>
+    <pre class="jsx"><code>import React from &#39;react&#39;
 import { useSelector } from &#39;react-redux&#39;
 import { createSelector } from &#39;reselect&#39;
 
@@ -174,8 +440,11 @@ export const App = () =&gt; {
     &lt;/&gt;
   )
 }</code></pre>
-<p>The same is true if the selector depends on the component’s props, but will only ever be used in a single instance of a single component:</p>
-<pre class="jsx"><code>import React from &#39;react&#39;
+    <p>
+      The same is true if the selector depends on the component’s props, but
+      will only ever be used in a single instance of a single component:
+    </p>
+    <pre class="jsx"><code>import React from &#39;react&#39;
 import { useSelector } from &#39;react-redux&#39;
 import { createSelector } from &#39;reselect&#39;
 
@@ -202,8 +471,17 @@ export const App = () =&gt; {
     &lt;/&gt;
   )
 }</code></pre>
-<p>However, when the selector is used in multiple component instances and depends on the component’s props, you need to ensure that each component instance gets its own selector instance (see <a href="https://github.com/reduxjs/reselect#accessing-react-props-in-selectors">here</a> for a more thorough explanation of why this is necessary):</p>
-<pre class="jsx"><code>import React, { useMemo } from &#39;react&#39;
+    <p>
+      However, when the selector is used in multiple component instances and
+      depends on the component’s props, you need to ensure that each component
+      instance gets its own selector instance (see
+      <a
+        href="https://github.com/reduxjs/reselect#accessing-react-props-in-selectors"
+        >here</a
+      >
+      for a more thorough explanation of why this is necessary):
+    </p>
+    <pre class="jsx"><code>import React, { useMemo } from &#39;react&#39;
 import { useSelector } from &#39;react-redux&#39;
 import { createSelector } from &#39;reselect&#39;
 
@@ -235,11 +513,18 @@ export const App = () =&gt; {
     &lt;/&gt;
   )
 }</code></pre>
-<h2 id="usedispatch"><code>useDispatch()</code></h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">const</span> dispatch <span class="op">=</span> <span class="at">useDispatch</span>()</a></code></pre></div>
-<p>This hook returns a reference to the <code>dispatch</code> function from the Redux store. You may use it to dispatch actions as needed.</p>
-<h4 id="examples">Examples</h4>
-<pre class="jsx"><code>import React from &#39;react&#39;
+    <h2 id="usedispatch"><code>useDispatch()</code></h2>
+    <div class="sourceCode" id="cb9">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">const</span> dispatch <span class="op">=</span> <span class="at">useDispatch</span>()</a></code></pre>
+    </div>
+    <p>
+      This hook returns a reference to the <code>dispatch</code> function from
+      the Redux store. You may use it to dispatch actions as needed.
+    </p>
+    <h4 id="examples">Examples</h4>
+    <pre class="jsx"><code>import React from &#39;react&#39;
 import { useDispatch } from &#39;react-redux&#39;
 
 export const CounterComponent = ({ value }) =&gt; {
@@ -254,8 +539,16 @@ export const CounterComponent = ({ value }) =&gt; {
     &lt;/div&gt;
   )
 }</code></pre>
-<p>When passing a callback using <code>dispatch</code> to a child component, you may sometimes want to memoize it with <a href="https://reactjs.org/docs/hooks-reference.html#usecallback"><code>useCallback</code></a>. <em>If</em> the child component is trying to optimize render behavior using <code>React.memo()</code> or similar, this avoids unnecessary rendering of child components due to the changed callback reference.</p>
-<pre class="jsx"><code>import React, { useCallback } from &#39;react&#39;
+    <p>
+      When passing a callback using <code>dispatch</code> to a child component,
+      you may sometimes want to memoize it with
+      <a href="https://reactjs.org/docs/hooks-reference.html#usecallback"
+        ><code>useCallback</code></a
+      >. <em>If</em> the child component is trying to optimize render behavior
+      using <code>React.memo()</code> or similar, this avoids unnecessary
+      rendering of child components due to the changed callback reference.
+    </p>
+    <pre class="jsx"><code>import React, { useCallback } from &#39;react&#39;
 import { useDispatch } from &#39;react-redux&#39;
 
 export const CounterComponent = ({ value }) =&gt; {
@@ -276,10 +569,23 @@ export const CounterComponent = ({ value }) =&gt; {
 export const MyIncrementButton = React.memo(({ onIncrement }) =&gt; (
   &lt;button onClick={onIncrement}&gt;Increment counter&lt;/button&gt;
 ))</code></pre>
-<p>:::info</p>
-<p>The <code>dispatch</code> function reference will be stable as long as the same store instance is being passed to the <code>&lt;Provider&gt;</code>. Normally, that store instance never changes in an application.</p>
-<p>However, the React hooks lint rules do not know that <code>dispatch</code> should be stable, and will warn that the <code>dispatch</code> variable should be added to dependency arrays for <code>useEffect</code> and <code>useCallback</code>. The simplest solution is to do just that:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="im">export</span> <span class="kw">const</span> <span class="at">Todos</span>() <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+    <p>:::info</p>
+    <p>
+      The <code>dispatch</code> function reference will be stable as long as the
+      same store instance is being passed to the <code>&lt;Provider&gt;</code>.
+      Normally, that store instance never changes in an application.
+    </p>
+    <p>
+      However, the React hooks lint rules do not know that
+      <code>dispatch</code> should be stable, and will warn that the
+      <code>dispatch</code> variable should be added to dependency arrays for
+      <code>useEffect</code> and <code>useCallback</code>. The simplest solution
+      is to do just that:
+    </p>
+    <div class="sourceCode" id="cb12">
+      <pre
+        class="sourceCode js"
+      ><code class="sourceCode javascript"><a class="sourceLine" id="cb12-1" title="1"><span class="im">export</span> <span class="kw">const</span> <span class="at">Todos</span>() <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
 <a class="sourceLine" id="cb12-2" title="2">  <span class="kw">const</span> dispatch <span class="op">=</span> <span class="at">useDispatch</span>()<span class="op">;</span></a>
 <a class="sourceLine" id="cb12-3" title="3"></a>
 <a class="sourceLine" id="cb12-4" title="4">  <span class="at">useEffect</span>(() <span class="kw">=&gt;</span> <span class="op">{</span></a>
@@ -469,6 +775,7 @@ export const MyIncrementButton = React.memo(({ onIncrement }) =&gt; (
 <a class="sourceLine" id="cb12-188" title="188"></a>
 <a class="sourceLine" id="cb12-189" title="189">### Additional considerations when using hooks</a>
 <a class="sourceLine" id="cb12-190" title="190"></a>
-<a class="sourceLine" id="cb12-191" title="191">There are some architectural trade offs to take into consideration when deciding whether to use hooks or <span class="va">not</span>. <span class="at">Mark</span> Erikson summarizes these nicely <span class="kw">in</span> his two blog posts [Thoughts on React Hooks<span class="op">,</span> Redux<span class="op">,</span> and Separation <span class="kw">of</span> Concerns](https<span class="op">:</span><span class="co">//blog.isquaredsoftware.com/2019/07/blogged-answers-thoughts-on-hooks/) and [Hooks, HOCs, and Tradeoffs](https://blog.isquaredsoftware.com/2019/09/presentation-hooks-hocs-tradeoffs/).</span></a></code></pre></div>
-</body>
+<a class="sourceLine" id="cb12-191" title="191">There are some architectural trade offs to take into consideration when deciding whether to use hooks or <span class="va">not</span>. <span class="at">Mark</span> Erikson summarizes these nicely <span class="kw">in</span> his two blog posts [Thoughts on React Hooks<span class="op">,</span> Redux<span class="op">,</span> and Separation <span class="kw">of</span> Concerns](https<span class="op">:</span><span class="co">//blog.isquaredsoftware.com/2019/07/blogged-answers-thoughts-on-hooks/) and [Hooks, HOCs, and Tradeoffs](https://blog.isquaredsoftware.com/2019/09/presentation-hooks-hocs-tradeoffs/).</span></a></code></pre>
+    </div>
+  </body>
 </html>

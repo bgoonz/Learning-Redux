@@ -1,7 +1,6 @@
- 
 
-Hooks
-=====
+
+# Hooks
 
 React’s new [“hooks” APIs](https://reactjs.org/docs/hooks-intro.html) give function components the ability to use local component state, execute side effects, and more. React also lets us write [custom hooks](https://reactjs.org/docs/hooks-custom.html), which let us extract reusable hooks to add our own behavior on top of React’s built-in hooks.
 
@@ -13,8 +12,7 @@ The existing `connect` API still works and will continue to be supported, but th
 
 These hooks were first added in v7.1.0.
 
-Using Hooks in a React Redux App
---------------------------------
+## Using Hooks in a React Redux App
 
 As with `connect()`, you should start by wrapping your entire application in a `<Provider>` component to make the store available throughout the component tree:
 
@@ -29,8 +27,7 @@ As with `connect()`, you should start by wrapping your entire application in a `
 
 From there, you may import any of the listed React Redux hooks APIs and use them within your function components.
 
-`useSelector()`
----------------
+## `useSelector()`
 
     const result: any = useSelector(selector: Function, equalityFn?: Function)
 
@@ -42,15 +39,15 @@ The selector is approximately equivalent to the [`mapStateToProps` argument to `
 
 However, there are some differences between the selectors passed to `useSelector()` and a `mapState` function:
 
--   The selector may return any value as a result, not just an object. The return value of the selector will be used as the return value of the `useSelector()` hook.
--   When an action is dispatched, `useSelector()` will do a reference comparison of the previous selector result value and the current result value. If they are different, the component will be forced to re-render. If they are the same, the component will not re-render.
--   The selector function does *not* receive an `ownProps` argument. However, props can be used through closure (see the examples below) or by using a curried selector.
--   Extra care must be taken when using memoizing selectors (see examples below for more details).
--   `useSelector()` uses strict `===` reference equality checks by default, not shallow equality (see the following section for more details).
+- The selector may return any value as a result, not just an object. The return value of the selector will be used as the return value of the `useSelector()` hook.
+- When an action is dispatched, `useSelector()` will do a reference comparison of the previous selector result value and the current result value. If they are different, the component will be forced to re-render. If they are the same, the component will not re-render.
+- The selector function does _not_ receive an `ownProps` argument. However, props can be used through closure (see the examples below) or by using a curried selector.
+- Extra care must be taken when using memoizing selectors (see examples below for more details).
+- `useSelector()` uses strict `===` reference equality checks by default, not shallow equality (see the following section for more details).
 
 There are potential edge cases with using props in selectors that may cause issues. See the [Usage Warnings](#usage-warnings) section of this page for further details.
 
-You may call `useSelector()` multiple times within a single function component. Each call to `useSelector()` creates an individual subscription to the Redux store. Because of the React update batching behavior used in React Redux v7, a dispatched action that causes multiple `useSelector()`s in the same component to return new values *should* only result in a single re-render.
+You may call `useSelector()` multiple times within a single function component. Each call to `useSelector()` creates an individual subscription to the Redux store. Because of the React update batching behavior used in React Redux v7, a dispatched action that causes multiple `useSelector()`s in the same component to return new values _should_ only result in a single re-render.
 
 ### Equality Comparisons and Updates
 
@@ -58,16 +55,16 @@ When the function component renders, the provided selector function will be call
 
 However, when an action is dispatched to the Redux store, `useSelector()` only forces a re-render if the selector result appears to be different than the last result. As of v7.1.0-alpha.5, the default comparison is a strict `===` reference comparison. This is different than `connect()`, which uses shallow equality checks on the results of `mapState` calls to determine if re-rendering is needed. This has several implications on how you should use `useSelector()`.
 
-With `mapState`, all individual fields were returned in a combined object. It didn’t matter if the return object was a new reference or not - `connect()` just compared the individual fields. With `useSelector()`, returning a new object every time will *always* force a re-render by default. If you want to retrieve multiple values from the store, you can:
+With `mapState`, all individual fields were returned in a combined object. It didn’t matter if the return object was a new reference or not - `connect()` just compared the individual fields. With `useSelector()`, returning a new object every time will _always_ force a re-render by default. If you want to retrieve multiple values from the store, you can:
 
--   Call `useSelector()` multiple times, with each call returning a single field value
--   Use Reselect or a similar library to create a memoized selector that returns multiple values in one object, but only returns a new object when one of the values has changed.
--   Use the `shallowEqual` function from React-Redux as the `equalityFn` argument to `useSelector()`, like:
+- Call `useSelector()` multiple times, with each call returning a single field value
+- Use Reselect or a similar library to create a memoized selector that returns multiple values in one object, but only returns a new object when one of the values has changed.
+- Use the `shallowEqual` function from React-Redux as the `equalityFn` argument to `useSelector()`, like:
 
-    import { shallowEqual, useSelector } from 'react-redux'
+  import { shallowEqual, useSelector } from 'react-redux'
 
-    // later
-    const selectedData = useSelector(selectorReturningObject, shallowEqual)
+  // later
+  const selectedData = useSelector(selectorReturningObject, shallowEqual)
 
 The optional comparison function also enables using something like Lodash’s `_.isEqual()` or Immutable.js’s comparison capabilities.
 
@@ -187,8 +184,7 @@ However, when the selector is used in multiple component instances and depends o
       )
     }
 
-`useDispatch()`
----------------
+## `useDispatch()`
 
     const dispatch = useDispatch()
 
@@ -212,7 +208,7 @@ This hook returns a reference to the `dispatch` function from the Redux store. Y
       )
     }
 
-When passing a callback using `dispatch` to a child component, you may sometimes want to memoize it with [`useCallback`](https://reactjs.org/docs/hooks-reference.html#usecallback). *If* the child component is trying to optimize render behavior using `React.memo()` or similar, this avoids unnecessary rendering of child components due to the changed callback reference.
+When passing a callback using `dispatch` to a child component, you may sometimes want to memoize it with [`useCallback`](https://reactjs.org/docs/hooks-reference.html#usecallback). _If_ the child component is trying to optimize render behavior using `React.memo()` or similar, this avoids unnecessary rendering of child components due to the changed callback reference.
 
     import React, { useCallback } from 'react'
     import { useDispatch } from 'react-redux'

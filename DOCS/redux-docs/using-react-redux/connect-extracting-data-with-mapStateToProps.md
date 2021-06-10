@@ -1,15 +1,13 @@
- 
 
-Connect: Extracting Data with `mapStateToProps`
-===============================================
+
+# Connect: Extracting Data with `mapStateToProps`
 
 As the first argument passed in to `connect`, `mapStateToProps` is used for selecting the part of the data from the store that the connected component needs. It’s frequently referred to as just `mapState` for short.
 
--   It is called every time the store state changes.
--   It receives the entire store state, and should return an object of data this component needs.
+- It is called every time the store state changes.
+- It receives the entire store state, and should return an object of data this component needs.
 
-Defining `mapStateToProps`
---------------------------
+## Defining `mapStateToProps`
 
 `mapStateToProps` should be defined as a function:
 
@@ -67,8 +65,8 @@ You do not need to include values from `ownProps` in the object returned from `m
 
 Your `mapStateToProps` function should return a plain object that contains the data the component needs:
 
--   Each field in the object will become a prop for your actual component
--   The values in the fields will be used to determine if your component needs to re-render
+- Each field in the object will become a prop for your actual component
+- The values in the fields will be used to determine if your component needs to re-render
 
 For example:
 
@@ -84,8 +82,7 @@ For example:
 
 > Note: In advanced scenarios where you need more control over the rendering performance, `mapStateToProps` can also return a function. In this case, that function will be used as the final `mapStateToProps` for a particular component instance. This allows you to do per-instance memoization. See the [Advanced Usage: Factory Functions](../api/connect.md) section of the docs for more details, as well as [PR \#279](https://github.com/reduxjs/react-redux/pull/279) and the tests it adds. Most apps never need this.
 
-Usage Guidelines
-----------------
+## Usage Guidelines
 
 ### Let `mapStateToProps` Reshape the Data from the Store
 
@@ -103,10 +100,9 @@ As part of the “re-shaping data” idea, `mapStateToProps` functions frequentl
 
 ### `mapStateToProps` Functions Should Be Pure and Synchronous
 
-Much like a Redux reducer, a `mapStateToProps` function should always be 100% pure and synchronous. It should only take `state` (and `ownProps`) as arguments, and return the data the component needs as props without mutating those arguments. It should *not* be used to trigger asynchronous behavior like AJAX calls for data fetching, and the functions should not be declared as `async`.
+Much like a Redux reducer, a `mapStateToProps` function should always be 100% pure and synchronous. It should only take `state` (and `ownProps`) as arguments, and return the data the component needs as props without mutating those arguments. It should _not_ be used to trigger asynchronous behavior like AJAX calls for data fetching, and the functions should not be declared as `async`.
 
-`mapStateToProps` and Performance
----------------------------------
+## `mapStateToProps` and Performance
 
 ### Return Values Determine If Your Component Re-Renders
 
@@ -126,23 +122,23 @@ React Redux does shallow comparisons to see if the `mapStateToProps` results hav
 
 Many common operations result in new object or array references being created:
 
--   Creating new arrays with `someArray.map()` or `someArray.filter()`
--   Merging arrays with `array.concat`
--   Selecting portion of an array with `array.slice`
--   Copying values with `Object.assign`
--   Copying values with the spread operator `{ ...oldState, ...newData }`
+- Creating new arrays with `someArray.map()` or `someArray.filter()`
+- Merging arrays with `array.concat`
+- Selecting portion of an array with `array.slice`
+- Copying values with `Object.assign`
+- Copying values with the spread operator `{ ...oldState, ...newData }`
 
-Put these operations in [memoized selector functions](https://redux.js.org/recipes/computing-derived-data#creating-a-memoized-selector) to ensure that they only run if the input values have changed. This will also ensure that if the input values *haven’t* changed, `mapStateToProps` will still return the same result values as before, and `connect` can skip re-rendering.
+Put these operations in [memoized selector functions](https://redux.js.org/recipes/computing-derived-data#creating-a-memoized-selector) to ensure that they only run if the input values have changed. This will also ensure that if the input values _haven’t_ changed, `mapStateToProps` will still return the same result values as before, and `connect` can skip re-rendering.
 
 ### Only Perform Expensive Operations When Data Changes
 
-Transforming data can often be expensive (*and* usually results in new object references being created). In order for your `mapStateToProps` function to be as fast as possible, you should only re-run these complex transformations when the relevant data has changed.
+Transforming data can often be expensive (_and_ usually results in new object references being created). In order for your `mapStateToProps` function to be as fast as possible, you should only re-run these complex transformations when the relevant data has changed.
 
 There are a few ways to approach this:
 
--   Some transformations could be calculated in an action creator or reducer, and the transformed data could be kept in the store
--   Transformations can also be done in a component’s `render()` method
--   If the transformation does need to be done in a `mapStateToProps` function, then we recommend using [memoized selector functions](https://redux.js.org/recipes/computing-derived-data#creating-a-memoized-selector) to ensure the transformation is only run when the input values have changed.
+- Some transformations could be calculated in an action creator or reducer, and the transformed data could be kept in the store
+- Transformations can also be done in a component’s `render()` method
+- If the transformation does need to be done in a `mapStateToProps` function, then we recommend using [memoized selector functions](https://redux.js.org/recipes/computing-derived-data#creating-a-memoized-selector) to ensure the transformation is only run when the input values have changed.
 
 #### Immutable.js Performance Concerns
 
@@ -152,12 +148,11 @@ Immutable.js author Lee Byron on Twitter [explicitly advises avoiding `toJS` whe
 
 There’s several other performance concerns to take into consideration with Immutable.js - see the list of links at the end of this page for more information.
 
-Behavior and Gotchas
---------------------
+## Behavior and Gotchas
 
 ### `mapStateToProps` Will Not Run if the Store State is the Same
 
-The wrapper component generated by `connect` subscribes to the Redux store. Every time an action is dispatched, it calls `store.getState()` and checks to see if `lastState === currentState`. If the two state values are identical by reference, then it will *not* re-run your `mapStateToProps` function, because it assumes that the rest of the store state hasn’t changed either.
+The wrapper component generated by `connect` subscribes to the Redux store. Every time an action is dispatched, it calls `store.getState()` and checks to see if `lastState === currentState`. If the two state values are identical by reference, then it will _not_ re-run your `mapStateToProps` function, because it assumes that the rest of the store state hasn’t changed either.
 
 The Redux `combineReducers` utility function tries to optimize for this. If none of the slice reducers returned a new value, then `combineReducers` returns the old state object instead of a new one. This means that mutation in a reducer can lead to the root state object not being updated, and thus the UI won’t re-render.
 
@@ -169,7 +164,7 @@ This means that **you should not add the `ownProps` argument unless you actually
 
 There are some edge cases around this behavior. **The number of mandatory arguments determines whether `mapStateToProps` will receive `ownProps`**.
 
-If the formal definition of the function contains one mandatory parameter, `mapStateToProps` will *not* receive `ownProps`:
+If the formal definition of the function contains one mandatory parameter, `mapStateToProps` will _not_ receive `ownProps`:
 
     function mapStateToProps(state) {
       console.log(state) // state
@@ -180,7 +175,7 @@ If the formal definition of the function contains one mandatory parameter, `mapS
       console.log(ownProps) // {}
     }
 
-It *will* receive `ownProps` when the formal definition of the function contains zero or two mandatory parameters:
+It _will_ receive `ownProps` when the formal definition of the function contains zero or two mandatory parameters:
 
     function mapStateToProps(state, ownProps) {
       console.log(state) // state
@@ -197,23 +192,22 @@ It *will* receive `ownProps` when the formal definition of the function contains
       console.log(args[1]) // ownProps
     }
 
-Links and References
---------------------
+## Links and References
 
 **Tutorials**
 
--   [Practical Redux Series, Part 6: Connected Lists, Forms, and Performance](https://blog.isquaredsoftware.com/2017/01/practical-redux-part-6-connected-lists-forms-and-performance/)
--   [Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance](https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/)
+- [Practical Redux Series, Part 6: Connected Lists, Forms, and Performance](https://blog.isquaredsoftware.com/2017/01/practical-redux-part-6-connected-lists-forms-and-performance/)
+- [Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance](https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/)
 
 **Performance**
 
--   [Lee Byron’s Tweet Suggesting to avoid `toJS`, `toArray` and `toObject` for Performance](https://twitter.com/leeb/status/746733697093668864)
--   [Improving React and Redux performance with Reselect](https://blog.rangle.io/react-and-redux-performance-with-reselect/)
--   [Immutable data performance links](https://github.com/markerikson/react-redux-links/blob/master/react-performance.md#immutable-data)
+- [Lee Byron’s Tweet Suggesting to avoid `toJS`, `toArray` and `toObject` for Performance](https://twitter.com/leeb/status/746733697093668864)
+- [Improving React and Redux performance with Reselect](https://blog.rangle.io/react-and-redux-performance-with-reselect/)
+- [Immutable data performance links](https://github.com/markerikson/react-redux-links/blob/master/react-performance.md#immutable-data)
 
 **Q&A**
 
--   [Why Is My Component Re-Rendering Too Often?](https://redux.js.org/faq/react-redux#why-is-my-component-re-rendering-too-often)
--   [Why isn’t my component re-rendering, or my mapStateToProps running](https://redux.js.org/faq/react-redux#why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running)
--   [How can I speed up my mapStateToProps?](https://redux.js.org/faq/react-redux#how-can-i-speed-up-my-mapstatetoprops)
--   [Should I only connect my top component, or can I connect multiple components in my tree?](https://redux.js.org/faq/react-redux#should-i-only-connect-my-top-component-or-can-i-connect-multiple-components-in-my-tree)
+- [Why Is My Component Re-Rendering Too Often?](https://redux.js.org/faq/react-redux#why-is-my-component-re-rendering-too-often)
+- [Why isn’t my component re-rendering, or my mapStateToProps running](https://redux.js.org/faq/react-redux#why-isnt-my-component-re-rendering-or-my-mapstatetoprops-running)
+- [How can I speed up my mapStateToProps?](https://redux.js.org/faq/react-redux#how-can-i-speed-up-my-mapstatetoprops)
+- [Should I only connect my top component, or can I connect multiple components in my tree?](https://redux.js.org/faq/react-redux#should-i-only-connect-my-top-component-or-can-i-connect-multiple-components-in-my-tree)

@@ -1,10 +1,8 @@
- 
 
-`connect()`
-===========
 
-Overview
---------
+# `connect()`
+
+## Overview
 
 The `connect()` function connects a React component to a Redux store.
 
@@ -18,8 +16,7 @@ The `mapStateToProps` and `mapDispatchToProps` deals with your Redux store’s `
 
 The returns of `mapStateToProps` and `mapDispatchToProps` are referred to internally as `stateProps` and `dispatchProps`, respectively. They will be supplied to `mergeProps`, if defined, as the first and the second argument, where the third argument will be `ownProps`. The combined result, commonly referred to as `mergedProps`, will then be supplied to your connected component.
 
-`connect()` Parameters
-----------------------
+## `connect()` Parameters
 
 `connect` accepts four different parameters, all optional. By convention, they are called:
 
@@ -47,7 +44,7 @@ If your `mapStateToProps` function is declared as taking one parameter, it will 
 
 ##### `ownProps`
 
-If your `mapStateToProps` function is declared as taking two parameters, it will be called whenever the store state changes *or* when the wrapper component receives new props (based on shallow equality comparisons). It will be given the store state as the first parameter, and the wrapper component’s props as the second parameter.
+If your `mapStateToProps` function is declared as taking two parameters, it will be called whenever the store state changes _or_ when the wrapper component receives new props (based on shallow equality comparisons). It will be given the store state as the first parameter, and the wrapper component’s props as the second parameter.
 
 The second parameter is normally referred to as `ownProps` by convention.
 
@@ -199,7 +196,7 @@ React-Redux v6 allows you to supply a custom context instance to be used by Reac
 
 #### `pure: boolean`
 
--   default value: `true`
+- default value: `true`
 
 Assumes that the wrapped component is a “pure” component and does not rely on any input or state other than its props and the selected Redux store’s state.
 
@@ -209,18 +206,18 @@ We provide a few examples in the following sections.
 
 #### `areStatesEqual: (next: Object, prev: Object) => boolean`
 
--   default value: `strictEqual: (next, prev) => prev === next`
+- default value: `strictEqual: (next, prev) => prev === next`
 
 When pure, compares incoming store state to its previous value.
 
-*Example 1*
+_Example 1_
 
     const areStatesEqual = (next, prev) =>
       prev.entities.todos === next.entities.todos
 
 You may wish to override `areStatesEqual` if your `mapStateToProps` function is computationally expensive and is also only concerned with a small slice of your state. The example above will effectively ignore state changes for everything but that slice of state.
 
-*Example 2*
+_Example 2_
 
 If you have impure reducers that mutate your store state, you may wish to override `areStatesEqual` to always return false:
 
@@ -230,7 +227,7 @@ This would likely impact the other equality checks as well, depending on your `m
 
 #### `areOwnPropsEqual: (next: Object, prev: Object) => boolean`
 
--   default value: `shallowEqual: (objA, objB) => boolean` ( returns `true` when each field of the objects is equal )
+- default value: `shallowEqual: (objA, objB) => boolean` ( returns `true` when each field of the objects is equal )
 
 When pure, compares incoming props to its previous value.
 
@@ -238,14 +235,14 @@ You may wish to override `areOwnPropsEqual` as a way to whitelist incoming props
 
 #### `areStatePropsEqual: (next: Object, prev: Object) => boolean`
 
--   type: `function`
--   default value: `shallowEqual`
+- type: `function`
+- default value: `shallowEqual`
 
 When pure, compares the result of `mapStateToProps` to its previous value.
 
 #### `areMergedPropsEqual: (next: Object, prev: Object) => boolean`
 
--   default value: `shallowEqual`
+- default value: `shallowEqual`
 
 When pure, compares the result of `mergeProps` to its previous value.
 
@@ -259,8 +256,7 @@ You may wish to override `areMergedPropsEqual` to implement a `deepEqual` if you
 
 If `{forwardRef : true}` has been passed to `connect`, adding a ref to the connected wrapper component will actually return the instance of the wrapped component.
 
-`connect()` Returns
--------------------
+## `connect()` Returns
 
 The return of `connect()` is a wrapper function that takes your component and returns a wrapper component with the additional props it injects.
 
@@ -289,179 +285,177 @@ In most cases, the wrapper function will be called right away, without being sav
 
     export default connect(mapState, mapDispatch)(Login)
 
-Example Usage
--------------
+## Example Usage
 
 Because `connect` is so flexible, it may help to see some additional examples of how it can be called:
 
--   Inject just `dispatch` and don’t listen to store
+- Inject just `dispatch` and don’t listen to store
 
-    export default connect()(TodoApp)
+  export default connect()(TodoApp)
 
--   Inject all action creators (`addTodo`, `completeTodo`, …) without subscribing to the store
+- Inject all action creators (`addTodo`, `completeTodo`, …) without subscribing to the store
 
-    import * as actionCreators from './actionCreators'
+  import \* as actionCreators from './actionCreators'
 
-    export default connect(null, actionCreators)(TodoApp)
+  export default connect(null, actionCreators)(TodoApp)
 
--   Inject `dispatch` and every field in the global state
+- Inject `dispatch` and every field in the global state
 
 > Don’t do this! It kills any performance optimizations because `TodoApp` will rerender after every state change. It’s better to have more granular `connect()` on several components in your view hierarchy that each only listen to a relevant slice of the state.
 
     // don't do this!
     export default connect((state) => state)(TodoApp)
 
--   Inject `dispatch` and `todos`
+- Inject `dispatch` and `todos`
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    export default connect(mapStateToProps)(TodoApp)
+  export default connect(mapStateToProps)(TodoApp)
 
--   Inject `todos` and all action creators
+- Inject `todos` and all action creators
 
-    import * as actionCreators from './actionCreators'
+  import \* as actionCreators from './actionCreators'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    export default connect(mapStateToProps, actionCreators)(TodoApp)
+  export default connect(mapStateToProps, actionCreators)(TodoApp)
 
--   Inject `todos` and all action creators (`addTodo`, `completeTodo`, …) as `actions`
+- Inject `todos` and all action creators (`addTodo`, `completeTodo`, …) as `actions`
 
-    import * as actionCreators from './actionCreators'
-    import { bindActionCreators } from 'redux'
+  import \* as actionCreators from './actionCreators'
+  import { bindActionCreators } from 'redux'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    function mapDispatchToProps(dispatch) {
-      return { actions: bindActionCreators(actionCreators, dispatch) }
-    }
+  function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actionCreators, dispatch) }
+  }
 
-    export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+  export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
--   Inject `todos` and a specific action creator (`addTodo`)
+- Inject `todos` and a specific action creator (`addTodo`)
 
-    import { addTodo } from './actionCreators'
-    import { bindActionCreators } from 'redux'
+  import { addTodo } from './actionCreators'
+  import { bindActionCreators } from 'redux'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    function mapDispatchToProps(dispatch) {
-      return bindActionCreators({ addTodo }, dispatch)
-    }
+  function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ addTodo }, dispatch)
+  }
 
-    export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+  export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
--   Inject `todos` and specific action creators (`addTodo` and `deleteTodo`) with shorthand syntax
+- Inject `todos` and specific action creators (`addTodo` and `deleteTodo`) with shorthand syntax
 
-    import { addTodo, deleteTodo } from './actionCreators'
+  import { addTodo, deleteTodo } from './actionCreators'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    const mapDispatchToProps = {
-      addTodo,
-      deleteTodo,
-    }
+  const mapDispatchToProps = {
+  addTodo,
+  deleteTodo,
+  }
 
-    export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+  export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
--   Inject `todos`, `todoActionCreators` as `todoActions`, and `counterActionCreators` as `counterActions`
+- Inject `todos`, `todoActionCreators` as `todoActions`, and `counterActionCreators` as `counterActions`
 
-    import * as todoActionCreators from './todoActionCreators'
-    import * as counterActionCreators from './counterActionCreators'
-    import { bindActionCreators } from 'redux'
+  import _ as todoActionCreators from './todoActionCreators'
+  import _ as counterActionCreators from './counterActionCreators'
+  import { bindActionCreators } from 'redux'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    function mapDispatchToProps(dispatch) {
-      return {
-        todoActions: bindActionCreators(todoActionCreators, dispatch),
-        counterActions: bindActionCreators(counterActionCreators, dispatch),
-      }
-    }
+  function mapDispatchToProps(dispatch) {
+  return {
+  todoActions: bindActionCreators(todoActionCreators, dispatch),
+  counterActions: bindActionCreators(counterActionCreators, dispatch),
+  }
+  }
 
-    export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+  export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
--   Inject `todos`, and todoActionCreators and counterActionCreators together as `actions`
+- Inject `todos`, and todoActionCreators and counterActionCreators together as `actions`
 
-    import * as todoActionCreators from './todoActionCreators'
-    import * as counterActionCreators from './counterActionCreators'
-    import { bindActionCreators } from 'redux'
+  import _ as todoActionCreators from './todoActionCreators'
+  import _ as counterActionCreators from './counterActionCreators'
+  import { bindActionCreators } from 'redux'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    function mapDispatchToProps(dispatch) {
-      return {
-        actions: bindActionCreators(
-          { ...todoActionCreators, ...counterActionCreators },
-          dispatch
-        ),
-      }
-    }
+  function mapDispatchToProps(dispatch) {
+  return {
+  actions: bindActionCreators(
+  { ...todoActionCreators, ...counterActionCreators },
+  dispatch
+  ),
+  }
+  }
 
-    export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+  export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
--   Inject `todos`, and all `todoActionCreators` and `counterActionCreators` directly as props
+- Inject `todos`, and all `todoActionCreators` and `counterActionCreators` directly as props
 
-    import * as todoActionCreators from './todoActionCreators'
-    import * as counterActionCreators from './counterActionCreators'
-    import { bindActionCreators } from 'redux'
+  import _ as todoActionCreators from './todoActionCreators'
+  import _ as counterActionCreators from './counterActionCreators'
+  import { bindActionCreators } from 'redux'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    function mapDispatchToProps(dispatch) {
-      return bindActionCreators(
-        { ...todoActionCreators, ...counterActionCreators },
-        dispatch
-      )
-    }
+  function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+  { ...todoActionCreators, ...counterActionCreators },
+  dispatch
+  )
+  }
 
-    export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+  export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
--   Inject `todos` of a specific user depending on props
+- Inject `todos` of a specific user depending on props
 
-    import * as actionCreators from './actionCreators'
+  import \* as actionCreators from './actionCreators'
 
-    function mapStateToProps(state, ownProps) {
-      return { todos: state.todos[ownProps.userId] }
-    }
+  function mapStateToProps(state, ownProps) {
+  return { todos: state.todos[ownProps.userId] }
+  }
 
-    export default connect(mapStateToProps)(TodoApp)
+  export default connect(mapStateToProps)(TodoApp)
 
--   Inject `todos` of a specific user depending on props, and inject `props.userId` into the action
+- Inject `todos` of a specific user depending on props, and inject `props.userId` into the action
 
-    import * as actionCreators from './actionCreators'
+  import \* as actionCreators from './actionCreators'
 
-    function mapStateToProps(state) {
-      return { todos: state.todos }
-    }
+  function mapStateToProps(state) {
+  return { todos: state.todos }
+  }
 
-    function mergeProps(stateProps, dispatchProps, ownProps) {
-      return Object.assign({}, ownProps, {
-        todos: stateProps.todos[ownProps.userId],
-        addTodo: (text) => dispatchProps.addTodo(ownProps.userId, text),
-      })
-    }
+  function mergeProps(stateProps, dispatchProps, ownProps) {
+  return Object.assign({}, ownProps, {
+  todos: stateProps.todos[ownProps.userId],
+  addTodo: (text) => dispatchProps.addTodo(ownProps.userId, text),
+  })
+  }
 
-    export default connect(mapStateToProps, actionCreators, mergeProps)(TodoApp)
+  export default connect(mapStateToProps, actionCreators, mergeProps)(TodoApp)
 
-Notes
------
+## Notes
 
 ### The Arity of `mapToProps` Functions
 
@@ -513,12 +507,11 @@ The factory functions are commonly used with memoized selectors. This gives you 
     }
     export default connect(makeMapState)(SomeComponent)
 
-Legacy Version Docs
--------------------
+## Legacy Version Docs
 
 While the `connect` API has stayed almost entirely API-compatible between all of our major versions, there have been some small changes in options and behavior from version to version.
 
 For details on the legacy 5.x and 6.x versions, please see these archived files in the React Redux repo:
 
--   [5.x `connect` API reference](https://github.com/reduxjs/react-redux/blob/v7.2.2/website/versioned_docs/version-5.x/api/connect.md)
--   [6.x `connect` API reference](https://github.com/reduxjs/react-redux/blob/v7.2.2/website/versioned_docs/version-6.x/api/connect.md)
+- [5.x `connect` API reference](https://github.com/reduxjs/react-redux/blob/v7.2.2/website/versioned_docs/version-5.x/api/connect.md)
+- [6.x `connect` API reference](https://github.com/reduxjs/react-redux/blob/v7.2.2/website/versioned_docs/version-6.x/api/connect.md)

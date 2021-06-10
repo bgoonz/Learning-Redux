@@ -1,6 +1,6 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Select from '../widgets/Select'
+import React from "react";
+import { connect } from "react-redux";
+import Select from "../widgets/Select";
 
 const CommentEdit = ({
   message,
@@ -8,54 +8,54 @@ const CommentEdit = ({
   currentPostId,
   posts,
   update,
-  save
+  save,
 }) => {
-  postId = postId || currentPostId || posts[0]._id
+  postId = postId || currentPostId || posts[0]._id;
 
   return (
     <div>
       <div>
-        <label htmlFor='message'>message:</label>
+        <label htmlFor="message">message:</label>
         <input
-          type='text'
-          name='message'
-          value={message || ''}
-          onChange={update('message', postId)}
+          type="text"
+          name="message"
+          value={message || ""}
+          onChange={update("message", postId)}
         />
       </div>
 
       <Select
-        name='postId'
+        name="postId"
         options={posts}
         value={postId}
-        onChange={update('postId', postId)}
+        onChange={update("postId", postId)}
       />
 
       <button onClick={save}>SAVE</button>
     </div>
-  )
-}
+  );
+};
 
-const mapState = state => ({
+const mapState = (state) => ({
   ...state.model,
   currentPostId: state.postId,
-  posts: state.posts.map(id => state.cache[id])
-})
+  posts: state.posts.map((id) => state.cache[id]),
+});
 
-const mapDispatch = dispatch => ({
-  update: (name, postId) => e => {
+const mapDispatch = (dispatch) => ({
+  update: (name, postId) => (e) => {
     const action = {
-      type: 'UPDATE_FORM',
+      type: "UPDATE_FORM",
       payload: {
         postId,
         name,
-        value: e.target.value
-      }
-    }
+        value: e.target.value,
+      },
+    };
 
-    dispatch(action)
+    dispatch(action);
   },
-  save: () => dispatch({ type: 'SAVE_COMMENT' })
-})
+  save: () => dispatch({ type: "SAVE_COMMENT" }),
+});
 
-export default connect(mapState, mapDispatch)(CommentEdit)
+export default connect(mapState, mapDispatch)(CommentEdit);

@@ -1,14 +1,12 @@
- 
+
 
 import LiteYouTubeEmbed from ‘react-lite-youtube-embed’; import ‘react-lite-youtube-embed/dist/LiteYouTubeEmbed.css’
 
-Getting Started with React Redux
-================================
+# Getting Started with React Redux
 
 [React Redux](https://github.com/reduxjs/react-redux) is the official [React](https://reactjs.org/) UI bindings layer for [Redux](https://redux.js.org/). It lets your React components read data from a Redux store, and dispatch actions to the store to update state.
 
-Installation
-------------
+## Installation
 
 React Redux 7.1+ requires **React 16.8.3 or later**, in order to make use of React Hooks.
 
@@ -38,8 +36,7 @@ If you are using TypeScript, the React Redux types are maintained separately in 
 
     npm install @types/react-redux
 
-API Overview
-------------
+## API Overview
 
 ### `Provider`
 
@@ -106,8 +103,7 @@ React Redux provides a pair of custom React hooks that allow your React componen
       )
     }
 
-Learning React Redux
---------------------
+## Learning React Redux
 
 ### Learn Modern Redux Livestream
 
@@ -115,14 +111,12 @@ Redux maintainer Mark Erikson appeared on the “Learn with Jason” show to exp
 
 See [the “Learn Modern Redux” show notes page](https://www.learnwithjason.dev/let-s-learn-modern-redux) for a transcript and links to the example app source.
 
-Help and Discussion
--------------------
+## Help and Discussion
 
 The **[\#redux channel](https://discord.gg/0ZcbPKXt5bZ6au5t)** of the **[Reactiflux Discord community](http://www.reactiflux.com)** is our official resource for all questions related to learning and using Redux. Reactiflux is a great place to hang out, ask questions, and learn - come join us!
 
 You can also ask questions on [Stack Overflow](https://stackoverflow.com) using the **[\#redux tag](https://stackoverflow.com/questions/tagged/redux)**.
 
-Docs Translations
------------------
+## Docs Translations
 
--   [Portuguese](https://fernandobelotto.github.io/react-redux)
+- [Portuguese](https://fernandobelotto.github.io/react-redux)

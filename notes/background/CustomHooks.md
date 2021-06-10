@@ -1,21 +1,17 @@
-Non-Visual Behavior (Custom Hooks)
-==================================
+# Non-Visual Behavior (Custom Hooks)
 
-stateful logic
---------------
+## stateful logic
 
 the term `stateful logic` is not ubiquitous. it just means logic codified (i.e. code) that interacts with state in any way. it can be logic that only reads from the state or logic that updates the state.
 
 in our lesson today, we will be using custom hooks to write code that interacts with state in a reusable way.
 
-simple form project
--------------------
+## simple form project
 
 1.  open the existing project and show how it works for a single username field
 2.  what is the `stateful logic` in this application?
 
-useForm custom hook
--------------------
+## useForm custom hook
 
 we want to create a hook that will allow us to reuse the `stateful logic` of dealing with forms. we want to be able to specify different fields and have the hook deal with the updates of the state as things are entered into field.
 
@@ -27,8 +23,7 @@ we want to create a hook that will allow us to reuse the `stateful logic` of dea
 6.  show how to create a single `handleChanges` within the hook for the two fields
 7.  refactor to make the `useForm` use a customizable initial value object
 
-hooks within hooks
-------------------
+## hooks within hooks
 
 1.  explain that we want to have persistence between page reloads, so we are going to use local storage
 2.  open up MDN for localStorage

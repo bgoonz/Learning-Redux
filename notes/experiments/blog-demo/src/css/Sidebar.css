@@ -10,7 +10,8 @@ h2 {
   margin-top: 0px;
   text-shadow: 1px 1px 1px #2d2d2d;
 }
-.sidebar a, .sidebar span {
+.sidebar a,
+.sidebar span {
   display: block;
   color: white;
   background: rgb(35, 40, 42);
@@ -28,18 +29,26 @@ h2 {
 }
 
 .sidebar .active {
-  background-image: linear-gradient(270deg, #fed29d, #A58B66, rgb(225, 10, 50), rgb(255, 10, 50));
+  background-image: linear-gradient(
+    270deg,
+    #fed29d,
+    #a58b66,
+    rgb(225, 10, 50),
+    rgb(255, 10, 50)
+  );
   background-size: 720%;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
   transition: 0s ease all;
 }
-.sidebar a:hover, .sidebar span:hover {
+.sidebar a:hover,
+.sidebar span:hover {
   background: rgb(120, 10, 40);
 }
-.sidebar .active a:hover, .sidebar .span span:hover {
+.sidebar .active a:hover,
+.sidebar .span span:hover {
   background: rgb(150, 10, 20);
 }
 
 .sidebar .active:hover {
-  background: rgba(225, 10, 50, .7);
+  background: rgba(225, 10, 50, 0.7);
 }

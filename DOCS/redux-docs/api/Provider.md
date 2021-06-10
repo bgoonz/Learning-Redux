@@ -1,10 +1,8 @@
- 
 
-`Provider`
-==========
 
-Overview
---------
+# `Provider`
+
+## Overview
 
 The `<Provider>` component makes the Redux `store` available to any nested components that need to access the Redux store.
 

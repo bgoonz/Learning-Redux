@@ -1,39 +1,40 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import styles from '../css/Home'
+import React from "react";
+import { connect } from "react-redux";
+import styles from "../css/Home";
 
-import PostList from './PostList'
-import Select from '../widgets/Select'
+import PostList from "./PostList";
+import Select from "../widgets/Select";
 
-const Home = ({ categories, selectCategory }) =>
+const Home = ({ categories, selectCategory }) => (
   <div className={styles.home}>
     <h1>Posts</h1>
 
     <Select
-      name='select category:'
-      options={[{ _id: 'all', name: 'all' }, ...categories]}
+      name="select category:"
+      options={[{ _id: "all", name: "all" }, ...categories]}
       onChange={selectCategory}
     />
 
     <PostList />
   </div>
+);
 
-const mapState = state => ({
+const mapState = (state) => ({
   postId: state.postId,
-  categories: state.categories.map(id => state.cache[id])
-})
+  categories: state.categories.map((id) => state.cache[id]),
+});
 
-const mapDispatch = dispatch => ({
-  selectCategory: e => {
+const mapDispatch = (dispatch) => ({
+  selectCategory: (e) => {
     const action = {
-      type: 'SELECT_CATEGORY',
+      type: "SELECT_CATEGORY",
       payload: {
-        categoryId: e.target.value
-      }
-    }
+        categoryId: e.target.value,
+      },
+    };
 
-    dispatch(action)
-  }
-})
+    dispatch(action);
+  },
+});
 
-export default connect(mapState, mapDispatch)(Home)
+export default connect(mapState, mapDispatch)(Home);

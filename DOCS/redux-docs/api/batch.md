@@ -1,11 +1,10 @@
- 
 
-`batch()`
-=========
+
+# `batch()`
 
     batch((fn: Function))
 
-*added in v7.0.0*
+_added in v7.0.0_
 
 React’s `unstable_batchedUpdates()` API allows any React updates in an event loop tick to be batched together into a single render pass. React already uses this internally for its own event handler callbacks. This API is actually part of the renderer packages like ReactDOM and React Native, not the React core itself.
 
@@ -23,7 +22,6 @@ Since React-Redux needs to work in both ReactDOM and React Native environments, 
       }
     }
 
-References
-----------
+## References
 
--   [`unstable_batchedUpdates()` API from React](https://github.com/facebook/react/commit/b41883fc708cd24d77dcaa767cde814b50b457fe)
+- [`unstable_batchedUpdates()` API from React](https://github.com/facebook/react/commit/b41883fc708cd24d77dcaa767cde814b50b457fe)

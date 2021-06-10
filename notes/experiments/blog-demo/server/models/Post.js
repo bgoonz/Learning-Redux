@@ -1,14 +1,14 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose";
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const scehma = new Schema({
   name: {
-    type: String
+    type: String,
   },
   body: {
-    type: String
-  }
-})
+    type: String,
+  },
+});
 
-module.exports = mongoose.model('Post', scehma)
+module.exports = mongoose.model("Post", scehma);

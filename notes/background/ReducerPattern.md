@@ -1,12 +1,10 @@
-ReducerPattern
-==============
+# ReducerPattern
 
 explain that the video in the TK talks about Redux but we haven’t covered Redux. explain that the REducer pattern is used in Redux and that’s why.
 
 Talk about immutability and why it’s important
 
-repl.it project
-===============
+# repl.it project
 
 build a new ES6 repl.it project.
 
@@ -17,8 +15,7 @@ build a new ES6 repl.it project.
 5.  show how “copying” an object by equal assign mutates the original
 6.  draw out how memory works for these variables and explain why mutation of original in object and the const keyword is possible because of how things are stored in memory
 
-codesandbox project
-===================
+# codesandbox project
 
 use the codesandbox title project
 
@@ -38,7 +35,7 @@ use the codesandbox title project
 14. in Title.js comment out the useState for title and editing and replace with reducer
 15. refactor code to use properly. ignore dispatch for now
 16. go over dispatch
-17. create an action and code path in reducer for ‘TOGGLE\_EDITING’
-18. dependingo n time, maybe breakout here and have groups do ‘SET\_TITLE’
-19. when they get back look at some code and build it out both with two dispatches on button press as well as one with reducer of SET\_TITLE also setting the editing kay
+17. create an action and code path in reducer for ‘TOGGLE_EDITING’
+18. dependingo n time, maybe breakout here and have groups do ‘SET_TITLE’
+19. when they get back look at some code and build it out both with two dispatches on button press as well as one with reducer of SET_TITLE also setting the editing kay
 20. rejoice

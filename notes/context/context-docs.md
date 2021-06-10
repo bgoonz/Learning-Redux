@@ -1,5 +1,4 @@
-Context – React
-===============
+# Context – React
 
 > A JavaScript library for building user interfaces
 
@@ -7,27 +6,26 @@ Context provides a way to pass data through the component tree without having to
 
 In a typical React application, data is passed top-down (parent to child) via props, but such usage can be cumbersome for certain types of props (e.g. locale preference, UI theme) that are required by many components within an application. Context provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree.
 
--   [When to Use Context](#when-to-use-context)
--   [Before You Use Context](#before-you-use-context)
--   [API](#api)
+- [When to Use Context](#when-to-use-context)
+- [Before You Use Context](#before-you-use-context)
+- [API](#api)
 
-    -   [React.createContext](#reactcreatecontext)
-    -   [Context.Provider](#contextprovider)
-    -   [Class.contextType](#classcontexttype)
-    -   [Context.Consumer](#contextconsumer)
-    -   [Context.displayName](#contextdisplayname)
+  - [React.createContext](#reactcreatecontext)
+  - [Context.Provider](#contextprovider)
+  - [Class.contextType](#classcontexttype)
+  - [Context.Consumer](#contextconsumer)
+  - [Context.displayName](#contextdisplayname)
 
--   [Examples](#examples)
+- [Examples](#examples)
 
-    -   [Dynamic Context](#dynamic-context)
-    -   [Updating Context from a Nested Component](#updating-context-from-a-nested-component)
-    -   [Consuming Multiple Contexts](#consuming-multiple-contexts)
+  - [Dynamic Context](#dynamic-context)
+  - [Updating Context from a Nested Component](#updating-context-from-a-nested-component)
+  - [Consuming Multiple Contexts](#consuming-multiple-contexts)
 
--   [Caveats](#caveats)
--   [Legacy API](#legacy-api)
+- [Caveats](#caveats)
+- [Legacy API](#legacy-api)
 
-[](#when-to-use-context)When to Use Context
--------------------------------------------
+## [](#when-to-use-context)When to Use Context
 
 Context is designed to share data that can be considered “global” for a tree of React components, such as the current authenticated user, theme, or preferred language. For example, in the code below we manually thread through a “theme” prop in order to style the Button component:
 
@@ -76,10 +74,9 @@ Using context, we can avoid passing props through intermediate elements:
         return <Button theme={this.context} />;  }
     }
 
-[](#before-you-use-context)Before You Use Context
--------------------------------------------------
+## [](#before-you-use-context)Before You Use Context
 
-Context is primarily used when some data needs to be accessible by *many* components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
+Context is primarily used when some data needs to be accessible by _many_ components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
 
 **If you only want to avoid passing some props through many levels, [component composition](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/docs/composition-vs-inheritance.html) is often a simpler solution than context.**
 
@@ -120,7 +117,7 @@ One way to solve this issue **without context** is to [pass down the `Avatar` co
 
 With this change, only the top-most Page component needs to know about the `Link` and `Avatar` components’ use of `user` and `avatarSize`.
 
-This *inversion of control* can make your code cleaner in many cases by reducing the amount of props you need to pass through your application and giving more control to the root components. Such inversion, however, isn’t the right choice in every case; moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want.
+This _inversion of control_ can make your code cleaner in many cases by reducing the amount of props you need to pass through your application and giving more control to the root components. Such inversion, however, isn’t the right choice in every case; moving more complexity higher in the tree makes those higher-level components more complicated and forces the lower-level components to be more flexible than you may want.
 
 You’re not limited to a single child for a component. You may pass multiple children, or even have multiple separate “slots” for children, [as documented here](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/docs/composition-vs-inheritance.html#containment):
 
@@ -146,8 +143,7 @@ This pattern is sufficient for many cases when you need to decouple a child from
 
 However, sometimes the same data needs to be accessible by many components in the tree, and at different nesting levels. Context lets you “broadcast” such data, and changes to it, to all components below. Common examples where using context might be simpler than the alternatives include managing the current locale, theme, or a data cache.
 
-[](#api)API
------------
+## [](#api)API
 
 ### [](#reactcreatecontext)`React.createContext`
 
@@ -178,19 +174,19 @@ Changes are determined by comparing the new and old values using the same algori
     class MyClass extends React.Component {
       componentDidMount() {
         let value = this.context;
-        
+
       }
       componentDidUpdate() {
         let value = this.context;
-        
+
       }
       componentWillUnmount() {
         let value = this.context;
-        
+
       }
       render() {
         let value = this.context;
-        
+
       }
     }
     MyClass.contextType = MyContext;
@@ -207,7 +203,7 @@ The `contextType` property on a class can be assigned a Context object created b
       static contextType = MyContext;
       render() {
         let value = this.context;
-        
+
       }
     }
 
@@ -236,8 +232,7 @@ For example, the following component will appear as MyDisplayName in the DevTool
     <MyContext.Provider> // "MyDisplayName.Provider" in DevTools
     <MyContext.Consumer> // "MyDisplayName.Consumer" in DevTools
 
-[](#examples)Examples
----------------------
+## [](#examples)Examples
 
 ### [](#dynamic-context)Dynamic Context
 
@@ -403,7 +398,7 @@ To keep context re-rendering fast, React needs to make each context consumer a s
       render() {
         const {signedInUser, theme} = this.props;
 
-        
+
         return (
           <ThemeContext.Provider value={theme}>        <UserContext.Provider value={signedInUser}>          <Layout />
             </UserContext.Provider>      </ThemeContext.Provider>    );
@@ -427,8 +422,7 @@ To keep context re-rendering fast, React needs to make each context consumer a s
 
 If two or more context values are often used together, you might want to consider creating your own render prop component that provides both.
 
-[](#caveats)Caveats
--------------------
+## [](#caveats)Caveats
 
 Because context uses reference identity to determine when to re-render, there are some gotchas that could trigger unintentional renders in consumers when a provider’s parent re-renders. For example, the code below will re-render all consumers every time the Provider re-renders because a new object is always created for `value`:
 
@@ -458,8 +452,7 @@ To get around this, lift the value into the parent’s state:
       }
     }
 
-[](#legacy-api)Legacy API
--------------------------
+## [](#legacy-api)Legacy API
 
 > Note
 >

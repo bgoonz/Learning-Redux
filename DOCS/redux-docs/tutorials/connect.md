@@ -1,7 +1,6 @@
- 
 
-Tutorial: Using the `connect` API
-=================================
+
+# Tutorial: Using the `connect` API
 
 We now recommend using [the React-Redux hooks API as the default](../api/hooks.md). However, the `connect` API still works fine.
 
@@ -11,63 +10,58 @@ We’re working on a new tutorial that will introduce the hooks APIs. Until then
 
 To see how to use React Redux in practice, we’ll show a step-by-step example by creating a todo list app.
 
-A Todo List Example
--------------------
+## A Todo List Example
 
 **Jump to**
 
--   🤞 [Just show me the code](https://codesandbox.io/s/9on71rvnyo)
--   👆 [Providing the store](#providing-the-store)
--   ✌️ [Connecting the Component](#connecting-the-components)
+- 🤞 [Just show me the code](https://codesandbox.io/s/9on71rvnyo)
+- 👆 [Providing the store](#providing-the-store)
+- ✌️ [Connecting the Component](#connecting-the-components)
 
 **The React UI Components**
 
 We have implemented our React UI components as follows:
 
--   `TodoApp` is the entry component for our app. It renders the header, the `AddTodo`, `TodoList`, and `VisibilityFilters` components.
--   `AddTodo` is the component that allows a user to input a todo item and add to the list upon clicking its “Add Todo” button:
-    -   It uses a controlled input that sets state upon `onChange`.
-    -   When the user clicks on the “Add Todo” button, it dispatches the action (that we will provide using React Redux) to add the todo to the store.
--   `TodoList` is the component that renders the list of todos:
-    -   It renders the filtered list of todos when one of the `VisibilityFilters` is selected.
--   `Todo` is the component that renders a single todo item:
-    -   It renders the todo content, and shows that a todo is completed by crossing it out.
-    -   It dispatches the action to toggle the todo’s complete status upon `onClick`.
--   `VisibilityFilters` renders a simple set of filters: *all*, *completed*, and *incomplete.* Clicking on each one of them filters the todos:
-    -   It accepts an `activeFilter` prop from the parent that indicates which filter is currently selected by the user. An active filter is rendered with an underscore.
-    -   It dispatches the `setFilter` action to update the selected filter.
--   `constants` holds the constants data for our app.
--   And finally `index` renders our app to the DOM.
-
-  
+- `TodoApp` is the entry component for our app. It renders the header, the `AddTodo`, `TodoList`, and `VisibilityFilters` components.
+- `AddTodo` is the component that allows a user to input a todo item and add to the list upon clicking its “Add Todo” button:
+  - It uses a controlled input that sets state upon `onChange`.
+  - When the user clicks on the “Add Todo” button, it dispatches the action (that we will provide using React Redux) to add the todo to the store.
+- `TodoList` is the component that renders the list of todos:
+  - It renders the filtered list of todos when one of the `VisibilityFilters` is selected.
+- `Todo` is the component that renders a single todo item:
+  - It renders the todo content, and shows that a todo is completed by crossing it out.
+  - It dispatches the action to toggle the todo’s complete status upon `onClick`.
+- `VisibilityFilters` renders a simple set of filters: _all_, _completed_, and _incomplete._ Clicking on each one of them filters the todos:
+  - It accepts an `activeFilter` prop from the parent that indicates which filter is currently selected by the user. An active filter is rendered with an underscore.
+  - It dispatches the `setFilter` action to update the selected filter.
+- `constants` holds the constants data for our app.
+- And finally `index` renders our app to the DOM.
 
 **The Redux Store**
 
 The Redux portion of the application has been set up using the [patterns recommended in the Redux docs](https://redux.js.org):
 
--   Store
-    -   `todos`: A normalized reducer of todos. It contains a `byIds` map of all todos and a `allIds` that contains the list of all ids.
-    -   `visibilityFilters`: A simple string `all`, `completed`, or `incomplete`.
--   Action Creators
-    -   `addTodo` creates the action to add todos. It takes a single string variable `content` and returns an `ADD_TODO` action with `payload` containing a self-incremented `id` and `content`
-    -   `toggleTodo` creates the action to toggle todos. It takes a single number variable `id` and returns a `TOGGLE_TODO` action with `payload` containing `id` only
-    -   `setFilter` creates the action to set the app’s active filter. It takes a single string variable `filter` and returns a `SET_FILTER` action with `payload` containing the `filter` itself
--   Reducers
-    -   The `todos` reducer
-        -   Appends the `id` to its `allIds` field and sets the todo within its `byIds` field upon receiving the `ADD_TODO` action
-        -   Toggles the `completed` field for the todo upon receiving the `TOGGLE_TODO` action
-    -   The `visibilityFilters` reducer sets its slice of store to the new filter it receives from the `SET_FILTER` action payload
--   Action Types
-    -   We use a file `actionTypes.js` to hold the constants of action types to be reused
--   Selectors
-    -   `getTodoList` returns the `allIds` list from the `todos` store
-    -   `getTodoById` finds the todo in the store given by `id`
-    -   `getTodos` is slightly more complex. It takes all the `id`s from `allIds`, finds each todo in `byIds`, and returns the final array of todos
-    -   `getTodosByVisibilityFilter` filters the todos according to the visibility filter
+- Store
+  - `todos`: A normalized reducer of todos. It contains a `byIds` map of all todos and a `allIds` that contains the list of all ids.
+  - `visibilityFilters`: A simple string `all`, `completed`, or `incomplete`.
+- Action Creators
+  - `addTodo` creates the action to add todos. It takes a single string variable `content` and returns an `ADD_TODO` action with `payload` containing a self-incremented `id` and `content`
+  - `toggleTodo` creates the action to toggle todos. It takes a single number variable `id` and returns a `TOGGLE_TODO` action with `payload` containing `id` only
+  - `setFilter` creates the action to set the app’s active filter. It takes a single string variable `filter` and returns a `SET_FILTER` action with `payload` containing the `filter` itself
+- Reducers
+  - The `todos` reducer
+    - Appends the `id` to its `allIds` field and sets the todo within its `byIds` field upon receiving the `ADD_TODO` action
+    - Toggles the `completed` field for the todo upon receiving the `TOGGLE_TODO` action
+  - The `visibilityFilters` reducer sets its slice of store to the new filter it receives from the `SET_FILTER` action payload
+- Action Types
+  - We use a file `actionTypes.js` to hold the constants of action types to be reused
+- Selectors
+  - `getTodoList` returns the `allIds` list from the `todos` store
+  - `getTodoById` finds the todo in the store given by `id`
+  - `getTodos` is slightly more complex. It takes all the `id`s from `allIds`, finds each todo in `byIds`, and returns the final array of todos
+  - `getTodosByVisibilityFilter` filters the todos according to the visibility filter
 
 You may check out [this CodeSandbox](https://codesandbox.io/s/6vwyqrpqk3) for the source code of the UI components and the unconnected Redux store described above.
-
-  
 
 We will now show how to connect this store to our app using React Redux.
 
@@ -101,11 +95,11 @@ React Redux provides a `connect` function for you to read values from the Redux 
 
 The `connect` function takes two arguments, both optional:
 
--   `mapStateToProps`: called every time the store state changes. It receives the entire store state, and should return an object of data this component needs.
+- `mapStateToProps`: called every time the store state changes. It receives the entire store state, and should return an object of data this component needs.
 
--   `mapDispatchToProps`: this parameter can either be a function, or an object.
-    -   If it’s a function, it will be called once on component creation. It will receive `dispatch` as an argument, and should return an object full of functions that use `dispatch` to dispatch actions.
-    -   If it’s an object full of action creators, each action creator will be turned into a prop function that automatically dispatches its action when called. **Note**: We recommend using this “object shorthand” form.
+- `mapDispatchToProps`: this parameter can either be a function, or an object.
+  - If it’s a function, it will be called once on component creation. It will receive `dispatch` as an argument, and should return an object full of functions that use `dispatch` to dispatch actions.
+  - If it’s an object full of action creators, each action creator will be turned into a prop function that automatically dispatches its action when called. **Note**: We recommend using this “object shorthand” form.
 
 Normally, you’ll call `connect` in this way:
 
@@ -270,49 +264,49 @@ Depending on what kind of components you are working with, there are different w
 
 If you call `connect` without providing any arguments, your component will:
 
--   *not* re-render when the store changes
--   receive `props.dispatch` that you may use to manually dispatch action
+- _not_ re-render when the store changes
+- receive `props.dispatch` that you may use to manually dispatch action
 
-    // ... Component
-    export default connect()(Component) // Component will receive `dispatch` (just like our <TodoList />!)
+  // ... Component
+  export default connect()(Component) // Component will receive `dispatch` (just like our <TodoList />!)
 
 #### Subscribe to the store and do not inject action creators
 
 If you call `connect` with only `mapStateToProps`, your component will:
 
--   subscribe to the values that `mapStateToProps` extracts from the store, and re-render only when those values have changed
--   receive `props.dispatch` that you may use to manually dispatch action
+- subscribe to the values that `mapStateToProps` extracts from the store, and re-render only when those values have changed
+- receive `props.dispatch` that you may use to manually dispatch action
 
-    // ... Component
-    const mapStateToProps = (state) => state.partOfState
-    export default connect(mapStateToProps)(Component)
+  // ... Component
+  const mapStateToProps = (state) => state.partOfState
+  export default connect(mapStateToProps)(Component)
 
 #### Do not subscribe to the store and inject action creators
 
 If you call `connect` with only `mapDispatchToProps`, your component will:
 
--   *not* re-render when the store changes
--   receive each of the action creators you inject with `mapDispatchToProps` as props and automatically dispatch the actions upon being called
+- _not_ re-render when the store changes
+- receive each of the action creators you inject with `mapDispatchToProps` as props and automatically dispatch the actions upon being called
 
-    import { addTodo } from './actionCreators'
-    // ... Component
-    export default connect(null, { addTodo })(Component)
+  import { addTodo } from './actionCreators'
+  // ... Component
+  export default connect(null, { addTodo })(Component)
 
 #### Subscribe to the store and inject action creators
 
 If you call `connect` with both `mapStateToProps` and `mapDispatchToProps`, your component will:
 
--   subscribe to the values that `mapStateToProps` extracts from the store, and re-render only when those values have changed
--   receive all of the action creators you inject with `mapDispatchToProps` as props and automatically dispatch the actions upon being called.
+- subscribe to the values that `mapStateToProps` extracts from the store, and re-render only when those values have changed
+- receive all of the action creators you inject with `mapDispatchToProps` as props and automatically dispatch the actions upon being called.
 
-    import * as actionCreators from './actionCreators'
-    // ... Component
-    const mapStateToProps = (state) => state.partOfState
-    export default connect(mapStateToProps, actionCreators)(Component)
+  import \* as actionCreators from './actionCreators'
+  // ... Component
+  const mapStateToProps = (state) => state.partOfState
+  export default connect(mapStateToProps, actionCreators)(Component)
 
 These four cases cover the most basic usages of `connect`. To read more about `connect`, continue reading our [API section](../api/connect.md) that explains it in more detail.
 
-------------------------------------------------------------------------
+---
 
 Now let’s connect the rest of our `<TodoApp />`.
 
@@ -391,18 +385,16 @@ Now we’ve finished a very simple example of a todo app with React Redux. All o
 
 ![](https://i.imgur.com/ONqer2R.png)
 
-Links
------
+## Links
 
--   [Usage with React](https://redux.js.org/basics/usage-with-react)
--   [Using the React Redux Bindings](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/react-redux.html)
--   [Higher Order Components in Depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
--   [Computing Derived Data](https://redux.js.org/recipes/computing-derived-data#sharing-selectors-across-multiple-components)
--   [Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance](https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/)
+- [Usage with React](https://redux.js.org/basics/usage-with-react)
+- [Using the React Redux Bindings](https://blog.isquaredsoftware.com/presentations/workshops/redux-fundamentals/react-redux.html)
+- [Higher Order Components in Depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
+- [Computing Derived Data](https://redux.js.org/recipes/computing-derived-data#sharing-selectors-across-multiple-components)
+- [Idiomatic Redux: Using Reselect Selectors for Encapsulation and Performance](https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/)
 
-Get More Help
--------------
+## Get More Help
 
--   [Reactiflux](https://www.reactiflux.com) Redux channel
--   [StackOverflow](https://stackoverflow.com/questions/tagged/react-redux)
--   [GitHub Issues](https://github.com/reduxjs/react-redux/issues/)
+- [Reactiflux](https://www.reactiflux.com) Redux channel
+- [StackOverflow](https://stackoverflow.com/questions/tagged/react-redux)
+- [GitHub Issues](https://github.com/reduxjs/react-redux/issues/)
