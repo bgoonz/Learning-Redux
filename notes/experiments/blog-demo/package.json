@@ -37,7 +37,7 @@
     "redux-first-router": "0.0.19-next",
     "redux-first-router-link": "^1.1.4",
     "reselect": "^3.0.1",
-    "transition-group": "^0.0.1",
+    "transition-group": "^0.0.2",
     "webpack-flush-chunks": "^1.1.22"
   },
   "devDependencies": {
