@@ -23,6 +23,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-dark.min.css"
     integrity="sha512-Njdz7T/p6Ud1FiTMqH87bzDxaZBsVNebOWmacBjMdgWyeIhUSFU4V52oGwo3sT+ud+lyIE98sS291/zxBfozKw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    //Get the button:
+    mybutton = document.getElementById( "scrollBtn" );
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if ( document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    };
+    window.addEventListener( 'DOMContentLoaded', ( event ) => {
+      console.log( 'DOM fully loaded and parsed' );
+      const scrollToTop = () => {
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+        if ( c > 0 ) {
+          window.requestAnimationFrame( scrollToTop );
+          window.scrollTo( 0, c - c / 8 );
+        }
+      };
+      scrollToTop();
+    } );
+  </script>
+
+
   <script async defer src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script async defer type="text/javascript" src="assets/js/bootstrap.min.js"></script>
@@ -33,9 +67,11 @@
     src="https://platform-api.sharethis.com/js/sharethis.js#property=60c2b3f20cb9f200113df1c3&product=sticky-share-buttons"
     async="async"></script>
 
-
-  <script async defer src="./index.js"></script>
   <style>
+    .ignore-css {
+      all: unset;
+    }
+
     body {
       width: 300px;
       margin: 0 auto;
@@ -149,14 +185,17 @@
   </script>
   <!-- Badge Code End Here -->
 
-  <div>
-    <h6>btn</h6>
-    <button id="scrollBtn" title="Go to top" onclick="topFunction()">Back To Top</button>
-  </div>
   <center>
     <h1>Bgoonz Learning Redux Repo:</h1>
     <br />
     <br />
+    <div>
+      <h6>btn</h6>
+      <button type="submit"
+        style="  position: fixed;  bottom: 80px;  right: 0px;  z-index: 99;  border: none;  outline: none;  background-color: red;  color: white;  cursor: pointer;  padding: 15px;  border-radius: 10px;  font-size: 18px "
+        id=" scrollBtn" title="Go to top" onclick="topFunction()">Back To
+        Top</button>
+    </div>
     <br />
     <h2>Repl For The Repo Behind This Site</h2>
     <br />
@@ -1360,8 +1399,25 @@
       </li>
     </ul>
   </div>
-  <a id="sidebar-toc-btn">&#x2261;</a>
+  <br>
+  <br>
+  <script async src="./index.js"></script>
+  <a class="bookmarklet_button" href="javascript:(function(){%20f='https://www.addtoany.com/share#url='+encodeURIComponent(window.location.href)+'&amp;title='+encodeURIComponent(document.title);%20a=function(){%20if(!window.open(f,'addtoany','width=800,height=600,toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes')){%20location.href=f+'jump=yes';%20};%20if(/Firefox/.test(navigator.userAgent)){%20setTimeout(a,0)%20}%20else{%20a()%20}%20})()"
+    title="AddToAny"
+    onclick="alert('Drag this link onto your toolbar to add the AddToAny Bookmarklet'); return false">Drag to
+    Bookmarks to add to Bookmarks!</a>
 
+  <br>
+  <br>
+
+  <div class="a2a_kit a2a_default_style">
+    <a class="a2a_button_facebook_like"></a>
+  </div>
+  <br>
+  <br> <br>
+  <br>
+
+  <a id="sidebar-toc-btn">&#x2261;</a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
