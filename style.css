@@ -19,7 +19,21 @@ pre[class*="language-"] {
   -ms-hyphens: none;
   hyphens: none;
 }
-
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px
+}
 /* Code blocks */
 pre[class*="language-"] {
   padding: 0.8em;

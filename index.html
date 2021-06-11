@@ -23,18 +23,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-dark.min.css"
     integrity="sha512-Njdz7T/p6Ud1FiTMqH87bzDxaZBsVNebOWmacBjMdgWyeIhUSFU4V52oGwo3sT+ud+lyIE98sS291/zxBfozKw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script async defer type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-  </script>
+  <script async defer src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script async defer type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/download-button/prism-download-button.min.js"
     integrity="sha512-rGJwSZEEYPBQjqYxrdg6Ug/6i763XQogKx+N/GF1rCGvfmhIlIUFxCjc4FmEdCu5dvovqxHsoe3IPMKP+KlgNQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript"
-      src="https://platform-api.sharethis.com/js/sharethis.js#property=60c2b3f20cb9f200113df1c3&product=sticky-share-buttons"
-      async="async"></script>
-  <script>
-    import Prism from "prismjs";
-  </script>
+  <script type="text/javascript"
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=60c2b3f20cb9f200113df1c3&product=sticky-share-buttons"
+    async="async"></script>
+
+
+  <script async defer src="./index.js"></script>
   <style>
     body {
       width: 300px;
@@ -88,10 +88,31 @@
       color: black;
       font-size: 20px;
     }
+
+    #scrollBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px
+    }
+
+    #scrollBtn:hover {
+      background-color: #555
+    }
   </style>
 </head>
 
 <body for="html-export">
+
   <div class="sharethis-sticky-share-buttons"></div>
   <a class="github-corner" href="https://github.com/bgoonz/Learning-Redux" aria-label="View source on Github">
 
@@ -115,21 +136,23 @@
   </a>
 
 
-<br>
+  <br>
   <br />
   <br />
 
-<!-- Badge Code - Do Not Change The Code -->
-<a class="hitCounter" href="https://visitorshitcounter.com/" target="_blank" title="Hit counter"
-  data-name="86b8037da0e55e778419cb9848fcacc9|5|page|200|rgb(0, 0, 0);|#ffffff|small|s-hit">Hit Counter</a>
-<script>
-  document.write( "<script type='text/javascript' src='https://visitorshitcounter.com/js/hitCounter.js?v=" + Date
-  .now() + "'><\/script>" );
-</script>
-<!-- Badge Code End Here -->
+  <!-- Badge Code - Do Not Change The Code -->
+  <a class="hitCounter" href="https://visitorshitcounter.com/" target="_blank" title="Hit counter"
+    data-name="86b8037da0e55e778419cb9848fcacc9|5|page|200|rgb(0, 0, 0);|#ffffff|small|s-hit">Hit Counter</a>
+  <script>
+    document.write( "<script type='text/javascript' src='https://visitorshitcounter.com/js/hitCounter.js?v=" + Date
+      .now() + "'><\/script>" );
+  </script>
+  <!-- Badge Code End Here -->
 
-
-
+  <div>
+    <h6>btn</h6>
+    <button id="scrollBtn" title="Go to top" onclick="topFunction()">Back To Top</button>
+  </div>
   <center>
     <h1>Bgoonz Learning Redux Repo:</h1>
     <br />
@@ -152,7 +175,6 @@
     <br />
     <br />
     <br />
-
 
     <iframe src="https://codesandbox.io/embed/hungry-lichterman-urxh4?fontsize=14&hidenavigation=1&theme=dark"
       style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" title="hungry-lichterman-urxh4"
@@ -1344,8 +1366,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.min.js"></script>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2b471a965f596"></script>
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2b471a965f596"></script>
 
 
   <script>
@@ -1360,12 +1382,14 @@
     } )
   </script>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2b471a965f596"></script>
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2b471a965f596"></script>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2b471a965f596"></script>
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2b471a965f596"></script>
 
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60c2b471a965f596"></script>
 
 </body>
 
