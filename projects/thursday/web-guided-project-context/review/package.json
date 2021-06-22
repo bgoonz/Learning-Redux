@@ -14,7 +14,7 @@
     "react-dom": "^16.14.0"
   },
   "devDependencies": {
-    "parcel-bundler": "1.12.4",
+    "parcel-bundler": "1.12.5",
     "sass": "1.27.0"
   }
 }
