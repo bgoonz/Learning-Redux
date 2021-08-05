@@ -1,0 +1,46 @@
+{
+  "name": "redux-data-structures",
+  "version": "0.1.6",
+  "description": "Creator functions for common reducers",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "rm -rf coverage && BABEL_ENV=commonjs jest --verbose --coverage src",
+    "build:es": "rm -rf es && BABEL_ENV=es babel src --out-dir es --ignore __tests__",
+    "build:commonjs": "rm -rf lib && BABEL_ENV=commonjs babel src --out-dir lib --ignore __tests__",
+    "build": "npm run build:es && npm run build:commonjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrienjt/redux-data-structures.git"
+  },
+  "keywords": [
+    "redux",
+    "reducer",
+    "data",
+    "structure",
+    "common",
+    "standard",
+    "boolean",
+    "toggle",
+    "counter",
+    "list",
+    "queue",
+    "stack",
+    "map",
+    "set",
+    "value"
+  ],
+  "author": "Adrien Trouillaud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrienjt/redux-data-structures/issues"
+  },
+  "homepage": "https://github.com/adrienjt/redux-data-structures#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "jest": "^20.0.4"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "env": {
+    "es": {
+      "presets": [["env", { "modules": false }]],
+      "plugins": [["transform-object-rest-spread", { "useBuiltIns": true }]]
+    },
+    "commonjs": {
+      "presets": ["env"],
+      "plugins": ["transform-object-rest-spread"]
+    }
+  }
+}
