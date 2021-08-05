@@ -1127,13 +1127,14 @@ babel-types@^6.19.0, babel-types@^6.23.0:
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
 
-babel-watch@2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/babel-watch/-/babel-watch-2.0.6.tgz#dfbd7eac9ddf687d411275d9f8599c2c1d78d4aa"
-  integrity sha1-371+rJ3faH1BEnXZ+FmcLB141Ko=
+babel-watch@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/babel-watch/-/babel-watch-2.0.8.tgz#7e5cb2cbc82113e087dc4441c22c476c79f8299c"
+  integrity sha512-dmuUumB5Mv0SOfDuQvJ2Dmx/4EYi76spzf/8wpH7D1DnL+3GEm4uIqY+/N+4CetAh0HLSZVl894bDD9pDdfzKw==
   dependencies:
     chokidar "^1.4.3"
     commander "^2.9.0"
+    lodash.debounce "^4.0.8"
     source-map-support "^0.4.0"
 
 babylon@^6.11.0:
@@ -4275,6 +4276,11 @@ lodash.clonedeep@^4.3.0, lodash.clonedeep@^4.3.1:
 lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
 lodash.defaults@^4.0.1:
   version "4.2.0"

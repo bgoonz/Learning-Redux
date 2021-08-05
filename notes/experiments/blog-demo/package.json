@@ -50,7 +50,7 @@
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
-    "babel-watch": "2.0.6",
+    "babel-watch": "2.0.8",
     "commitizen": "2.9.6",
     "cross-env": "5.0.1",
     "css-loader": "0.27.3",
