@@ -1,0 +1,86 @@
+{
+  "_from": "redux-cheerio",
+  "_id": "redux-cheerio@0.0.3",
+  "_inBundle": false,
+  "_integrity": "sha1-vZH10HugjmBYxxyubcpTWXL9qd4=",
+  "_location": "/redux-cheerio",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "redux-cheerio",
+    "name": "redux-cheerio",
+    "escapedName": "redux-cheerio",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/redux-cheerio/-/redux-cheerio-0.0.3.tgz",
+  "_shasum": "bd91f5d07ba08e6058c71cae6dca535972fda9de",
+  "_spec": "redux-cheerio",
+  "_where": "/workspace/Learning-Redux/TOOLS/npm-packages",
+  "author": {
+    "name": "therewillbecode"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/therewillbecode/redux-cheerio/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "axios": "^0.15.3",
+    "cheerio": "^0.22.0"
+  },
+  "deprecated": false,
+  "description": "cheerio based middleware for Redux - run cheerio scripts as redux middleware",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-plugin-transform-regenerator": "^6.21.0",
+    "babel-preset-es2015": "^6.18.0",
+    "chai": "^3.5.0",
+    "cross-env": "^3.1.3",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.2",
+    "redux": "^3.6.0",
+    "redux-mock-store": "^1.2.1",
+    "sinon": "^1.17.7",
+    "webpack": "^1.14.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "homepage": "https://github.com/therewillbecode/redux-cheerio#readme",
+  "keywords": [
+    "cheerio",
+    "redux",
+    "middleware",
+    "request",
+    "webscraping",
+    "fetch",
+    "axios"
+  ],
+  "license": "ISC",
+  "main": "lib/index.js",
+  "name": "redux-cheerio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/therewillbecode/redux-cheerio.git"
+  },
+  "scripts": {
+    "prepublish": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-core/register --reporter spec test/*.js"
+  },
+  "version": "0.0.3"
+}

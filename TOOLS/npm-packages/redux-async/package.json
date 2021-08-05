@@ -1,0 +1,64 @@
+{
+  "_from": "redux-async",
+  "_id": "redux-async@2.0.1",
+  "_inBundle": false,
+  "_integrity": "sha1-uh6fQ+wH8BblfDaDK6KnGhFztwY=",
+  "_location": "/redux-async",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "redux-async",
+    "name": "redux-async",
+    "escapedName": "redux-async",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/redux-async/-/redux-async-2.0.1.tgz",
+  "_shasum": "ba1e9f43ec07f016e57c36832ba2a71a1173b706",
+  "_spec": "redux-async",
+  "_where": "/workspace/Learning-Redux/TOOLS/npm-packages",
+  "author": {
+    "name": "Moshe Kolodny"
+  },
+  "bugs": {
+    "url": "https://github.com/kolodny/redux-async/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "dispatch async actions in redux",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.22",
+    "coveralls": "^2.11.4",
+    "expect": "^1.9.0",
+    "istanbul": "^0.3.19",
+    "mocha": "^2.3.1",
+    "redux": "^2.0.0"
+  },
+  "homepage": "https://github.com/kolodny/redux-async#readme",
+  "keywords": [
+    "redux",
+    "react"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "name": "redux-async",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolodny/redux-async.git"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "prepublish": "npm run test && npm run build",
+    "test": "mocha --compilers js:babel/register --recursive",
+    "test-cov": "node ./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha 'test/**/*.js' -- --reporter dot --require babel/register",
+    "test-travis": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha 'test/**/*.js' -- -R spec --require babel/register"
+  },
+  "version": "2.0.1"
+}
