@@ -43,9 +43,9 @@
   "deprecated": false,
   "description": "Object.prototype.hasOwnProperty.call shortcut",
   "devDependencies": {
-    "@ljharb/eslint-config": "^12.2.1",
-    "eslint": "^4.19.1",
-    "tape": "^4.9.0"
+    "@ljharb/eslint-config": "12.2.1",
+    "eslint": "4.19.1",
+    "tape": "4.14.0"
   },
   "engines": {
     "node": ">= 0.4.0"

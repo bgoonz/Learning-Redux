@@ -32,10 +32,10 @@
   "deprecated": false,
   "description": "The string_decoder module from Node core",
   "devDependencies": {
-    "babel-polyfill": "^6.23.0",
-    "core-util-is": "^1.0.2",
-    "inherits": "^2.0.3",
-    "tap": "~0.4.8"
+    "babel-polyfill": "6.26.0",
+    "core-util-is": "1.0.3",
+    "inherits": "2.0.4",
+    "tap": "0.4.13"
   },
   "files": [
     "lib"

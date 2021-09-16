@@ -49,11 +49,11 @@
   "deprecated": false,
   "description": "node's assert.deepEqual algorithm",
   "devDependencies": {
-    "@ljharb/eslint-config": "^15.0.1",
-    "auto-changelog": "^1.16.2",
-    "eslint": "^6.6.0",
-    "safe-publish-latest": "^1.1.4",
-    "tape": "^4.11.0"
+    "@ljharb/eslint-config": "15.1.0",
+    "auto-changelog": "1.16.4",
+    "eslint": "6.8.0",
+    "safe-publish-latest": "1.1.4",
+    "tape": "4.14.0"
   },
   "directories": {
     "lib": ".",
