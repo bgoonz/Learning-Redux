@@ -37,8 +37,8 @@
   "devDependencies": {
     "coveralls": "*",
     "istanbul": "*",
-    "jshint": "2",
-    "mocha": "^5.0.1",
+    "jshint": "2.13.1",
+    "mocha": "5.2.0",
     "mocha-lcov-reporter": "*"
   },
   "directories": {

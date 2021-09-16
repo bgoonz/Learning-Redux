@@ -36,12 +36,12 @@
   "deprecated": false,
   "description": "Define multiple non-enumerable properties at once. Uses `Object.defineProperty` when available; falls back to standard assignment in older engines.",
   "devDependencies": {
-    "@ljharb/eslint-config": "^13.0.0",
-    "covert": "^1.1.0",
-    "eslint": "^5.3.0",
-    "jscs": "^3.0.7",
-    "nsp": "^3.2.1",
-    "tape": "^4.9.0"
+    "@ljharb/eslint-config": "13.1.1",
+    "covert": "1.1.1",
+    "eslint": "5.16.0",
+    "jscs": "3.0.7",
+    "nsp": "3.2.1",
+    "tape": "4.14.0"
   },
   "engines": {
     "node": ">= 0.4"

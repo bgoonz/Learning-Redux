@@ -48,13 +48,13 @@
   "deprecated": false,
   "description": "HTTP and HTTPS modules that follow redirects.",
   "devDependencies": {
-    "bluebird": "^3.4.0",
-    "concat-stream": "^1.5.0",
-    "coveralls": "^2.11.2",
-    "express": "^4.13.0",
-    "mocha": "^3.1.2",
-    "nyc": "^8.3.1",
-    "xo": "^0.17.0"
+    "bluebird": "3.7.2",
+    "concat-stream": "1.6.2",
+    "coveralls": "2.13.3",
+    "express": "4.17.1",
+    "mocha": "3.5.3",
+    "nyc": "8.4.0",
+    "xo": "0.17.1"
   },
   "files": [
     "index.js",

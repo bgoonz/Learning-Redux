@@ -35,7 +35,7 @@
   "deprecated": false,
   "description": "a CSS selector parser",
   "devDependencies": {
-    "jshint": "2"
+    "jshint": "2.13.1"
   },
   "engines": {
     "node": "*"

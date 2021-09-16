@@ -38,10 +38,10 @@
   "deprecated": false,
   "description": "utilities for working with htmlparser2's dom",
   "devDependencies": {
-    "domhandler": "2",
-    "htmlparser2": "~3.3.0",
-    "jshint": "~2.3.0",
-    "mocha": "~1.15.1"
+    "domhandler": "2.4.2",
+    "htmlparser2": "3.3.0",
+    "jshint": "2.3.0",
+    "mocha": "1.15.1"
   },
   "directories": {
     "test": "tests"

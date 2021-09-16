@@ -39,11 +39,11 @@
   "description": "render dom nodes to string",
   "devDependencies": {
     "cheerio": "*",
-    "expect.js": "^0.3.1",
-    "jshint": "^2.9.1-rc1",
-    "lodash": "^4.17.11",
-    "mocha": "^5.2.0",
-    "xyz": "^3.0.0"
+    "expect.js": "0.3.1",
+    "jshint": "2.13.1",
+    "lodash": "4.17.21",
+    "mocha": "5.2.0",
+    "xyz": "3.0.0"
   },
   "files": [
     "index.js"

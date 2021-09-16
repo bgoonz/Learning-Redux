@@ -39,15 +39,15 @@
   "deprecated": false,
   "description": "Runtime type checking for React props and similar objects.",
   "devDependencies": {
-    "babel-jest": "^19.0.0",
-    "babel-preset-react": "^6.24.1",
-    "browserify": "^16.2.3",
-    "bundle-collapser": "^1.2.1",
-    "eslint": "^5.13.0",
-    "jest": "^19.0.2",
-    "react": "^15.5.1",
-    "uglifyify": "^3.0.4",
-    "uglifyjs": "^2.4.10"
+    "babel-jest": "19.0.0",
+    "babel-preset-react": "6.24.1",
+    "browserify": "16.5.2",
+    "bundle-collapser": "1.4.0",
+    "eslint": "5.16.0",
+    "jest": "19.0.2",
+    "react": "15.7.0",
+    "uglifyify": "3.0.4",
+    "uglifyjs": "2.4.11"
   },
   "files": [
     "LICENSE",

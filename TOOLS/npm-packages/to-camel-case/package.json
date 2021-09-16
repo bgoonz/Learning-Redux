@@ -27,12 +27,12 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "to-space-case": "^1.0.0"
+    "to-space-case": "1.0.0"
   },
   "deprecated": false,
   "description": "Convert a string to camel case.",
   "devDependencies": {
-    "mocha": "^2.3.4"
+    "mocha": "2.5.3"
   },
   "homepage": "https://github.com/ianstormtaylor/to-camel-case#readme",
   "keywords": [
