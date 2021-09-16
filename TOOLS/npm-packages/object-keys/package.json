@@ -59,13 +59,13 @@
   "deprecated": false,
   "description": "An Object.keys replacement, in case Object.keys is not available. From https://github.com/es-shims/es5-shim",
   "devDependencies": {
-    "@ljharb/eslint-config": "^13.1.1",
-    "covert": "^1.1.1",
-    "eslint": "^5.13.0",
-    "foreach": "^2.0.5",
-    "indexof": "^0.0.1",
-    "is": "^3.3.0",
-    "tape": "^4.9.2"
+    "@ljharb/eslint-config": "13.1.1",
+    "covert": "1.1.1",
+    "eslint": "5.16.0",
+    "foreach": "2.0.5",
+    "indexof": "0.0.1",
+    "is": "3.3.0",
+    "tape": "4.14.0"
   },
   "engines": {
     "node": ">= 0.4"

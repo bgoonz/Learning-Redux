@@ -27,12 +27,12 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "to-no-case": "^1.0.0"
+    "to-no-case": "1.0.2"
   },
   "deprecated": false,
   "description": "Convert a string to space case.",
   "devDependencies": {
-    "mocha": "^2.3.4"
+    "mocha": "2.5.3"
   },
   "homepage": "https://github.com/ianstormtaylor/to-space-case#readme",
   "keywords": [

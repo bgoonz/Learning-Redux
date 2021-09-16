@@ -139,13 +139,13 @@
   "deprecated": false,
   "description": "Javascript utility for calculating deep difference, capturing changes, and applying changes across objects; for nodejs and the browser.",
   "devDependencies": {
-    "deep-equal": "~1.0.0",
-    "expect.js": "^0.3.1",
-    "jscs": "^1.12.0",
-    "jshint": "^2.6.3",
-    "mocha": "^2.2.1",
-    "rollup": "^0.41.6",
-    "uglifyjs": "^2.4.10"
+    "deep-equal": "1.0.1",
+    "expect.js": "0.3.1",
+    "jscs": "1.13.1",
+    "jshint": "2.13.1",
+    "mocha": "2.5.3",
+    "rollup": "0.41.6",
+    "uglifyjs": "2.4.11"
   },
   "directories": {
     "examples": "./examples",

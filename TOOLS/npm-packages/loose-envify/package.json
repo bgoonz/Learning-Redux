@@ -42,9 +42,9 @@
   "deprecated": false,
   "description": "Fast (and loose) selective `process.env` replacer using js-tokens instead of an AST",
   "devDependencies": {
-    "browserify": "^13.1.1",
-    "envify": "^3.4.0",
-    "tap": "^8.0.0"
+    "browserify": "13.3.0",
+    "envify": "3.4.1",
+    "tap": "8.0.1"
   },
   "homepage": "https://github.com/zertosh/loose-envify",
   "keywords": [

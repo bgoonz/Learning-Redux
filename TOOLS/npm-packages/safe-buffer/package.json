@@ -35,7 +35,7 @@
   "description": "Safer Node.js Buffer API",
   "devDependencies": {
     "standard": "*",
-    "tape": "^5.0.0"
+    "tape": "5.3.1"
   },
   "funding": [
     {
