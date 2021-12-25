@@ -2710,10 +2710,10 @@ extglob@^0.3.1:
   dependencies:
     is-extglob "^1.0.0"
 
-extract-css-chunks-webpack-plugin@2.0.15:
-  version "2.0.15"
-  resolved "https://registry.yarnpkg.com/extract-css-chunks-webpack-plugin/-/extract-css-chunks-webpack-plugin-2.0.15.tgz#7ba65b53a1c1fa4b2b562760ffe0c1356ac6fcdf"
-  integrity sha512-S7nz8n8Ub8MxgUnxReDaD1YhfS9o0KvXHD/C/zsgWm1IXvGVHzGJhs59oubH2p3TP56l+UtOppcWWM7c+vsD/A==
+extract-css-chunks-webpack-plugin@2.0.19:
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/extract-css-chunks-webpack-plugin/-/extract-css-chunks-webpack-plugin-2.0.19.tgz#a2babd7f51568165944f5ed4816bcd4bf84f5bbb"
+  integrity sha512-zSQx/jVLgs4uWDfMirYA/Gr78GnvJfcmxo6FIx4YvgU+ihtxPVmtuxyyIBSBptgBJtXcDB7z96KCDEVUo8Ksng==
   dependencies:
     ajv "4.11.2"
     async "^2.5.0"
