@@ -48,7 +48,7 @@
     "jsdom": "16.7.0",
     "mdn-browser-compat-data": "git+https://github.com/mdn/browser-compat-data.git#60214baa97657c798dd7eac44b7bc73af4968033",
 
-    "mdn-data": "git+https://github.com/mdn/data.git#7f622300bb7e285a2cbce7db6f8ecd8f964a18eb",
+    "mdn-data": "git+https://github.com/mdn/data.git#dbc4ec645bf7f19e6a88e77a7f898d1a05938106",
     "prettier": "2.4.1",
     "request": "2.88.2",
     "ts-jest": "26.5.6",
