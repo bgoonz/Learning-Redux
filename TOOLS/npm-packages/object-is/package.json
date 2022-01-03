@@ -44,7 +44,7 @@
   "deprecated": false,
   "description": "ES2015-compliant shim for Object.is - differentiates between -0 and +0",
   "devDependencies": {
-    "@es-shims/api": "2.2.1",
+    "@es-shims/api": "2.2.3",
     "@ljharb/eslint-config": "17.6.0",
     "aud": "1.1.5",
     "auto-changelog": "2.3.0",
