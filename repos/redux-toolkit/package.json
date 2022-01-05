@@ -27,7 +27,7 @@
   "unpkg": "dist/redux-toolkit.umd.min.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@microsoft/api-extractor": "7.13.2",
+    "@microsoft/api-extractor": "7.19.4",
     "@size-limit/preset-small-lib": "4.11.0",
     "@testing-library/react": "11.2.6",
     "@testing-library/react-hooks": "5.1.2",
